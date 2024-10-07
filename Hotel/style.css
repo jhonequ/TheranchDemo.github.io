@@ -211,25 +211,25 @@ body {
   color: #fff;
 }
 [data-type="iceland"] .content__left {
-  background-image: url("habitacion.jpeg");
+  background-image: url("img/Cuarto1.png");
 }
 .spinner--right [data-type="iceland"] .content__left {
   background-image: none;
 }
 [data-type="china"] .content__left {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/china.jpg");
+  background-image: url("img/cuarto2.png");
 }
 .spinner--right [data-type="china"] .content__left {
   background-image: none;
 }
 [data-type="usa"] .content__left {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/usa.jpg");
+  background-image: url("img/Cuarto3.png");
 }
 .spinner--right [data-type="usa"] .content__left {
   background-image: none;
 }
 [data-type="peru"] .content__left {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/peru.jpg");
+  background-image: url("img/cuarto5.png");
 }
 .spinner--right [data-type="peru"] .content__left {
   background-image: none;
