@@ -50,6 +50,10 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
+	<link rel="stylesheet" href="../Eventos/css/eventsCss/eventmenu.css">
+	<link rel="stylesheet" href="../Eventos/css/eventsCss/EventHead.css">
+
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -63,37 +67,22 @@
 	<div class="fh5co-loader"></div>
 	
 	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<!-- <div class="top-menu"> -->
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 text-center logo-wrap">
-						<div id="fh5co-logo"><a href="../index.html"><img src="../LogosTheranch/logo1V1.png" alt="Logo alt"></a></div>
-					</div>
-					<div class="col-xs-12 text-center menu-1 menu-wrap">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="menu.html">Menu</a></li>
-							<li class="has-dropdown active">
-								<a href="gallery.html">Gallery</a>
-								<ul class="dropdown">
-									<li><a href="#">Events</a></li>
-									<li><a href="#">Food</a></li>
-									<li><a href="#">Coffees</a></li>
-								</ul>
-							</li>
-							<li><a href="reservation.html">Reservation</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-				
-			</div>
-		<!-- </div> -->
-	</nav>
+	
 
 	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image: url(images/hero_1.jpeg);" data-stellar-background-ratio="0.5">
+		<div class="lineamenu">
+			<nav id="nav" class="nav">
+				<img src="icon/logo2.ico" alt="The Ranch" class="logomenu">
+				<ul class="menu">
+					<li><a href="../index.html" class="nav_link">Inicio</a></li>
+					<li><a href="index.html" class="nav_link">Eventos</a></li>
+					<li><a href="../Hotel/index.html" class="nav_link">Hospedaje</a></li>
+					<!--<li><a href="../Restaurante/index.html" class="nav_link">Restaurante</a></li>
+					<li><a href="#" class="nav_link">Servicios</a></li>-->
+				</ul>
+			</nav>
+		</div>
+		
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -113,29 +102,53 @@
 	<div id="fh5co-gallery" class="fh5co-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 fh5co-heading animate-box">
+				<!--<div class="col-md-12 fh5co-heading animate-box">
 					<h2>Our Gallery</h2>
 					<div class="row">
 						<div class="col-md-6">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ab debitis sit itaque totam, a maiores nihil, nulla magnam porro minima officiis! Doloribus aliquam voluptates corporis et tempora consequuntur ipsam, itaque, nesciunt similique commodi omnis. Ad magni perspiciatis, voluptatum repellat.</p>
 						</div>
 					</div>
-				</div>
+				</div>-->
 				
 
 				<div class="col-md-3 col-sm-3 fh5co-gallery_item">
-					<div class="fh5co-bg-img" style="background-image: url(images/gallery_1.jpeg);" data-trigger="zoomerang"></div>
-					<div class="fh5co-bg-img" style="background-image: url(images/gallery_2.jpeg);" data-trigger="zoomerang"></div>
+					<div class="fh5co-bg-img" style="background-image: url(../Eventos/images/events/botanic.png);" data-trigger="zoomerang"></div>
+					<div class="fh5co-bg-img" style="background-image: url(../Eventos/images/events/coctel.jpg);" data-trigger="zoomerang"></div>
 				</div>
 				<div class="col-md-6 col-sm-6 fh5co-gallery_item">
-					<div class="fh5co-bg-img fh5co-gallery_big" style="background-image: url(images/gallery_8.jpeg);" data-trigger="zoomerang"></div>
+					<div class="fh5co-bg-img fh5co-gallery_big" style="background-image: url(../Eventos/images/events/Celebbraciones.jpg);" data-trigger="zoomerang"></div>
 				</div>
 				<div class="col-md-3 col-sm-3 fh5co-gallery_item">
-					<div class="fh5co-bg-img" style="background-image: url(images/gallery_4.jpeg);" data-trigger="zoomerang"></div>
-					<div class="fh5co-bg-img" style="background-image: url(images/gallery_5.jpeg);" data-trigger="zoomerang"></div>
+					<div class="fh5co-bg-img" style="background-image: url(../Eventos/images/events/img2.jpg);" data-trigger="zoomerang"></div>
+					<div class="fh5co-bg-img" style="background-image: url(../Eventos/images/events/img3.jpg);" data-trigger="zoomerang"></div>
 				</div>
 
 				<div class="col-md-3 col-sm-3 fh5co-gallery_item">
+					<div class="fh5co-bg-img" style="background-image: url(../Eventos/images/events/img7.jpg);" data-trigger="zoomerang"></div>
+					<div class="fh5co-bg-img" style="background-image: url(../Eventos/images/events/img10.jpg);" data-trigger="zoomerang"></div>
+				</div>
+				<div class="col-md-3 col-sm-3 fh5co-gallery_item">
+					<div class="fh5co-bg-img" style="background-image: url(../Eventos/images/events/elements.jpg);" data-trigger="zoomerang"></div>
+					<div class="fh5co-bg-img" style="background-image: url(../Eventos/images/events/img4.jpg);" data-trigger="zoomerang"></div>
+				</div>
+				<div class="col-md-6 col-sm-6 fh5co-gallery_item">
+					<div class="fh5co-bg-img fh5co-gallery_big" style="background-image: url(../Eventos/images/events/img6.jpg);" data-trigger="zoomerang"></div>
+				</div>
+
+				<div class="col-md-3 col-sm-3 fh5co-gallery_item">
+					<div class="fh5co-bg-img" style="background-image: url(../Eventos/images/events/img9.jpg);" data-trigger="zoomerang"></div>
+					<div class="fh5co-bg-img" style="background-image: url(../Eventos/images/events/img8.jpg);" data-trigger="zoomerang"></div>
+				</div>
+				<div class="col-md-6 col-sm-6 fh5co-gallery_item">
+					<div class="fh5co-bg-img fh5co-gallery_big" style="background-image: url(../Eventos/images/events/img7.jpg);" data-trigger="zoomerang"></div>
+				</div>
+				<div class="col-md-3 col-sm-3 fh5co-gallery_item">
+					<div class="fh5co-bg-img" style="background-image: url(../Eventos/images/events/img8.jpg);" data-trigger="zoomerang"></div>
+					<div class="fh5co-bg-img" style="background-image: url(../Eventos/images/events/img9.jpg);" data-trigger="zoomerang"></div>
+				</div>
+
+				<!--<div class="col-md-3 col-sm-3 fh5co-gallery_item">
 					<div class="fh5co-bg-img" style="background-image: url(images/gallery_5.jpeg);" data-trigger="zoomerang"></div>
 					<div class="fh5co-bg-img" style="background-image: url(images/gallery_6.jpeg);" data-trigger="zoomerang"></div>
 				</div>
@@ -145,36 +158,12 @@
 				</div>
 				<div class="col-md-6 col-sm-6 fh5co-gallery_item">
 					<div class="fh5co-bg-img fh5co-gallery_big" style="background-image: url(images/gallery_9.jpeg);" data-trigger="zoomerang"></div>
-				</div>
-
-				<div class="col-md-3 col-sm-3 fh5co-gallery_item">
-					<div class="fh5co-bg-img" style="background-image: url(images/gallery_1.jpeg);" data-trigger="zoomerang"></div>
-					<div class="fh5co-bg-img" style="background-image: url(images/gallery_2.jpeg);" data-trigger="zoomerang"></div>
-				</div>
-				<div class="col-md-6 col-sm-6 fh5co-gallery_item">
-					<div class="fh5co-bg-img fh5co-gallery_big" style="background-image: url(images/gallery_8.jpeg);" data-trigger="zoomerang"></div>
-				</div>
-				<div class="col-md-3 col-sm-3 fh5co-gallery_item">
-					<div class="fh5co-bg-img" style="background-image: url(images/gallery_4.jpeg);" data-trigger="zoomerang"></div>
-					<div class="fh5co-bg-img" style="background-image: url(images/gallery_5.jpeg);" data-trigger="zoomerang"></div>
-				</div>
-
-				<div class="col-md-3 col-sm-3 fh5co-gallery_item">
-					<div class="fh5co-bg-img" style="background-image: url(images/gallery_5.jpeg);" data-trigger="zoomerang"></div>
-					<div class="fh5co-bg-img" style="background-image: url(images/gallery_6.jpeg);" data-trigger="zoomerang"></div>
-				</div>
-				<div class="col-md-3 col-sm-3 fh5co-gallery_item">
-					<div class="fh5co-bg-img" style="background-image: url(images/gallery_7.jpeg);" data-trigger="zoomerang"></div>
-					<div class="fh5co-bg-img" style="background-image: url(images/gallery_8.jpeg);" data-trigger="zoomerang"></div>
-				</div>
-				<div class="col-md-6 col-sm-6 fh5co-gallery_item">
-					<div class="fh5co-bg-img fh5co-gallery_big" style="background-image: url(images/gallery_9.jpeg);" data-trigger="zoomerang"></div>
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</div>
 
-	<div id="fh5co-featured-testimony" class="fh5co-section">
+	<!--<div id="fh5co-featured-testimony" class="fh5co-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 fh5co-heading animate-box">
@@ -197,16 +186,19 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	
 	<div id="fh5co-started" class="fh5co-section animate-box" style="background-image: url(images/hero_1.jpeg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Book a Table</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae enim quae vitae cupiditate, sequi quam ea id dolor reiciendis consectetur repudiandae. Rem quam, repellendus veniam ipsa fuga maxime odio? Eaque!</p>
-					<p><a href="mailto:info@yourdomainname.com" class="btn btn-primary btn-outline">Contact Us</a></p>
+					<h2>The Ranch Group</h2>
+					<p>Celebra tus momentos especiales en un lugar donde la naturaleza y la elegancia se unen. The Ranch Hotel Boutique te ofrece una amplia variedad de espacios para personalizar tu evento y crear una atmósfera única. Nuestro equipo se encargará de cada detalle para que tu evento sea un éxito rotundo.</p>
+					<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
+					target="_blank">
+					<button class="button">Solicitar Cita</button>
+				</a>
 				</div>
 			</div>
 		</div>
@@ -215,11 +207,18 @@
 	<footer id="fh5co-footer" role="contentinfo" class="fh5co-section">
 		<div class="container">
 			<div class="row row-pb-md">
-				<div class="col-md-4 fh5co-widget">
-					<h4>Tasty</h4>
-					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+				<div class="col-md-3 fh5co-widget">
+					<h4>The Ranch Group</h4>
+					<p>Nuestro mayor logro se basa en el acompañamiento y
+						en la calidad de las experiencias contenidas durante
+						el desarrollo de cada momento mágico.
+						Somos un espacio encantado lleno de naturaleza y
+						hermosos espacios para crear
+						diferentes ambientes, con fácil acceso y variedad de
+						servicios
+					</p>
 				</div>
-				<div class="col-md-2 col-md-push-1 fh5co-widget">
+				<!-- 				<div class="col-md-2 col-md-push-1 fh5co-widget">
 					<h4>Links</h4>
 					<ul class="fh5co-footer-links">
 						<li><a href="#">Home</a></li>
@@ -227,44 +226,52 @@
 						<li><a href="#">Menu</a></li>
 						<li><a href="#">Gallery</a></li>
 					</ul>
-				</div>
+				</div> -->
 
-				<div class="col-md-2 col-md-push-1 fh5co-widget">
+				<!-- 		<div class="col-md-2 col-md-push-1 fh5co-widget">
 					<h4>Categories</h4>
 					<ul class="fh5co-footer-links">
-						<li><a href="#">Landing Page</a></li>
+						<li><a href="#">Servicios</a></li>
 						<li><a href="#">Real Estate</a></li>
 						<li><a href="#">Personal</a></li>
 						<li><a href="#">Business</a></li>
 						<li><a href="#">e-Commerce</a></li>
 					</ul>
-				</div>
+				</div> -->
 
-				<div class="col-md-4 col-md-push-1 fh5co-widget">
+				<div class="col-md-3 col-md-push-1 fh5co-widget">
 					<h4>Contact Information</h4>
 					<ul class="fh5co-footer-links">
-						<li>198 West 21th Street, <br> Suite 721 New York NY 10016</li>
-						<li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-						<li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-						<li><a href="http://https://freehtml5.co">freehtml5.co</a></li>
+						<li>The Ranch Hotel <br> Santa Elena Vereda Pantanillo</li>
+						<li><a href="tel://3233454530">+57 3233454530</a></li>
+						<li><a href="mailto:theranchboutique@gmail.com">theranchboutique@gmail.com</a></li>
+						<li><a href="http://https://theranchgroup.com">theranchgroup.com</a></li>
 					</ul>
 				</div>
 
+				<div class="col-md-2 col-md-push-1 fh5co-widget">
+					<h4>Ubicación</h4>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4716.940300296729!2d-75.49158757969506!3d6.203129256692126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e469d7d2d544e7b%3A0xfdec30027c4ca674!2sThe%20Ranch%20Hotel%20Boutique!5e0!3m2!1ses-419!2sco!4v1727750943307!5m2!1ses-419!2sco"
+						width="525" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
 			</div>
 
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+						<small class="block">&copy; 2024 The Ranch Group. All Rights Reserved.</small>
+						<small class="block">Designed by Jhones</small>
 					</p>
 					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter2"></i></a></li>
-							<li><a href="#"><i class="icon-facebook2"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin2"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-						</ul>
+					<ul class="fh5co-social-icons">
+						<li><a href="https://www.facebook.com/theranchhotelboutique" target="_blank"><i class="icon-facebook2"></i></a></li>
+						<!-- 
+						<li><a href="#"><i class="icon-twitter2"></i></a></li>
+						<li><a href="#"><i class="icon-linkedin2"></i></a></li> -->
+						<li><a href="https://www.instagram.com/theranch_hotelboutique?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="icon-instagram"></i></a></li>
+					</ul>
 					</p>
 				</div>
 			</div>

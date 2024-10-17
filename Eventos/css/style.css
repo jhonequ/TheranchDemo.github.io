@@ -24,6 +24,10 @@
   }
 }
 
+body {
+  background: #0B1D27;
+}
+
 #page {
   position: relative;
   overflow-x: hidden;
@@ -361,7 +365,7 @@
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   color: #fff;
   position: relative;
 }
@@ -750,13 +754,13 @@
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
 }
 .fh5co-social-icons li a {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   color: #ea272d;
   padding-left: 10px;
   padding-right: 10px;
