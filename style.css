@@ -10,8 +10,6 @@ a{
     text-decoration: none;
 }
 header{
-    width: 1140px;
-    max-width: 80%;
     margin: auto;
     height: 50px;
     display: flex;
@@ -19,10 +17,7 @@ header{
     position: relative;
     z-index: 100;
 }
-header a{
-    color: #eee;
-    margin-right: 40px;
-}
+
 /* carousel */
 .carousel{
     height: 100vh;
@@ -137,7 +132,7 @@ header a{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #eee4;
+    background-color: #ede29e;
     border: none;
     color: #fff;
     font-family: monospace;
@@ -145,8 +140,8 @@ header a{
     transition: .5s;
 }
 .arrows button:hover{
-    background-color: #fff;
-    color: #000;
+    background-color: #817546;
+    color: #fff;
 }
 
 /* animation */
