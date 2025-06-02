@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ranch - Eventos y Hotel Boutique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Define la fuente principal para todo el cuerpo del documento */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Evita el desplazamiento horizontal no deseado */
+            overflow-x: hidden;
+        }
+
+        /* Definiciones de colores personalizados usando clases de utilidad (conceptuales para Tailwind) */
+        /* En un proyecto real, estos se configurarían en tailwind.config.js */
+        .bg-gold-primary { background-color: #B8860B; } /* Dorado principal para acentos */
+        .text-gold-primary { color: #B8860B; }
+        .hover\:bg-gold-darker:hover { background-color: #DAA520; } /* Dorado más oscuro para estados hover */
+
+        .bg-green-natural-1 { background-color: #2E8B57; } /* Verde natural 1 */
+        .text-green-natural-1 { color: #2E8B57; }
+
+        .bg-green-natural-2 { background-color: #4F835F; } /* Verde natural 2 para secciones */
+
+        .bg-neutral-beige { background-color: #F5F5DC; } /* Beige para fondos claros */
+        .text-neutral-charcoal { color: #36454F; } /* Gris oscuro para texto principal */
+        .bg-neutral-off-white { background-color: #F8F8F8; } /* Blanco roto para fondos */
+        .bg-dark-slate-gray { background-color: #2F4F4F; } /* Gris pizarra oscuro para footer */
+
+        /* Estilos específicos para la sección Hero (video/imagen de fondo) */
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Envía el video al fondo */
+        }
+        .hero-video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centra el video */
+            object-fit: cover; /* Asegura que el video cubra el contenedor */
+        }
+        .hero-overlay {
+            /* Capa semitransparente sobre el video para mejorar la legibilidad del texto */
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white; /* Color del texto sobre la capa */
+            padding: 1rem;
+        }
+
+        /* Estilos para el botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed; /* Fijo en la pantalla */
+            bottom: 20px; /* 20px desde abajo */
+            right: 20px; /* 20px desde la derecha */
+            z-index: 1000; /* Asegura que esté por encima de otros elementos */
+        }
+
+        /* Estilos para el menú móvil (oculto por defecto y con transformación) */
+        #mobile-menu.hidden {
+            transform: translateX(-100%); /* Oculta el menú fuera de la vista */
+        }
+        #mobile-menu.flex {
+            transform: translateX(0); /* Muestra el menú deslizándolo */
+        }
+    </style>
+</head>
+<body class="bg-neutral-off-white text-neutral-charcoal">
+
+    <header class="bg-neutral-off-white shadow-md py-4 px-6 flex justify-between items-center fixed top-0 left-0 w-full z-50 rounded-b-lg">
+        <div class="flex items-center">
+            <a href="#" class="text-2xl font-bold text-gold-primary hover:text-gold-darker transition-colors duration-300">THE RANCH</a>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+            <a href="#eventos-section" class="text-neutral-charcoal hover:text-gold-primary transition-colors duration-300 font-semibold">Eventos</a>
+            <a href="#hoteleria-section" class="text-neutral-charcoal hover:text-gold-primary transition-colors duration-300 font-semibold">Hotelería</a>
+            <a href="#locaciones" class="text-neutral-charcoal hover:text-gold-primary transition-colors duration-300 font-semibold">Locaciones</a>
+            <a href="#galeria" class="text-neutral-charcoal hover:text-gold-primary transition-colors duration-300 font-semibold">Galería</a>
+            <a href="#contacto" class="text-neutral-charcoal hover:text-gold-primary transition-colors duration-300 font-semibold">Contacto</a>
+        </nav>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-neutral-charcoal focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-neutral-off-white z-40 hidden md:hidden flex-col items-center justify-center space-y-6 transition-transform duration-300 transform -translate-x-full">
+        <button id="close-mobile-menu" class="absolute top-6 right-6 text-neutral-charcoal focus:outline-none">
+            <i class="fas fa-times text-3xl"></i>
+        </button>
+        <a href="#eventos-section" class="text-3xl text-neutral-charcoal hover:text-gold-primary transition-colors duration-300 font-semibold" onclick="document.getElementById('mobile-menu').classList.add('-translate-x-full');">Eventos</a>
+        <a href="#hoteleria-section" class="text-3xl text-neutral-charcoal hover:text-gold-primary transition-colors duration-300 font-semibold" onclick="document.getElementById('mobile-menu').classList.add('-translate-x-full');">Hotelería</a>
+        <a href="#locaciones" class="text-3xl text-neutral-charcoal hover:text-gold-primary transition-colors duration-300 font-semibold" onclick="document.getElementById('mobile-menu').classList.add('-translate-x-full');">Locaciones</a>
+        <a href="#galeria" class="text-3xl text-neutral-charcoal hover:text-gold-primary transition-colors duration-300 font-semibold" onclick="document.getElementById('mobile-menu').classList.add('-translate-x-full');">Galería</a>
+        <a href="#contacto" class="text-3xl text-neutral-charcoal hover:text-gold-primary transition-colors duration-300 font-semibold" onclick="document.getElementById('mobile-menu').classList.add('-translate-x-full');">Contacto</a>
+    </div>
+
+    <section class="relative h-screen w-full flex items-center justify-center text-center overflow-hidden">
+        <div class="hero-video-container">
+            <video autoplay loop muted class="hero-video">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-happy-couple-on-a-date-3129-large.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+            <img src="https://placehold.co/1920x1080/4F835F/FFFFFF?text=The+Ranch+Experiences" alt="The Ranch Experiences" class="hero-video absolute top-0 left-0 w-full h-full object-cover" onerror="this.style.display='block'; this.parentNode.querySelector('video').style.display='none';">
+        </div>
+        <div class="hero-overlay">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight rounded-lg p-2">The Ranch: Donde tus Sueños Cobran Vida en la Naturaleza</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl rounded-lg p-2">Crea Momentos Inolvidables y Conexiones Genuinas en Nuestros Espacios Únicos.</p>
+            <a href="#eventos-section" class="bg-gold-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold-darker transition-all duration-300 shadow-lg">Explora Nuestros Eventos</a>
+        </div>
+    </section>
+
+    <section id="eventos-section" class="py-16 md:py-24 bg-neutral-beige">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-neutral-charcoal">Nuestros Servicios</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl font-bold text-gold-primary mb-6 text-center">Eventos que Dejan Huella</h3>
+                    <p class="text-lg text-neutral-charcoal mb-8 text-center">En The Ranch, cada celebración es una obra de arte. Diseñamos experiencias únicas rodeadas de naturaleza y un servicio excepcional.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-ring text-green-natural-1 text-2xl"></i>
+                            <span class="text-lg text-neutral-charcoal">Matrimonios</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-church text-green-natural-1 text-2xl"></i>
+                            <span class="text-lg text-neutral-charcoal">Primera Comunión</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-crown text-green-natural-1 text-2xl"></i>
+                            <span class="text-lg text-neutral-charcoal">Quinceañeros</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-heart text-green-natural-1 text-2xl"></i>
+                            <span class="text-lg text-neutral-charcoal">Pedida de Matrimonio</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-camera text-green-natural-1 text-2xl"></i>
+                            <span class="text-lg text-neutral-charcoal">Fotografía y Video</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-briefcase text-green-natural-1 text-2xl"></i>
+                            <span class="text-lg text-neutral-charcoal">Eventos Empresariales</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-utensils text-green-natural-1 text-2xl"></i>
+                            <span class="text-lg text-neutral-charcoal">Menaje y Mobiliario</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-volume-up text-green-natural-1 text-2xl"></i>
+                            <span class="text-lg text-neutral-charcoal">Ayudas Audiovisuales</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="#" class="bg-gold-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gold-darker transition-all duration-300 shadow-md">Ver Todos los Servicios de Eventos</a>
+                    </div>
+                </div>
+
+                <div id="hoteleria-section" class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-3xl font-bold text-gold-primary mb-6 text-center">Relájate y Conecta en Nuestro Hotel Boutique</h3>
+                    <p class="text-lg text-neutral-charcoal mb-8 text-center">Escápate a un oasis de tranquilidad. Nuestros glamping y actividades te invitan a reconectar con la naturaleza y contigo mismo.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-campground text-green-natural-1 text-2xl"></i>
+                            <span class="text-lg text-neutral-charcoal">Glamping</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-utensils text-green-natural-1 text-2xl"></i>
+                            <span class="text-lg text-neutral-charcoal">Restaurante</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-horse text-green-natural-1 text-2xl"></i>
+                            <span class="text-lg text-neutral-charcoal">Paseo a Caballo</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-spa text-green-natural-1 text-2xl"></i>
+                            <span class="text-lg text-neutral-charcoal">Masajes</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-film text-green-natural-1 text-2xl"></i>
+                            <span class="text-lg text-neutral-charcoal">Cinema</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="#" class="bg-gold-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gold-darker transition-all duration-300 shadow-md">Descubre el Hotel Boutique</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="locaciones" class="py-16 md:py-24 bg-green-natural-2 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12">Escenarios Encantados para Momentos Inolvidables</h2>
+            <p class="text-xl mb-12 max-w-3xl mx-auto">The Ranch ofrece una diversidad de locaciones únicas, cada una con su propia esencia, diseñadas para adaptarse a cualquier tipo de celebración o experiencia.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/8B4513/FFFFFF?text=Cava+de+Vino" alt="Cava de Vino" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gold-primary mb-2">Cava de Vino</h3>
+                        <p class="text-neutral-charcoal">Un espacio rústico y elegante para eventos íntimos.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/2E8B57/FFFFFF?text=Elements" alt="Elements" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gold-primary mb-2">Elements (Zona Verde)</h3>
+                        <p class="text-neutral-charcoal">Amplios jardines para grandes celebraciones al aire libre.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/DAA520/FFFFFF?text=Plaza+Pastel" alt="Plaza Pastel" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gold-primary mb-2">Plaza Pastel</h3>
+                        <p class="text-neutral-charcoal">Un toque vintage y dulce para momentos especiales.</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="mt-12 inline-block bg-gold-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold-darker transition-all duration-300 shadow-lg">Explora Todas Nuestras Locaciones</a>
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-dark-slate-gray text-white py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-gold-primary">Contacto</h3>
+                <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> Dirección de The Ranch</p>
+                <p class="mb-2"><i class="fas fa-phone mr-2"></i> +57 323 345 4530</p>
+                <p class="mb-2"><i class="fas fa-envelope mr-2"></i> info@theranch.com</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-gold-primary">Enlaces Rápidos</h3>
+                <ul>
+                    <li class="mb-2"><a href="#eventos-section" class="hover:text-gold-primary transition-colors duration-300">Eventos</a></li>
+                    <li class="mb-2"><a href="#hoteleria-section" class="hover:text-gold-primary transition-colors duration-300">Hotelería</a></li>
+                    <li class="mb-2"><a href="#locaciones" class="hover:text-gold-primary transition-colors duration-300">Locaciones</a></li>
+                    <li class="mb-2"><a href="#galeria" class="hover:text-gold-primary transition-colors duration-300">Galería</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-gold-primary">Síguenos</h3>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="https://www.instagram.com/theranch_hotelboutique" target="_blank" class="text-white hover:text-gold-primary transition-colors duration-300">
+                        <i class="fab fa-instagram text-3xl"></i>
+                    </a>
+                    </div>
+            </div>
+        </div>
+        <div class="text-center text-sm mt-8 border-t border-gray-700 pt-6">
+            <p>&copy; 2025 The Ranch. Todos los derechos reservados.</p>
+            <p><a href="#" class="hover:text-gold-primary transition-colors duration-300">Política de Privacidad</a></p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/573233454530" target="_blank" class="whatsapp-float bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        // Script para el desplazamiento suave (smooth scrolling) de los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); // Previene el comportamiento de anclaje por defecto
+                // Desplaza la vista al elemento con el ID correspondiente
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth' // Desplazamiento suave
+                });
+            });
+        });
+
+        // Lógica para el menú móvil (botón de hamburguesa)
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Abre el menú móvil al hacer clic en el botón de hamburguesa
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full'); // Mueve el menú a la vista
+            mobileMenu.classList.add('flex'); // Cambia a display flex para mostrarlo
+        });
+
+        // Cierra el menú móvil al hacer clic en el botón de cerrar (X)
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full'); // Mueve el menú fuera de la vista
+            mobileMenu.classList.remove('flex'); // Oculta el menú
+        });
+
+        // Cierra el menú móvil cuando se hace clic en un enlace dentro del menú
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // Oculta el menú móvil si la ventana se redimensiona a tamaño de escritorio
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) { // md breakpoint de Tailwind
+                mobileMenu.classList.add('-translate-x-full');
+                mobileMenu.classList.remove('flex');
+            }
+        });
+    </script>
+</body>
+</html>

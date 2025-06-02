@@ -1,0 +1,52 @@
+/* filepath: c:\Users\jhone\Downloads\Desarrollo\_header.scss */
+.header {
+    background-color: $secondary-bg;
+    padding: $base-padding 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    li {
+        margin-left: $base-margin;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: $text-color;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $gold-color;
+        transition: width 0.3s ease;
+    }
+
+    &:hover::after,
+    &.active::after {
+        width: 100%;
+    }
+}

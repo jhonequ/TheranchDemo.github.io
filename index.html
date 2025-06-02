@@ -1,169 +1,337 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Ranch Group - Lujo y Naturaleza en un Espacio Soñado</title>
+    <meta name="description" content="Descubre The Ranch Group, un espacio soñado donde el lujo se encuentra con la naturaleza. Ofrecemos eventos, hotelería y gastronomía en un entorno único.">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="Eventos/css/eventsCss/EventHead.css">
-    <link rel="stylesheet" href="Eventos/css/eventsCss/eventmenu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
-    <header>
-        <div class="lineamenu">
-            <nav id="nav" class="nav">
-                <img src="Eventos/icon/logo2.ico" alt="The Ranch" class="logomenu">
-                <ul class="menu">
-                    <li><a href="index.html" class="nav_link">Inicio</a></li>
-                    <li><a href="Eventos/index.html" class="nav_link">Eventos</a></li>
-                    <li><a href="Hotel/index.html" class="nav_link">Hospedaje</a></li>
-                    <!--<li><a href="../Restaurante/index.html" class="nav_link">Restaurante</a></li>
-					<li><a href="#" class="nav_link">Servicios</a></li>-->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="image/logos the ranch.png" alt="The Ranch Group Logo"></a>
+            </div>
+            <nav class="main-nav">
+                <button class="nav-toggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="active">Inicio</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#hoteleria">Hotelería</a></li>
+                    <li><a href="#restaurante">Restaurante</a></li>
+                    <li><a href="#servicios-adicionales">Servicios Especiales</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- carousel -->
-    <div class="carousel">
-        <!-- list item -->
-        <div class="list">
-            <div class="item">
-                <img src="image/Imagen6.png">
-                <div class="content">
-                    <div class="author">The Ranch</div>
-                    <div class="title">Celebraciones</div>
-                    <div class="topic">Eventos</div>
-                    <div class="des">
-                        The Ranch Hotel Boutique se caracteriza por realizar
-                        eventos con un concepto <br> único para quienes buscan
-                        generar experiencias y disfrutar escenarios rodeados <br>
-                        de vegetación, jardines y ambientes diferentes
-                        acompañados de un excelente <br> servicio.
-                        El éxito de todo tipo de evento se evidencia en el
-                        bienestar transmitido <br> y sentido por los invitados y
-                        anfitriones.
-                    </div>
-                    <div class="buttons">
-                        <button onclick="location.href='Eventos/index.html'">M&aacute;s Informaci&oacute;n</button>
-                        <button>Registrarse</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="image/entrada.png">
-                <div class="content">
-                    <div class="author">The Ranch</div>
-                    <div class="title">Hospedaje</div>
-                    <div class="topic">Hotel</div>
-                    <div class="des">
-                        <!-- lorem 50 -->
-                        ¡Déjate llevar y transportar a los momentos <br>
-                        fascinantes que se viven en este increíble lugar!
-
-                        Vive la magia de la naturaleza con nosotros.
-                    </div>
-                    <div class="buttons">
-                        <button onclick="location.href='Hotel/index.html'">M&aacute;s Informaci&oacute;n</button>
-                        <button>Registrarse</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- <div class="item">
-                <img src="image/Imagen5.png">
-                <div class="content">
-                    <div class="author">The Ranch</div>
-                    <div class="title">Restaurante</div>
-                    <div class="topic">Gastronimia Unica</div>
-                    <div class="des">
-                        Dejate envolver en la magia de nuestra gastronomia, <br>
-                        con los deliciosos platos echos por nuestro chef y mucho mas..
-                    </div>
-                    <div class="buttons">
-                        <button onclick="location.href='Restaurante/index.html'">M&aacute;s Informaci&oacute;n</button>
-                        <button>Registrarse</button>
-                    </div>
-                </div>
-            </div>-->
-            <!--<div class="item">
-                <img src="image/img4.jpg">
-                <div class="content">
-                    <div class="author">The Ranch</div>
-                    <div class="title">Servicios Adicionales</div>
-                    <div class="topic">Aventuras</div>
-                    <div class="des">
-                        ¡Déjate llevar y transportar a las aventuras <br>
-                        que proporcionamos y vive lo increíble de este lugar!
-                    </div>
-                    <div class="buttons">
-                        <button>M&aacute;s Informaci&oacute;n</button>
-                        <button>Registrarse</button>
-                    </div>
-                </div>
-            </div>-->
+    <section id="inicio" class="hero-section">
+        <div class="hero-content">
+            <h1>The Ranch: Tu Espacio Soñado</h1>
+            <p>Donde el lujo, la naturaleza y la innovación se unen para crear experiencias inolvidables.</p>
+            <a href="#eventos" class="btn btn-primary">Empieza tu Sueño Aquí</a>
         </div>
-        <!-- list thumnail -->
-        <div class="thumbnail">
-            <div class="item">
-                <img src="image/entrada.png">
-                <div class="content">
-                    <div class="title">
-                        Hotel
-                    </div>
-                    <div class="description">
-                        The Ranchs
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="image/Imagen6.png">
-                <div class="content">
-                    <div class="title">
-                        Eventos
-                    </div>
-                    <div class="description">
-                        The Ranch
-                    </div>
-                </div>
-            </div>
-            <!--<div class="item">
-                <img src="image/Imagen5.png">
-                <div class="content">
-                    <div class="title">
-                        Name Slider
-                    </div>
-                    <div class="description">
-                        Description
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="image/img4.jpg">
-                <div class="content">
-                    <div class="title">
-                        Name Slider
-                    </div>
-                    <div class="description">
-                        Description
-                    </div>
-                </div>
-            </div>-->
-        </div>
-        <!-- next prev -->
+    </section>
 
-        <div class="arrows">
-            <button id="prev"><</button>
-            <button id="next">></button>
-        </div>
-        <!-- time running -->
-        <div class="time"></div>
-    </div>
+    <main>
+        
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2 class="section-title">Nuestra Esencia: Lujo, Naturaleza y Sueños</h2>
+                        <p>En The Ranch, hemos creado un santuario donde la sofisticación moderna se fusiona con la serenidad de la naturaleza. Nuestro compromiso es transformar cada momento en una experiencia única y memorable, brindándote un espacio encantado diseñado para tus sueños.</p>
+                        <p>Desde eventos que marcan un antes y un después, hasta estancias que reconectan el alma, y una gastronomía que deleita los sentidos, The Ranch es más que un lugar; es un estilo de vida exclusivo, innovador y profundamente conectado con la belleza de nuestro entorno.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="image/entradanoche.jpg" alt="Entrada de The Ranch Group, mostrando lujo y naturaleza">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <script src="app.js"></script>
+        <section id="eventos" class="section events-section">
+            <div class="container">
+                <h2 class="section-title">Eventos que Marcan la Historia</h2>
+                <div class="section-description">
+                    <p>The Ranch Hotel Boutique es el escenario perfecto para eventos con un concepto único, rodeados de vegetación exuberante y ambientes que inspiran. Cada detalle se cuida para que tu celebración sea una experiencia mágica e inolvidable.</p>
+                </div>
+                <div class="event-highlights-grid">
+                    <div class="highlight-item">
+                        <img src="Eventos/images/Cava de vino/485.jpg" alt="Cava de Vino para Eventos">
+                        <h3>Cava de Vino</h3>
+                        <p>Elegancia rústica para bodas y eventos corporativos con un toque de encanto histórico.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <img src="Eventos/images/Garden/176.JPG" alt="Gardens para Eventos">
+                        <h3>Gardens</h3>
+                        <p>Un oasis íntimo y romántico para celebraciones especiales en plena naturaleza.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <img src="Eventos/images/Elements/531.jpg" alt="Elements para Eventos">
+                        <h3>Elements</h3>
+                        <p>Un espacio mágico donde los elementos se unen para bodas y ceremonias únicas.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-30">
+                    <a href="eventos.html" class="btn btn-secondary">Descubre todos los Espacios y Servicios de Eventos</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="hoteleria" class="section hotel-section">
+            <div class="container">
+                <h2 class="section-title">Hotelería: Tu Refugio en la Naturaleza</h2>
+                <div class="section-description">
+                    <p>Sumérgete en la paz de nuestro bosque y reconecta con la naturaleza. The Ranch ofrece una experiencia hotelera exclusiva, con planes diseñados para tu máximo confort y bienestar.</p>
+                </div>
+                <div class="hotel-plans-grid">
+                    <div class="plan-card">
+                        <h3>Estándar</h3>
+                        <ul>
+                            <li><i class="fas fa-cocktail icon-gold"></i> Cóctel de bienvenida</li>
+                            <li><i class="fas fa-coffee icon-gold"></i> Desayuno</li>
+                            <li><i class="fas fa-fire icon-gold"></i> Fogata</li>
+                            <li><i class="fas fa-film icon-gold"></i> Cinema</li>
+                            <li><i class="fas fa-parking icon-gold"></i> Parqueadero</li>
+                        </ul>
+                        <div class="price-info">
+                            <span class="price-from">Desde</span>
+                            <span class="price">$520.000 COP</span>
+                        </div>
+                    </div>
+                    <div class="plan-card highlight-plan">
+                        <h3>Premium <span class="badge">Recomendado</span></h3>
+                        <ul>
+                            <li><i class="fas fa-cocktail icon-gold"></i> Cóctel de bienvenida</li>
+                            <li><i class="fas fa-spa icon-gold"></i> Servicio de SPA</li>
+                            <li><i class="fas fa-coffee icon-gold"></i> Desayuno</li>
+                            <li><i class="fas fa-fire icon-gold"></i> Fogata</li>
+                            <li><i class="fas fa-film icon-gold"></i> Cinema</li>
+                            <li><i class="fas fa-parking icon-gold"></i> Parqueadero</li>
+                        </ul>
+                        <div class="price-info">
+                            <span class="price-from">Desde</span>
+                            <span class="price">$710.000 COP</span>
+                        </div>
+                    </div>
+                    <div class="plan-card">
+                        <h3>Full</h3>
+                        <ul>
+                            <li><i class="fas fa-cocktail icon-gold"></i> Cóctel de bienvenida</li>
+                            <li><i class="fas fa-bed icon-gold"></i> Habitación decorada</li>
+                            <li><i class="fas fa-utensils icon-gold"></i> Cena en Restaurante Gardens</li>
+                            <li><i class="fas fa-spa icon-gold"></i> Servicio de SPA</li>
+                            <li><i class="fas fa-coffee icon-gold"></i> Desayuno</li>
+                            <li><i class="fas fa-fire icon-gold"></i> Fogata, Cinema, Parqueadero</li>
+                        </ul>
+                        <div class="price-info">
+                            <span class="price-from">Desde</span>
+                            <span class="price">$870.000 COP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-highlight">
+                    <img src="Hotel/img/Cuarto1.png" alt="Junior Suite The Ranch">
+                    <div class="room-details">
+                        <h4>Junior Suite</h4>
+                        <p>Sumérgete en la comodidad y la tranquilidad. Nuestra Junior Suite ofrece un balcón privado y vistas espectaculares al bosque, creando un ambiente de paz y lujo.</p>
+                        <ul>
+                            <li><i class="fas fa-bed icon-gold"></i> Cama doble</li>
+                            <li><i class="fas fa-tv icon-gold"></i> Tv (señal TDT)</li>
+                            <li><i class="fas fa-bath icon-gold"></i> Baño privado con agua caliente</li>
+                            <li><i class="fas fa-mountain icon-gold"></i> Balcón y hamaca con vista al bosque</li>
+                            <li><i class="fas fa-coffee icon-gold"></i> Desayuno en la habitación</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary disabled-link">Ver precios y planes (Próximamente)</a>
+                    </div>
+                </div>
+
+                <div class="text-center mt-50">
+                    <a href="hoteleria.html" class="btn btn-secondary">Explora todas nuestras Habitaciones y Planes</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="restaurante" class="section restaurant-section">
+            <div class="container">
+                <h2 class="section-title">Gastronomía Única: Creaciones del Chef</h2>
+                <div class="section-description">
+                    <p>En The Ranch, el arte culinario se encuentra con la naturaleza. Nuestro restaurante te invita a un viaje de sabores, donde la gastronomía única de la zona se transforma en creaciones propias de nuestro chef, utilizando ingredientes frescos y de temporada. Una experiencia que deleita los sentidos y celebra la riqueza local.</p>
+                </div>
+                <div class="restaurant-images">
+                    <img src="Restaurante/images/bbig1.jpg" alt="Plato del chef The Ranch">
+                    <img src="Restaurante/images/bbig8.jpg" alt="Ambiente del restaurante The Ranch">
+                </div>
+                <div class="text-center mt-50">
+                    <a href="restaurante.html" class="btn btn-primary">Descubre el Menú y la Experiencia Culinaria</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios-adicionales" class="section special-services-section">
+            <div class="container">
+                <h2 class="section-title">Servicios Especiales para una Experiencia Completa</h2>
+                <div class="section-description">
+                    <p>Más allá de nuestros eventos y hotelería, The Ranch ofrece una gama de servicios adicionales pensados para enriquecer tu estancia y crear momentos aún más memorables.</p>
+                </div>
+                <div class="services-additional-grid">
+                    <div class="service-item">
+                        <i class="fas fa-horse icon-gold"></i>
+                        <h3>Paseo a Caballo</h3>
+                        <p>Explora nuestros paisajes naturales a caballo, una aventura conectada con la esencia de The Ranch.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-spa icon-gold"></i>
+                        <h3>SPA</h3>
+                        <p>Relájate y revitaliza tu cuerpo y mente en nuestro exclusivo oasis de bienestar.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-wine-bottle icon-gold"></i>
+                        <h3>Vinos y Café</h3>
+                        <p>Disfruta de una selección premium de vinos y cafés locales en ambientes acogedores.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-glass-whiskey icon-gold"></i>
+                        <h3>Bar</h3>
+                        <p>Cócteles artesanales y un ambiente sofisticado para tus noches en The Ranch.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-ticket-alt icon-gold"></i>
+                        <h3>Cinema</h3>
+                        <p>Vive la magia del cine bajo las estrellas o en nuestro acogedor espacio interior.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-50">
+                    <a href="servicios_especiales.html" class="btn btn-secondary">Ver todos los Servicios Adicionales</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title">Planifica tu Evento, Estancia o Experiencia</h2>
+                <p>Estamos listos para ayudarte a crear momentos inolvidables. Contáctanos y haz realidad tu sueño en The Ranch.</p>
+                <div class="contact-details">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4716.940300296729!2d-75.49158757969506!3d6.203129256692126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e469d7d2d544e7b%3A0xfdec30027c4ca674!2sThe%20Ranch%20Hotel%20Boutique!5e0!3m2!1ses-419!2sco!4v1727750943307!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <p><i class="fas fa-phone icon-gold"></i> **Teléfono:** <a href="tel:+573001234567">+57 323 345 4530</a></p>
+                    <p><i class="fas fa-envelope icon-gold"></i> **Email:** <a href="mailto:theranchboutique@gmail.com">theranchboutique@gmail.com</a></p>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20" class="btn btn-primary" target="_blank">Contáctanos Ahora</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="image/logos the ranch.png" alt="The Ranch Group Logo" class="footer-logo">
+                    <p>The Ranch es el destino exclusivo donde la elegancia y la naturaleza se fusionan para crear experiencias únicas e inolvidables.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Explora</h4>
+                    <ul>
+                        <li><a href="#eventos">Eventos</a></li>
+                        <li><a href="#hoteleria">Hotelería</a></li>
+                        <li><a href="#restaurante">Restaurante</a></li>
+                        <li><a href="#servicios-adicionales">Servicios Especiales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt icon-gold"></i> Vereda Pantanillo, Santa Elena, Antioquia, Colombia 050017</p>
+                    <p><i class="fas fa-phone icon-gold"></i> +57 323 345 4530</p>
+                    <p><i class="fas fa-envelope icon-gold"></i> theranchboutique@gmail.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <a href="https://www.facebook.com/theranchhotelboutique" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/theranch_hotelboutique?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> The Ranch Group. Todos los derechos reservados.</p>
+                <p>Diseñado con pasión por la naturaleza y la elegancia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu after clicking
+                const navMenu = document.querySelector('.nav-menu');
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Cierra el menú al hacer clic en cualquier enlace del menú
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navMenu = document.querySelector('.nav-menu');
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Alterna el menú con el botón hamburguesa
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Update current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Optional: Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.querySelector('.nav-menu');
+            const navToggle = document.querySelector('.nav-toggle');
+            if (!navMenu.contains(event.target) && !navToggle.contains(event.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        const sections = document.querySelectorAll('.section');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
-
 </html>
