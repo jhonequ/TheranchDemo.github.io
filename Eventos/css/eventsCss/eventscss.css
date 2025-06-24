@@ -45,23 +45,38 @@ body {
     margin: 0 130px;
 }
 
-.info-img-right {
+.info-img-right,
+.info-img-left {
     display: flex;
-    flex-direction: row;
-    justify-content: right;
     width: 40%;
+    height: 100%;
     background-position: center;
     background-size: cover;
-    height: 100%;
-    border-top-left-radius: 250px;
-    border-bottom-left-radius: 250px;
     box-shadow: 0 0 1em #FBF9A7;
-    transition: width 1s;
+    transition: transform 0.4s cubic-bezier(.4,2,.6,1);
     object-fit: cover;
+    border-radius: 250px;
 }
 
-.info-img-right:hover {
-    width: 70%;
+.info-img-right {
+    justify-content: flex-end;
+    border-top-left-radius: 250px;
+    border-bottom-left-radius: 250px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.info-img-left {
+    justify-content: flex-start;
+    border-top-right-radius: 250px;
+    border-bottom-right-radius: 250px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.info-img-right:hover,
+.info-img-left:hover {
+    transform: scale(1.05);
 }
 
 h1 {
@@ -115,21 +130,12 @@ ul li {
     margin: 0 150px;
 }
 
-.info-img-left {
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    width: 40%;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    border-top-right-radius: 250px;
-    border-bottom-right-radius: 250px;
-    box-shadow: 0 0 1em #FBF9A7;
-    transition: width 1s;
-    object-fit: cover;
-}
+rcfacturacionagencialzsa
 
-.info-img-left:hover {
-    width: 70%;
-}
+DocumentConsecutive String
+Request String
+Response String
+DocumentPDF String
+DocumentXML String
+CreatedDate date
+UpdatedDate date
