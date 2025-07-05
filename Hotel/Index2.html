@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ranch - Hotelería y Habitaciones</title>
+    <!-- Carga de Tailwind CSS CDN para estilos rápidos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de fuentes para una tipografía más elegante: Playfair Display (serif) y Lato (sans-serif) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Carga de Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Define las fuentes principales */
+        body {
+            font-family: 'Lato', sans-serif; /* Fuente sans-serif para el cuerpo */
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif; /* Fuente serif para los títulos */
+        }
+
+        /* Definiciones de colores personalizados para un look más elegante */
+        /* Dorado principal: Un tono más apagado y rico */
+        .bg-gold-elegant { background-color: #C69C6D; }
+        .text-gold-elegant { color: #C69C6D; }
+        .hover\:bg-gold-darker-elegant:hover { background-color: #A0784D; } /* Un dorado más oscuro para hover */
+
+        /* Verdes naturales: Más profundos y sofisticados */
+        .bg-green-deep { background-color: #3A5A40; } /* Verde bosque oscuro */
+        .text-green-deep { color: #3A5A40; }
+        .hover\:bg-green-darker:hover { background-color: #2E4731; }
+
+        /* Neutros: Más suaves y cálidos */
+        .bg-neutral-light { background-color: #FDFDFD; } /* Blanco casi puro */
+        .text-neutral-dark { color: #333333; } /* Gris muy oscuro para texto */
+        .bg-neutral-soft-gray { background-color: #EFEFEF; } /* Gris muy claro para fondos de secciones */
+        .bg-footer-dark { background-color: #222222; } /* Negro muy oscuro para el footer */
+
+        /* Estilos para el botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        /* Estilos para el menú móvil (oculto por defecto y con transformación) */
+        #mobile-menu.hidden {
+            transform: translateX(-100%);
+        }
+        #mobile-menu.flex {
+            transform: translateX(0);
+        }
+
+        /* Estilos para el carrusel de imágenes */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem; /* rounded-xl */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-images img {
+            width: 100%;
+            flex-shrink: 0; /* Evita que las imágenes se encojan */
+            object-fit: cover;
+            height: 400px; /* Altura fija para las imágenes del carrusel */
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 1rem;
+            border-radius: 9999px; /* rounded-full */
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.3s ease;
+        }
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .carousel-button.left { left: 1rem; }
+        .carousel-button.right { right: 1rem; }
+
+        /* Estilos para los modales de cotización/reserva */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            max-width: 90%;
+            width: 600px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-neutral-light text-neutral-dark">
+
+    <!-- Header (Encabezado) -->
+    <header class="bg-neutral-light shadow-md py-5 px-8 flex justify-between items-center fixed top-0 left-0 w-full z-50 rounded-b-xl">
+        <div class="flex items-center">
+            <!-- Logo The Ranch - Enlace a la página de inicio -->
+            <a href="index.html" class="text-3xl font-bold text-gold-elegant hover:text-gold-darker-elegant transition-colors duration-300">THE RANCH</a>
+        </div>
+        <!-- Navegación de escritorio (visible solo en pantallas grandes) -->
+        <nav class="hidden md:flex space-x-10">
+            <a href="index.html#eventos-section" class="text-neutral-dark hover:text-gold-elegant transition-colors duration-300 font-semibold text-lg">Eventos</a>
+            <a href="#" class="text-gold-elegant font-semibold text-lg">Hotelería</a>
+            <a href="index.html#locaciones" class="text-neutral-dark hover:text-gold-elegant transition-colors duration-300 font-semibold text-lg">Locaciones</a>
+            <a href="index.html#galeria" class="text-neutral-dark hover:text-gold-elegant transition-colors duration-300 font-semibold text-lg">Galería</a>
+            <a href="index.html#contacto" class="text-neutral-dark hover:text-gold-elegant transition-colors duration-300 font-semibold text-lg">Contacto</a>
+        </nav>
+        <!-- Botón de menú móvil (hamburguesa - visible solo en pantallas pequeñas) -->
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-neutral-dark focus:outline-none">
+                <i class="fas fa-bars text-3xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Menú móvil superpuesto (oculto por defecto) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-neutral-light z-40 hidden md:hidden flex-col items-center justify-center space-y-8 transition-transform duration-300 transform -translate-x-full">
+        <!-- Botón para cerrar el menú móvil -->
+        <button id="close-mobile-menu" class="absolute top-8 right-8 text-neutral-dark focus:outline-none">
+            <i class="fas fa-times text-4xl"></i>
+        </button>
+        <!-- Enlaces del menú móvil, al hacer clic, cierran el menú -->
+        <a href="index.html#eventos-section" class="text-4xl text-neutral-dark hover:text-gold-elegant transition-colors duration-300 font-semibold" onclick="document.getElementById('mobile-menu').classList.add('-translate-x-full');">Eventos</a>
+        <a href="#" class="text-4xl text-gold-elegant font-semibold" onclick="document.getElementById('mobile-menu').classList.add('-translate-x-full');">Hotelería</a>
+        <a href="index.html#locaciones" class="text-4xl text-neutral-dark hover:text-gold-elegant transition-colors duration-300 font-semibold" onclick="document.getElementById('mobile-menu').classList.add('-translate-x-full');">Locaciones</a>
+        <a href="index.html#galeria" class="text-4xl text-neutral-dark hover:text-gold-elegant transition-colors duration-300 font-semibold" onclick="document.getElementById('mobile-menu').classList.add('-translate-x-full');">Galería</a>
+        <a href="index.html#contacto" class="text-4xl text-neutral-dark hover:text-gold-elegant transition-colors duration-300 font-semibold" onclick="document.getElementById('mobile-menu').classList.add('-translate-x-full');">Contacto</a>
+    </div>
+
+    <!-- Sección Hero de Hotelería -->
+    <section class="relative h-96 w-full flex items-center justify-center text-center overflow-hidden pt-20">
+        <img src="https://placehold.co/1920x500/3A5A40/FFFFFF?text=The+Ranch+Hoteleria" alt="The Ranch Hotelería" class="absolute top-0 left-0 w-full h-full object-cover z-0">
+        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10 flex items-center justify-center">
+            <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-lg z-20">Nuestras Habitaciones</h1>
+        </div>
+    </section>
+
+    <!-- Contenido de Habitaciones -->
+    <main class="py-16 md:py-24 bg-neutral-soft-gray">
+        <div class="container mx-auto px-8 space-y-24">
+
+            <!-- Junior Suite -->
+            <section class="room-section bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-10">
+                <div class="lg:w-1/2 w-full">
+                    <div class="carousel-container">
+                        <div class="carousel-images" id="junior-suite-carousel">
+                            <!-- Imágenes de la Junior Suite -->
+                            <img src="https://placehold.co/800x600/C69C6D/FFFFFF?text=Junior+Suite+1" alt="Junior Suite Imagen 1" data-room="junior-suite">
+                            <img src="https://placehold.co/800x600/A0784D/FFFFFF?text=Junior+Suite+2" alt="Junior Suite Imagen 2" data-room="junior-suite">
+                            <img src="https://placehold.co/800x600/3A5A40/FFFFFF?text=Junior+Suite+3" alt="Junior Suite Imagen 3" data-room="junior-suite">
+                            <img src="https://placehold.co/800x600/2E4731/FFFFFF?text=Junior+Suite+4" alt="Junior Suite Imagen 4" data-room="junior-suite">
+                        </div>
+                        <button class="carousel-button left" onclick="moveCarousel('junior-suite', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-button right" onclick="moveCarousel('junior-suite', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full text-center lg:text-left">
+                    <h3 class="text-4xl font-bold text-gold-elegant mb-6">Junior Suite</h3>
+                    <p class="text-xl text-neutral-dark mb-6 leading-relaxed">Una habitación acogedora con vistas al bosque, perfecta para una escapada romántica.</p>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Comodidades:</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bed mr-3 text-gold-elegant"></i>Cama doble</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-tv mr-3 text-gold-elegant"></i>Tv (señal tdt)</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bath mr-3 text-gold-elegant"></i>Baño privado</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-water mr-3 text-gold-elegant"></i>Agua caliente</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-chair mr-3 text-gold-elegant"></i>Balcón y hamaca</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-tree mr-3 text-gold-elegant"></i>Vista al bosque</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-coffee mr-3 text-gold-elegant"></i>Desayuno en la habitación</li>
+                    </ul>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Planes (por noche pareja):</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li><span class="font-semibold">ESTÁNDAR:</span> $360.000</li>
+                        <li><span class="font-semibold">ESPECIAL:</span> $520.000</li>
+                        <li><span class="font-semibold">PREMIUM:</span> $710.000</li>
+                        <li><span class="font-semibold">FULL:</span> $870.000</li>
+                    </ul>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <button class="btn-quote bg-gold-elegant text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold-darker-elegant transition-all duration-300 shadow-lg" data-room-name="Junior Suite">Generar Cotización</button>
+                        <button class="btn-reserve bg-green-deep text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-darker transition-all duration-300 shadow-lg" data-room-name="Junior Suite">Reservar Habitación</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Suite Entre Bosques -->
+            <section class="room-section bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col lg:flex-row-reverse items-center gap-10">
+                <div class="lg:w-1/2 w-full">
+                    <div class="carousel-container">
+                        <div class="carousel-images" id="entre-bosques-carousel">
+                            <!-- Imágenes de la Suite Entre Bosques -->
+                            <img src="https://placehold.co/800x600/3A5A40/FFFFFF?text=Entre+Bosques+1" alt="Suite Entre Bosques Imagen 1" data-room="entre-bosques">
+                            <img src="https://placehold.co/800x600/2E4731/FFFFFF?text=Entre+Bosques+2" alt="Suite Entre Bosques Imagen 2" data-room="entre-bosques">
+                            <img src="https://placehold.co/800x600/C69C6D/FFFFFF?text=Entre+Bosques+3" alt="Suite Entre Bosques Imagen 3" data-room="entre-bosques">
+                        </div>
+                        <button class="carousel-button left" onclick="moveCarousel('entre-bosques', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-button right" onclick="moveCarousel('entre-bosques', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full text-center lg:text-left">
+                    <h3 class="text-4xl font-bold text-gold-elegant mb-6">Suite Entre Bosques</h3>
+                    <p class="text-xl text-neutral-dark mb-6 leading-relaxed">Sumérgete en la naturaleza con esta suite que ofrece un jacuzzi y vistas inigualables al bosque.</p>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Comodidades:</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bed mr-3 text-gold-elegant"></i>Cama doble</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-tv mr-3 text-gold-elegant"></i>Tv (señal tdt)</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bath mr-3 text-gold-elegant"></i>Baño privado</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-hot-tub mr-3 text-gold-elegant"></i>Jacuzzi</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-wine-bottle mr-3 text-gold-elegant"></i>Nevera mini bar</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-couch mr-3 text-gold-elegant"></i>Deck con sala</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-tree mr-3 text-gold-elegant"></i>Vista al bosque</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-coffee mr-3 text-gold-elegant"></i>Desayuno en la habitación</li>
+                    </ul>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Planes (por noche pareja):</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li><span class="font-semibold">ESTÁNDAR:</span> $530.000</li>
+                        <li><span class="font-semibold">ESPECIAL:</span> $690.000</li>
+                        <li><span class="font-semibold">PREMIUM:</span> $880.000</li>
+                        <li><span class="font-semibold">FULL:</span> $1.040.000</li>
+                    </ul>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <button class="btn-quote bg-gold-elegant text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold-darker-elegant transition-all duration-300 shadow-lg" data-room-name="Suite Entre Bosques">Generar Cotización</button>
+                        <button class="btn-reserve bg-green-deep text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-darker transition-all duration-300 shadow-lg" data-room-name="Suite Entre Bosques">Reservar Habitación</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Balcony Suite -->
+            <section class="room-section bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-10">
+                <div class="lg:w-1/2 w-full">
+                    <div class="carousel-container">
+                        <div class="carousel-images" id="balcony-suite-carousel">
+                            <!-- Imágenes de la Balcony Suite -->
+                            <img src="https://placehold.co/800x600/C69C6D/FFFFFF?text=Balcony+Suite+1" alt="Balcony Suite Imagen 1" data-room="balcony-suite">
+                            <img src="https://placehold.co/800x600/A0784D/FFFFFF?text=Balcony+Suite+2" alt="Balcony Suite Imagen 2" data-room="balcony-suite">
+                            <img src="https://placehold.co/800x600/3A5A40/FFFFFF?text=Balcony+Suite+3" alt="Balcony Suite Imagen 3" data-room="balcony-suite">
+                            <img src="https://placehold.co/800x600/2E4731/FFFFFF?text=Balcony+Suite+4" alt="Balcony Suite Imagen 4" data-room="balcony-suite">
+                        </div>
+                        <button class="carousel-button left" onclick="moveCarousel('balcony-suite', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-button right" onclick="moveCarousel('balcony-suite', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full text-center lg:text-left">
+                    <h3 class="text-4xl font-bold text-gold-elegant mb-6">Balcony Suite</h3>
+                    <p class="text-xl text-neutral-dark mb-6 leading-relaxed">Disfruta de la brisa y las vistas desde tu balcón privado con hamaca y jacuzzi.</p>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Comodidades:</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bed mr-3 text-gold-elegant"></i>Cama doble</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-tv mr-3 text-gold-elegant"></i>Tv (señal tdt)</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bath mr-3 text-gold-elegant"></i>Baño privado</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-hot-tub mr-3 text-gold-elegant"></i>Jacuzzi</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-wine-bottle mr-3 text-gold-elegant"></i>Nevera mini bar</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-couch mr-3 text-gold-elegant"></i>Sala balcón</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-chair mr-3 text-gold-elegant"></i>Balcón con hamaca</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-mountain mr-3 text-gold-elegant"></i>Hermosa vista</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-coffee mr-3 text-gold-elegant"></i>Desayuno habitación</li>
+                    </ul>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Planes (por noche pareja):</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li><span class="font-semibold">ESTÁNDAR:</span> $530.000</li>
+                        <li><span class="font-semibold">ESPECIAL:</span> $690.000</li>
+                        <li><span class="font-semibold">PREMIUM:</span> $880.000</li>
+                        <li><span class="font-semibold">FULL:</span> $1.040.000</li>
+                    </ul>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <button class="btn-quote bg-gold-elegant text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold-darker-elegant transition-all duration-300 shadow-lg" data-room-name="Balcony Suite">Generar Cotización</button>
+                        <button class="btn-reserve bg-green-deep text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-darker transition-all duration-300 shadow-lg" data-room-name="Balcony Suite">Reservar Habitación</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Suite Panorámica -->
+            <section class="room-section bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col lg:flex-row-reverse items-center gap-10">
+                <div class="lg:w-1/2 w-full">
+                    <div class="carousel-container">
+                        <div class="carousel-images" id="panoramica-suite-carousel">
+                            <!-- Imágenes de la Suite Panorámica -->
+                            <img src="https://placehold.co/800x600/3A5A40/FFFFFF?text=Panoramica+Suite+1" alt="Suite Panorámica Imagen 1" data-room="panoramica-suite">
+                            <img src="https://placehold.co/800x600/2E4731/FFFFFF?text=Panoramica+Suite+2" alt="Suite Panorámica Imagen 2" data-room="panoramica-suite">
+                            <img src="https://placehold.co/800x600/C69C6D/FFFFFF?text=Panoramica+Suite+3" alt="Suite Panorámica Imagen 3" data-room="panoramica-suite">
+                        </div>
+                        <button class="carousel-button left" onclick="moveCarousel('panoramica-suite', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-button right" onclick="moveCarousel('panoramica-suite', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full text-center lg:text-left">
+                    <h3 class="text-4xl font-bold text-gold-elegant mb-6">Suite Panorámica</h3>
+                    <p class="text-xl text-neutral-dark mb-6 leading-relaxed">Vistas impresionantes y un ambiente de lujo con jacuzzi y balcón con hamaca.</p>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Comodidades:</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bed mr-3 text-gold-elegant"></i>Cama doble</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-tv mr-3 text-gold-elegant"></i>Tv (señal tdt)</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bath mr-3 text-gold-elegant"></i>Baño privado</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-hot-tub mr-3 text-gold-elegant"></i>Jacuzzi</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-wine-bottle mr-3 text-gold-elegant"></i>Nevera mini bar</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-chair mr-3 text-gold-elegant"></i>Balcón con hamaca</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-tree mr-3 text-gold-elegant"></i>Vista al bosque</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-coffee mr-3 text-gold-elegant"></i>Desayuno en la habitación</li>
+                    </ul>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Planes (por noche pareja):</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li><span class="font-semibold">ESTÁNDAR:</span> $530.000</li>
+                        <li><span class="font-semibold">ESPECIAL:</span> $690.000</li>
+                        <li><span class="font-semibold">PREMIUM:</span> $880.000</li>
+                        <li><span class="font-semibold">FULL:</span> $1.040.000</li>
+                    </ul>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <button class="btn-quote bg-gold-elegant text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold-darker-elegant transition-all duration-300 shadow-lg" data-room-name="Suite Panorámica">Generar Cotización</button>
+                        <button class="btn-reserve bg-green-deep text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-darker transition-all duration-300 shadow-lg" data-room-name="Suite Panorámica">Reservar Habitación</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Master Suite Ranch -->
+            <section class="room-section bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-10">
+                <div class="lg:w-1/2 w-full">
+                    <div class="carousel-container">
+                        <div class="carousel-images" id="master-ranch-suite-carousel">
+                            <!-- Imágenes de la Master Suite Ranch -->
+                            <img src="https://placehold.co/800x600/C69C6D/FFFFFF?text=Master+Ranch+Suite+1" alt="Master Suite Ranch Imagen 1" data-room="master-ranch-suite">
+                            <img src="https://placehold.co/800x600/A0784D/FFFFFF?text=Master+Ranch+Suite+2" alt="Master Suite Ranch Imagen 2" data-room="master-ranch-suite">
+                            <img src="https://placehold.co/800x600/3A5A40/FFFFFF?text=Master+Ranch+Suite+3" alt="Master Suite Ranch Imagen 3" data-room="master-ranch-suite">
+                            <img src="https://placehold.co/800x600/2E4731/FFFFFF?text=Master+Ranch+Suite+4" alt="Master Suite Ranch Imagen 4" data-room="master-ranch-suite">
+                        </div>
+                        <button class="carousel-button left" onclick="moveCarousel('master-ranch-suite', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-button right" onclick="moveCarousel('master-ranch-suite', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full text-center lg:text-left">
+                    <h3 class="text-4xl font-bold text-gold-elegant mb-6">Master Suite Ranch</h3>
+                    <p class="text-xl text-neutral-dark mb-6 leading-relaxed">Lujo y espacio en esta suite con sala interna, jacuzzi y una hermosa vista.</p>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Comodidades:</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bed mr-3 text-gold-elegant"></i>Cama doble</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-tv mr-3 text-gold-elegant"></i>Tv (señal tdt)</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bath mr-3 text-gold-elegant"></i>Baño privado</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-hot-tub mr-3 text-gold-elegant"></i>Jacuzzi</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-wine-bottle mr-3 text-gold-elegant"></i>Nevera mini bar</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-couch mr-3 text-gold-elegant"></i>Sala interna</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-chair mr-3 text-gold-elegant"></i>Balcón con hamaca</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-mountain mr-3 text-gold-elegant"></i>Hermosa vista</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-coffee mr-3 text-gold-elegant"></i>Desayuno habitación</li>
+                    </ul>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Planes (por noche pareja):</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li><span class="font-semibold">ESTÁNDAR:</span> $600.000</li>
+                        <li><span class="font-semibold">ESPECIAL:</span> $760.000</li>
+                        <li><span class="font-semibold">PREMIUM:</span> $950.000</li>
+                        <li><span class="font-semibold">FULL:</span> $1.110.000</li>
+                    </ul>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <button class="btn-quote bg-gold-elegant text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold-darker-elegant transition-all duration-300 shadow-lg" data-room-name="Master Suite Ranch">Generar Cotización</button>
+                        <button class="btn-reserve bg-green-deep text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-darker transition-all duration-300 shadow-lg" data-room-name="Master Suite Ranch">Reservar Habitación</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Master Suite Ático -->
+            <section class="room-section bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col lg:flex-row-reverse items-center gap-10">
+                <div class="lg:w-1/2 w-full">
+                    <div class="carousel-container">
+                        <div class="carousel-images" id="master-atico-suite-carousel">
+                            <!-- Imágenes de la Master Suite Ático -->
+                            <img src="https://placehold.co/800x600/3A5A40/FFFFFF?text=Master+Atico+Suite+1" alt="Master Suite Ático Imagen 1" data-room="master-atico-suite">
+                            <img src="https://placehold.co/800x600/2E4731/FFFFFF?text=Master+Atico+Suite+2" alt="Master Suite Ático Imagen 2" data-room="master-atico-suite">
+                            <img src="https://placehold.co/800x600/C69C6D/FFFFFF?text=Master+Atico+Suite+3" alt="Master Suite Ático Imagen 3" data-room="master-atico-suite">
+                            <img src="https://placehold.co/800x600/A0784D/FFFFFF?text=Master+Atico+Suite+4" alt="Master Suite Ático Imagen 4" data-room="master-atico-suite">
+                        </div>
+                        <button class="carousel-button left" onclick="moveCarousel('master-atico-suite', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-button right" onclick="moveCarousel('master-atico-suite', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full text-center lg:text-left">
+                    <h3 class="text-4xl font-bold text-gold-elegant mb-6">Master Suite Ático</h3>
+                    <p class="text-xl text-neutral-dark mb-6 leading-relaxed">Una experiencia única en el ático con cama estilo altar, jacuzzi y vistas espectaculares.</p>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Comodidades:</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bed mr-3 text-gold-elegant"></i>Cama estilo altar</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-tv mr-3 text-gold-elegant"></i>Tv (señal tdt)</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bath mr-3 text-gold-elegant"></i>Baño privado</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-hot-tub mr-3 text-gold-elegant"></i>Jacuzzi</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-wine-bottle mr-3 text-gold-elegant"></i>Nevera mini bar</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-couch mr-3 text-gold-elegant"></i>Sala y balcón</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-mountain mr-3 text-gold-elegant"></i>Hermosa vista</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-coffee mr-3 text-gold-elegant"></i>Desayuno en la habitación</li>
+                    </ul>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Planes (por noche pareja):</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li><span class="font-semibold">ESTÁNDAR:</span> $600.000</li>
+                        <li><span class="font-semibold">ESPECIAL:</span> $760.000</li>
+                        <li><span class="font-semibold">PREMIUM:</span> $950.000</li>
+                        <li><span class="font-semibold">FULL:</span> $1.110.000</li>
+                    </ul>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <button class="btn-quote bg-gold-elegant text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold-darker-elegant transition-all duration-300 shadow-lg" data-room-name="Master Suite Ático">Generar Cotización</button>
+                        <button class="btn-reserve bg-green-deep text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-darker transition-all duration-300 shadow-lg" data-room-name="Master Suite Ático">Reservar Habitación</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Entre Bosques Suite Familiar -->
+            <section class="room-section bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-10">
+                <div class="lg:w-1/2 w-full">
+                    <div class="carousel-container">
+                        <div class="carousel-images" id="familiar-suite-carousel">
+                            <!-- Imágenes de la Suite Familiar -->
+                            <img src="https://placehold.co/800x600/C69C6D/FFFFFF?text=Familiar+Suite+1" alt="Entre Bosques Suite Familiar Imagen 1" data-room="familiar-suite">
+                            <img src="https://placehold.co/800x600/A0784D/FFFFFF?text=Familiar+Suite+2" alt="Entre Bosques Suite Familiar Imagen 2" data-room="familiar-suite">
+                            <img src="https://placehold.co/800x600/3A5A40/FFFFFF?text=Familiar+Suite+3" alt="Entre Bosques Suite Familiar Imagen 3" data-room="familiar-suite">
+                            <img src="https://placehold.co/800x600/2E4731/FFFFFF?text=Familiar+Suite+4" alt="Entre Bosques Suite Familiar Imagen 4" data-room="familiar-suite">
+                        </div>
+                        <button class="carousel-button left" onclick="moveCarousel('familiar-suite', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-button right" onclick="moveCarousel('familiar-suite', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full text-center lg:text-left">
+                    <h3 class="text-4xl font-bold text-gold-elegant mb-6">Entre Bosques Suite Familiar</h3>
+                    <p class="text-xl text-neutral-dark mb-6 leading-relaxed">Ideal para familias, con camas dobles y sencillas, jacuzzi y vista al bosque. Máximo 4 personas.</p>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Comodidades:</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bed mr-3 text-gold-elegant"></i>1 Cama doble</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bed mr-3 text-gold-elegant"></i>2 Camas sencillas</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-tv mr-3 text-gold-elegant"></i>Tv (señal tdt)</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-bath mr-3 text-gold-elegant"></i>Baño privado</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-hot-tub mr-3 text-gold-elegant"></i>Jacuzzi</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-wine-bottle mr-3 text-gold-elegant"></i>Nevera mini bar</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-tree mr-3 text-gold-elegant"></i>Vista al bosque</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-coffee mr-3 text-gold-elegant"></i>Desayuno habitación</li>
+                        <li class="flex items-center justify-center lg:justify-start"><i class="fas fa-users mr-3 text-gold-elegant"></i>Máximo 4 personas</li>
+                    </ul>
+                    <h4 class="text-2xl font-semibold text-green-deep mb-4">Planes (por noche pareja / adicional por persona):</h4>
+                    <ul class="list-none space-y-2 text-lg text-neutral-dark mb-8">
+                        <li><span class="font-semibold">ESTÁNDAR:</span> $530.000 / Persona adicional: $60.000</li>
+                        <li><span class="font-semibold">ESPECIAL:</span> $690.000 / Persona adicional: $95.000</li>
+                        <li><span class="font-semibold">PREMIUM:</span> $880.000 / Persona adicional: $220.000</li>
+                        <li><span class="font-semibold">FULL:</span> $1.040.000 / Persona adicional: $255.000</li>
+                    </ul>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <button class="btn-quote bg-gold-elegant text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold-darker-elegant transition-all duration-300 shadow-lg" data-room-name="Entre Bosques Suite Familiar">Generar Cotización</button>
+                        <button class="btn-reserve bg-green-deep text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-darker transition-all duration-300 shadow-lg" data-room-name="Entre Bosques Suite Familiar">Reservar Habitación</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer (Pie de página) -->
+    <footer id="contacto" class="bg-footer-dark text-white py-16">
+        <div class="container mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+            <div>
+                <h3 class="text-2xl font-bold mb-6 text-gold-elegant">Contacto</h3>
+                <p class="mb-3 text-lg"><i class="fas fa-map-marker-alt mr-3"></i> Dirección de The Ranch</p>
+                <p class="mb-3 text-lg"><i class="fas fa-phone mr-3"></i> +57 323 345 4530</p>
+                <p class="mb-3 text-lg"><i class="fas fa-envelope mr-3"></i> info@theranch.com</p>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-6 text-gold-elegant">Enlaces Rápidos</h3>
+                <ul>
+                    <li class="mb-3"><a href="index.html#eventos-section" class="hover:text-gold-elegant transition-colors duration-300 text-lg">Eventos</a></li>
+                    <li class="mb-3"><a href="#" class="hover:text-gold-elegant transition-colors duration-300 text-lg">Hotelería</a></li>
+                    <li class="mb-3"><a href="index.html#locaciones" class="hover:text-gold-elegant transition-colors duration-300 text-lg">Locaciones</a></li>
+                    <li class="mb-3"><a href="index.html#galeria" class="hover:text-gold-elegant transition-colors duration-300 text-lg">Galería</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-6 text-gold-elegant">Síguenos</h3>
+                <div class="flex justify-center md:justify-start space-x-6">
+                    <!-- Enlace a Instagram -->
+                    <a href="https://www.instagram.com/theranch_hotelboutique" target="_blank" class="text-white hover:text-gold-elegant transition-colors duration-300">
+                        <i class="fab fa-instagram text-4xl"></i>
+                    </a>
+                    <!-- Añadir otros íconos de redes sociales según sea necesario -->
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-md mt-12 border-t border-gray-700 pt-8">
+            <p>&copy; 2025 The Ranch. Todos los derechos reservados.</p>
+            <p class="mt-2"><a href="#" class="hover:text-gold-elegant transition-colors duration-300">Política de Privacidad</a></p>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573233454530" target="_blank" class="whatsapp-float bg-green-deep text-white p-5 rounded-full shadow-xl hover:bg-green-darker transition-colors duration-300">
+        <i class="fab fa-whatsapp text-4xl"></i>
+    </a>
+
+    <!-- Modal de Cotización/Reserva (Reutilizable) -->
+    <div id="action-modal" class="modal">
+        <div class="modal-content">
+            <button id="close-action-modal" class="absolute top-6 right-6 text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
+            <h3 id="modal-title" class="text-3xl font-bold text-gold-elegant mb-6 text-center"></h3>
+            <p id="modal-message" class="text-xl text-neutral-dark mb-8 text-center"></p>
+            <div class="text-center">
+                <a id="modal-whatsapp-link" href="https://wa.me/573233454530" target="_blank" class="bg-green-deep text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-darker transition-all duration-300 shadow-lg">Contactar por WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script para el desplazamiento suave (smooth scrolling) de los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Lógica para el menú móvil (botón de hamburguesa)
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.remove('-translate-x-full');
+            mobileMenu.classList.add('flex');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+            mobileMenu.classList.remove('flex');
+            setTimeout(() => { mobileMenu.classList.add('hidden'); }, 300);
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+                mobileMenu.classList.remove('flex');
+                setTimeout(() => { mobileMenu.classList.add('hidden'); }, 300);
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('-translate-x-full');
+                mobileMenu.classList.remove('flex');
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Lógica del Carrusel de Imágenes
+        const carousels = {}; // Objeto para almacenar el estado de cada carrusel
+
+        function initCarousel(id) {
+            const carouselElement = document.getElementById(id);
+            const images = carouselElement.querySelectorAll('img');
+            carousels[id] = {
+                currentIndex: 0,
+                images: images,
+                totalImages: images.length,
+                element: carouselElement
+            };
+            updateCarousel(id);
+        }
+
+        function updateCarousel(id) {
+            const carousel = carousels[id];
+            const offset = -carousel.currentIndex * 100;
+            carousel.element.style.transform = `translateX(${offset}%)`;
+        }
+
+        function moveCarousel(id, direction) {
+            const carousel = carousels[id];
+            carousel.currentIndex = (carousel.currentIndex + direction + carousel.totalImages) % carousel.totalImages;
+            updateCarousel(id);
+        }
+
+        // Inicializar todos los carruseles al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.carousel-images').forEach(carousel => {
+                initCarousel(carousel.id);
+            });
+        });
+
+        // Lógica para el Modal de Cotización/Reserva
+        const actionModal = document.getElementById('action-modal');
+        const closeActionModalButton = document.getElementById('close-action-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalMessage = document.getElementById('modal-message');
+        const modalWhatsappLink = document.getElementById('modal-whatsapp-link');
+
+        document.querySelectorAll('.btn-quote').forEach(button => {
+            button.addEventListener('click', () => {
+                const roomName = button.dataset.roomName;
+                modalTitle.textContent = `Generar Cotización para ${roomName}`;
+                modalMessage.textContent = `Para obtener una cotización personalizada para la ${roomName}, por favor contáctanos vía WhatsApp. Estaremos encantados de ayudarte.`;
+                actionModal.classList.add('open');
+            });
+        });
+
+        document.querySelectorAll('.btn-reserve').forEach(button => {
+            button.addEventListener('click', () => {
+                const roomName = button.dataset.roomName;
+                modalTitle.textContent = `Reservar Habitación ${roomName}`;
+                modalMessage.textContent = `Para reservar la ${roomName}, por favor contáctanos vía WhatsApp. Nuestro equipo te guiará en el proceso.`;
+                actionModal.classList.add('open');
+            });
+        });
+
+        closeActionModalButton.addEventListener('click', () => {
+            actionModal.classList.remove('open');
+        });
+
+        // Cerrar modal al hacer clic fuera del contenido
+        actionModal.addEventListener('click', (e) => {
+            if (e.target === actionModal) {
+                actionModal.classList.remove('open');
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!-- Diseño inspirado en la imagen proporcionada -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habitaciones - The Ranch</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-neutral-100 text-neutral-900">
+
+  <!-- Hero Section -->
+  <section class="relative h-[380px] flex items-center justify-center">
+    <img src="https://placehold.co/1920x400/3A5A40/FFFFFF?text=The+Ranch+Rooms" alt="Rooms Hero" class="absolute inset-0 w-full h-full object-cover z-0">
+    <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
+    <div class="relative z-20 text-center">
+      <h1 class="text-5xl font-bold text-white mb-4">Rooms</h1>
+      <p class="text-xl text-white">Disfruta de una experiencia única en nuestras habitaciones</p>
+    </div>
+  </section>
+
+  <!-- Filtro de fechas y huéspedes -->
+  <div class="max-w-4xl mx-auto -mt-10 bg-white rounded-xl shadow-lg p-6 flex flex-col md:flex-row items-center justify-center gap-4 relative z-30">
+    <div class="flex flex-col md:flex-row gap-4 w-full">
+      <div class="flex flex-col">
+        <label class="font-semibold text-neutral-700 mb-1">Check In</label>
+        <input type="date" class="border rounded px-3 py-2 w-full">
+      </div>
+      <div class="flex flex-col">
+        <label class="font-semibold text-neutral-700 mb-1">Check Out</label>
+        <input type="date" class="border rounded px-3 py-2 w-full">
+      </div>
+      <div class="flex flex-col">
+        <label class="font-semibold text-neutral-700 mb-1">Guests</label>
+        <input type="number" min="1" value="2" class="border rounded px-3 py-2 w-full">
+      </div>
+      <button class="bg-[#C69C6D] hover:bg-[#A0784D] text-white font-bold px-6 py-3 rounded transition-colors mt-4 md:mt-0 self-end">Check Availability</button>
+    </div>
+  </div>
+
+  <!-- Cards de habitaciones -->
+  <main class="max-w-6xl mx-auto py-16 px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
+    <!-- Card 1 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+      <img src="https://placehold.co/400x300" alt="Luxury Super Delux" class="w-full md:w-1/2 object-cover">
+      <div class="p-8 flex-1 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-400 mr-2"><i class="fas fa-star"></i> 12 Reviews</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-2">Luxury Super Delux</h2>
+          <p class="text-neutral-600 mb-4">El placer de un descanso elegante y moderno.</p>
+          <div class="flex items-center mb-2">
+            <span class="text-[#C69C6D] font-bold text-xl mr-2">$299</span>
+            <span class="text-neutral-500">/ NIGHT</span>
+          </div>
+          <ul class="text-neutral-700 text-sm mb-4">
+            <li><b>Status:</b> Available</li>
+            <li><b>Payment:</b> 30% Advanced</li>
+            <li><b>Guest:</b> 3</li>
+            <li><b>Beds:</b> 2</li>
+          </ul>
+        </div>
+        <div class="flex gap-3">
+          <button class="bg-[#C69C6D] hover:bg-[#A0784D] text-white font-semibold px-5 py-2 rounded transition">Book Now</button>
+          <button class="border border-[#C69C6D] text-[#C69C6D] hover:bg-[#C69C6D] hover:text-white font-semibold px-5 py-2 rounded transition">More Details</button>
+        </div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+      <img src="https://placehold.co/400x300" alt="Simple Family Room" class="w-full md:w-1/2 object-cover">
+      <div class="p-8 flex-1 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-400 mr-2"><i class="fas fa-star"></i> 12 Reviews</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-2">Simple Family Room</h2>
+          <p class="text-neutral-600 mb-4">Comodidad y espacio para toda la familia.</p>
+          <div class="flex items-center mb-2">
+            <span class="text-[#C69C6D] font-bold text-xl mr-2">$399</span>
+            <span class="text-neutral-500">/ NIGHT</span>
+          </div>
+          <ul class="text-neutral-700 text-sm mb-4">
+            <li><b>Status:</b> Available</li>
+            <li><b>Payment:</b> 30% Advanced</li>
+            <li><b>Guest:</b> 3</li>
+            <li><b>Beds:</b> 2</li>
+          </ul>
+        </div>
+        <div class="flex gap-3">
+          <button class="bg-[#C69C6D] hover:bg-[#A0784D] text-white font-semibold px-5 py-2 rounded transition">Book Now</button>
+          <button class="border border-[#C69C6D] text-[#C69C6D] hover:bg-[#C69C6D] hover:text-white font-semibold px-5 py-2 rounded transition">More Details</button>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+      <img src="https://placehold.co/400x300" alt="Luxury Family Delux" class="w-full md:w-1/2 object-cover">
+      <div class="p-8 flex-1 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-400 mr-2"><i class="fas fa-star"></i> 12 Reviews</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-2">Luxury Family Delux</h2>
+          <p class="text-neutral-600 mb-4">Lujo y confort para toda la familia.</p>
+          <div class="flex items-center mb-2">
+            <span class="text-[#C69C6D] font-bold text-xl mr-2">$499</span>
+            <span class="text-neutral-500">/ NIGHT</span>
+          </div>
+          <ul class="text-neutral-700 text-sm mb-4">
+            <li><b>Status:</b> Available</li>
+            <li><b>Payment:</b> 30% Advanced</li>
+            <li><b>Guest:</b> 3</li>
+            <li><b>Beds:</b> 2</li>
+          </ul>
+        </div>
+        <div class="flex gap-3">
+          <button class="bg-[#C69C6D] hover:bg-[#A0784D] text-white font-semibold px-5 py-2 rounded transition">Book Now</button>
+          <button class="border border-[#C69C6D] text-[#C69C6D] hover:bg-[#C69C6D] hover:text-white font-semibold px-5 py-2 rounded transition">More Details</button>
+        </div>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+      <img src="https://placehold.co/400x300" alt="Single Super Delux" class="w-full md:w-1/2 object-cover">
+      <div class="p-8 flex-1 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-400 mr-2"><i class="fas fa-star"></i> 12 Reviews</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-2">Single Super Delux</h2>
+          <p class="text-neutral-600 mb-4">Perfecta para quienes buscan privacidad y lujo.</p>
+          <div class="flex items-center mb-2">
+            <span class="text-[#C69C6D] font-bold text-xl mr-2">$599</span>
+            <span class="text-neutral-500">/ NIGHT</span>
+          </div>
+          <ul class="text-neutral-700 text-sm mb-4">
+            <li><b>Status:</b> Available</li>
+            <li><b>Payment:</b> 30% Advanced</li>
+            <li><b>Guest:</b> 3</li>
+            <li><b>Beds:</b> 2</li>
+          </ul>
+        </div>
+        <div class="flex gap-3">
+          <button class="bg-[#C69C6D] hover:bg-[#A0784D] text-white font-semibold px-5 py-2 rounded transition">Book Now</button>
+          <button class="border border-[#C69C6D] text-[#C69C6D] hover:bg-[#C69C6D] hover:text-white font-semibold px-5 py-2 rounded transition">More Details</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Load More Button -->
+  <div class="flex justify-center mb-12">
+    <button class="border border-[#C69C6D] text-[#C69C6D] hover:bg-[#C69C6D] hover:text-white font-semibold px-8 py-3 rounded transition">LOAD MORE</button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#222222] text-white py-12">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
+      <div>
+        <h3 class="text-xl font-bold mb-4">About</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-[#C69C6D]">About us</a></li>
+          <li><a href="#" class="hover:text-[#C69C6D]">Company</a></li>
+          <li><a href="#" class="hover:text-[#C69C6D]">Team Members</a></li>
+          <li><a href="#" class="hover:text-[#C69C6D]">Help Guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Service</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-[#C69C6D]">Hotel Booking</a></li>
+          <li><a href="#" class="hover:text-[#C69C6D]">Online Ticket</a></li>
+          <li><a href="#" class="hover:text-[#C69C6D]">Travel Agent</a></li>
+          <li><a href="#" class="hover:text-[#C69C6D]">Reservation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-[#C69C6D]">Sales & Service</a></li>
+          <li><a href="#" class="hover:text-[#C69C6D]">Promotional Offers</a></li>
+          <li><a href="#" class="hover:text-[#C69C6D]">Online Booking</a></li>
+          <li><a href="#" class="hover:text-[#C69C6D]">Return Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Address</h3>
+        <ul class="space-y-2 text-sm">
+          <li>29, Irdashti, Amin Bazar, Savar, Dhaka</li>
+          <li>+88 01234 56789 (Sales)</li>
+          <li>+88 01234 56789 (Service)</li>
+          <li>hello@rovero.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-8 text-sm text-neutral-400">
+      <p>&copy; 2025 ROVERO. Designed by Juvel Khan</p>
+      <div class="flex justify-center gap-4 mt-2">
+        <a href="#" class="hover:text-[#C69C6D]"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-[#C69C6D]"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-[#C69C6D]"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="hover:text-[#C69C6D]"><i class="fab
