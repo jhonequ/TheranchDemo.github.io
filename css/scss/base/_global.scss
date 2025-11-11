@@ -1,0 +1,41 @@
+:root {
+    --primary-bg: #{$primary-bg};
+    --secondary-bg: #{$secondary-bg};
+    --tertiary-bg: #{$tertiary-bg};
+    --text-color: #{$text-color};
+    --text-dark: #{$text-dark};
+    --text-muted: #{$text-muted};
+    --gold-color: #{$gold-color};
+    --light-gold: #{$light-gold};
+    --accent-color: #{$accent-color};
+    --border-color: #{$border-color};
+    --natural-green: #{$natural-green};
+    --natural-brown: #{$natural-brown};
+}
+
+.container {
+    max-width: $container-xl;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+    
+    @media (max-width: $breakpoint-tablet) {
+        padding: 0 $spacing-md;
+    }
+}
+
+.section {
+    padding: $spacing-2xl 0;
+    margin-bottom: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity $transition-base, transform $transition-base;
+    
+    &.animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    &:nth-of-type(even) {
+        background-color: $secondary-bg;
+    }
+}

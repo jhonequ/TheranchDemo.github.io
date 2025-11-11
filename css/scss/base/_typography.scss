@@ -1,0 +1,27 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: $secondary-font;
+    color: $gold-color;
+    font-weight: $font-weight-bold;
+    margin-bottom: 0.8em;
+}
+
+h1 { font-size: $font-size-3xl; }
+h2 { font-size: 2.8em; }
+h3 { font-size: 2.2em; }
+h4 { font-size: $font-size-xl; }
+h5 { font-size: $font-size-lg; }
+h6 { font-size: $font-size-base; }
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: $gold-color;
+    text-decoration: none;
+    transition: color $transition-base;
+    
+    &:hover {
+        color: $light-gold;
+    }
+}
