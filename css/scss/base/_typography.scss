@@ -1,27 +1,36 @@
+// ============================================
+// TYPOGRAPHY
+// ============================================
+
+@use '../abstracts/colors' as colors;
+@use '../abstracts/variables' as vars;
+
 h1, h2, h3, h4, h5, h6 {
-    font-family: $secondary-font;
-    color: $gold-color;
-    font-weight: $font-weight-bold;
+    font-family: vars.$secondary-font;
+    color: colors.$gold-color;
+    text-align: center;
     margin-bottom: 0.8em;
+    font-weight: vars.$font-weight-bold;
 }
 
-h1 { font-size: $font-size-3xl; }
-h2 { font-size: 2.8em; }
-h3 { font-size: 2.2em; }
-h4 { font-size: $font-size-xl; }
-h5 { font-size: $font-size-lg; }
-h6 { font-size: $font-size-base; }
+h1 { font-size: vars.$font-size-3xl; }
+h2 { font-size: vars.$font-size-2xl; }
+h3 { font-size: vars.$font-size-xl; }
+h4 { font-size: vars.$font-size-lg; }
+h5 { font-size: vars.$font-size-base; }
+h6 { font-size: vars.$font-size-sm; }
 
 p {
     margin-bottom: 1em;
+    color: colors.$text-color;
 }
 
 a {
-    color: $gold-color;
+    color: colors.$gold-color;
     text-decoration: none;
-    transition: color $transition-base;
-    
+    transition: color vars.$transition-base;
+
     &:hover {
-        color: $light-gold;
+        color: colors.$light-gold;
     }
 }

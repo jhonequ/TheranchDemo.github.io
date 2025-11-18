@@ -1,0 +1,58 @@
+// ============================================
+// BUTTONS
+// ============================================
+
+@use '../abstracts/colors' as colors;
+@use '../abstracts/variables' as vars;
+
+.btn {
+    display: inline-block;
+    padding: vars.$spacing-lg vars.$spacing-xl;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: vars.$font-weight-semibold;
+    transition: background-color vars.$transition-base, 
+                color vars.$transition-base, 
+                border-color vars.$transition-base, 
+                transform 0.2s ease;
+    border: 2px solid transparent;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+}
+
+.btn-primary {
+    background-color: colors.$gold-color;
+    color: colors.$primary-bg;
+
+    &:hover {
+        background-color: colors.$light-gold;
+        color: colors.$primary-bg;
+    }
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: colors.$gold-color;
+    border-color: colors.$gold-color;
+
+    &:hover {
+        background-color: colors.$gold-color;
+        color: colors.$primary-bg;
+    }
+}
+
+.disabled-link {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.icon-gold {
+    color: colors.$gold-color;
+    margin-right: vars.$spacing-sm;
+}

@@ -1,0 +1,455 @@
+// ============================================
+// MENU & NAVIGATION STYLES
+// ============================================
+
+@use '../abstracts/colors' as colors;
+@use '../abstracts/variables' as vars;
+
+// ============================================
+// HEADER
+// ============================================
+
+.header {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: vars.$spacing-md 0;
+    
+    // ✅ FORZAR STICKY CON MÚLTIPLES PROPIEDADES
+    position: -webkit-sticky;  // Safari
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    
+    // ✅ IMPORTANTE: Sin esto sticky no funciona
+    align-self: flex-start;
+    
+    transition: all 0.3s ease;
+
+    // ✅ Backdrop blur para efecto moderno
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 vars.$spacing-md;
+    }
+
+    // ✅ Efecto al hacer scroll
+    &.scrolled {
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: vars.$spacing-sm 0;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
+}
+
+// ✅ Compensar el espacio del header sticky en mobile
+@media (max-width: 900px) {
+    body {
+        padding-top: 0; // No necesitamos padding extra
+    }
+
+    .header {
+        // ✅ Asegurar que sea completamente opaco en mobile
+        background-color: rgba(0, 0, 0, 0.98);
+    }
+}
+
+// ============================================
+// LOGO
+// ============================================
+
+.logo {
+    display: flex;
+    align-items: center;
+    z-index: 1003;
+
+    a {
+        display: inline-block;
+        line-height: 0;
+    }
+
+    img {
+        height: 90px;
+        width: auto;
+        display: block;
+        transition: opacity vars.$transition-base;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            height: 70px;
+        }
+
+        @media (max-width: 480px) {
+            height: 60px;
+        }
+    }
+}
+
+// ============================================
+// MAIN NAV CONTAINER
+// ============================================
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+// ============================================
+// MOBILE NAV TOGGLE
+// ============================================
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: colors.$gold-color;
+    cursor: pointer;
+    z-index: 1003;
+    transition: transform vars.$transition-base;
+    position: relative;
+    padding: 0.5rem;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &:focus {
+        outline: 2px solid colors.$gold-color;
+        outline-offset: 4px;
+    }
+
+    i {
+        pointer-events: none;
+        display: block;
+    }
+
+    @media (max-width: 900px) {
+        display: block;
+    }
+}
+
+// ============================================
+// NAVIGATION MENU - DESKTOP
+// ============================================
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: vars.$spacing-lg;
+
+    li {
+        margin: 0;
+    }
+
+    a {
+        color: colors.$text-color;
+        font-weight: vars.$font-weight-normal;
+        font-size: 1.05em;
+        padding: vars.$spacing-sm 0;
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: color vars.$transition-base;
+        display: block;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: colors.$gold-color;
+            transition: width vars.$transition-base;
+        }
+
+        &:hover {
+            color: colors.$light-gold;
+
+            &::after {
+                width: 100%;
+            }
+        }
+
+        &.active {
+            color: colors.$gold-color;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// ============================================
+// MOBILE STYLES
+// ============================================
+
+@media (max-width: 900px) {
+    .main-nav .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 320px;
+        max-width: 85vw;
+        height: 100vh;
+        background: linear-gradient(180deg, 
+                    rgba(0, 0, 0, 0.98) 0%, 
+                    rgba(20, 20, 20, 0.98) 100%);
+        flex-direction: column;
+        padding: 110px vars.$spacing-lg vars.$spacing-2xl;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.8);
+        z-index: 1002;
+        overflow-y: auto;
+        gap: 0;
+        
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-out, 
+                    opacity 0.3s ease-out, 
+                    visibility 0s 0.3s;
+        pointer-events: none;
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(0);
+            transition: transform 0.3s ease-out, 
+                        opacity 0.3s ease-out, 
+                        visibility 0s 0s;
+            pointer-events: auto;
+        }
+    }
+
+    .main-nav .nav-menu li {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+
+        &:first-child {
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .main-nav .nav-menu a {
+        padding: vars.$spacing-lg vars.$spacing-md;
+        font-size: 1.15em;
+        font-weight: vars.$font-weight-semibold;
+        
+        // ✅ COLOR MÁS CLARO Y VISIBLE
+        color: #E8E8E8;
+        
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        letter-spacing: 1.5px;
+        transition: all 0.3s ease;
+        background-color: transparent;
+        cursor: pointer;
+
+        &::after {
+            display: none;
+        }
+
+        // ✅ HOVER MUY VISIBLE
+        &:hover {
+            color: colors.$gold-color;
+            background-color: rgba(212, 175, 55, 0.15);
+            transform: translateX(-5px);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        // ✅ ESTADO ACTIVO MUY VISIBLE
+        &.active {
+            color: colors.$gold-color;
+            background-color: rgba(212, 175, 55, 0.25);
+            border-left: 4px solid colors.$gold-color;
+            font-weight: vars.$font-weight-bold;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+        }
+    }
+
+    // ✅ BOTÓN TOGGLE MÁS VISIBLE
+    .nav-toggle {
+        background-color: rgba(212, 175, 55, 0.15);
+        border-radius: 6px;
+        padding: 0.6rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: rgba(212, 175, 55, 0.25);
+            transform: scale(1.05);
+        }
+
+        &:active {
+            background-color: rgba(212, 175, 55, 0.35);
+            transform: scale(0.95);
+        }
+    }
+
+    // ============================================
+    // HEADER COMPACTO EN MOBILE AL HACER SCROLL
+    // ============================================
+
+    .header.scrolled {
+        padding: vars.$spacing-xs 0;
+        
+        .logo img {
+            height: 60px;
+            transition: height 0.3s ease;
+        }
+    }
+}
+
+// ============================================
+// BOTÓN CERRAR (X) DENTRO DEL MENÚ
+// ============================================
+
+.nav-close-wrapper {
+    display: none;
+    
+    @media (max-width: 900px) {
+        display: block;
+        border: none !important;
+        padding: 0 0 vars.$spacing-lg 0 !important;
+        margin-bottom: vars.$spacing-md;
+    }
+}
+
+.nav-close {
+    background: none;
+    border: 2px solid colors.$gold-color;
+    border-radius: 50%;
+    font-size: 1.8em;
+    color: colors.$gold-color;
+    cursor: pointer;
+    padding: 0.4rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+
+    &:hover {
+        color: #ffffff;
+        background-color: colors.$gold-color;
+        transform: rotate(90deg);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    }
+
+    &:active {
+        transform: rotate(90deg) scale(0.9);
+    }
+
+    &:focus {
+        outline: 2px solid colors.$gold-color;
+        outline-offset: 4px;
+    }
+
+    i {
+        pointer-events: none;
+    }
+}
+
+// ============================================
+// PANTALLAS MUY PEQUEÑAS
+// ============================================
+
+@media (max-width: 480px) {
+    .main-nav .nav-menu {
+        width: 100%;
+        max-width: 100%;
+        padding: 100px vars.$spacing-md vars.$spacing-xl;
+    }
+    
+    .main-nav .nav-menu a {
+        font-size: 1.05em;
+        padding: vars.$spacing-md;
+    }
+}
+
+// ============================================
+// OVERLAY
+// ============================================
+
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;  // ✅ MENOR que el menú (1002)
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    pointer-events: auto;  // ✅ Siempre clickeable para cerrar
+
+    &.active {
+        display: block;
+        opacity: 1;
+    }
+}
+
+// ============================================
+// BODY SCROLL LOCK
+// ============================================
+
+body.menu-open {
+    overflow: hidden;
+
+    @media (min-width: 901px) {
+        overflow: auto;
+    }
+}
+
+// ============================================
+// ACCESSIBILITY
+// ============================================
+
+.nav-menu a:focus-visible {
+    outline: 2px solid colors.$gold-color;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.nav-toggle:focus-visible {
+    outline: 2px solid colors.$gold-color;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+// ============================================
+// FIX PARA SAFARI Y IOS
+// ============================================
+
+@supports (-webkit-touch-callout: none) {
+    .nav-menu {
+        height: -webkit-fill-available;
+    }
+}
