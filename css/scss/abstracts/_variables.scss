@@ -12,20 +12,80 @@ $font-size-xl: 24px;
 $font-size-2xl: 32px;
 $font-size-3xl: 48px;
 
-// Pesos de fuente
+// ============================================
+// FONT WEIGHTS
+// ============================================
+
 $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 
+// ============================================
+// TEXT ALIGNMENT
+// ============================================
+
+$text-align-left: left;
+$text-align-center: center;
+$text-align-right: right;
+$text-align-justify: justify;
+
+// ============================================
+// FLEXBOX/GRID ALIGNMENT (align-items)
+// ============================================
+
+$align-start: flex-start;
+$align-center: center;
+$align-end: flex-end;
+$align-stretch: stretch;
+$align-baseline: baseline;
+
+// ============================================
+// FLEXBOX/GRID JUSTIFICATION (justify-content)
+// ============================================
+
+$justify-start: flex-start;
+$justify-center: center;
+$justify-end: flex-end;
+$justify-between: space-between;
+$justify-around: space-around;
+$justify-evenly: space-evenly;
+
+// ============================================
+// PLACE ITEMS (align-items + justify-content combinados)
+// ============================================
+
+$place-start: start;
+$place-center: center;
+$place-end: end;
+$place-stretch: stretch;
+
+// ============================================
+// FLEX DIRECTION
+// ============================================
+
+$flex-row: row;
+$flex-row-reverse: row-reverse;
+$flex-column: column;
+$flex-column-reverse: column-reverse;
+
+// ============================================
+// FLEX WRAP
+// ============================================
+
+$flex-nowrap: nowrap;
+$flex-wrap: wrap;
+$flex-wrap-reverse: wrap-reverse;
+
 // ==================== ESPACIADOS ====================
 $spacing-xs: 5px;
 $spacing-sm: 10px;
 $spacing-md: 15px;
-$spacing-lg: 20px;
-$spacing-xl: 30px;
+$spacing-lg: 30px;
+$spacing-xl: 40px;
 $spacing-2xl: 60px;
-$spacing-3xl: 90px;
+$spacing-3xl: 80px;
+$spacing-4xl: 100px;
 
 // ==================== BORDES Y SOMBRAS ====================
 $border-radius-sm: 4px;
@@ -40,18 +100,14 @@ $box-shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.5);
 $box-shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.6);
 
 // ==================== TRANSICIONES ====================
-$transition-fast: 0.15s ease-in-out;
-$transition-base: 0.3s ease-in-out;
-$transition-slow: 0.5s ease-in-out;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+$transition-fast: 0.15s ease;
 
 // ==================== Z-INDEX ====================
-$z-dropdown: 1000;
-$z-sticky: 1020;
-$z-fixed: 1030;
-$z-modal-backdrop: 1040;
-$z-modal: 1050;
-$z-popover: 1060;
-$z-tooltip: 1070;
+$z-fixed: 1000;
+$z-modal: 2000;
+$z-tooltip: 3000;
 
 // ==================== CONTENEDORES ====================
 $container-sm: 540px;
@@ -64,6 +120,29 @@ $container-xxl: 1320px;
 $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
-$breakpoint-large: 1440px;
-$breakpoint-xl: 1920px;
+$breakpoint-wide: 1200px;
+
+// ============================================
+// CARD & GRID VARIABLES
+// ============================================
+
+$card-min-width: 280px;
+$card-border-radius: $border-radius-lg;
+$card-padding: $spacing-2xl;
+$card-gap: $spacing-xl;
+
+// ============================================
+// IMAGE SIZES
+// ============================================
+
+$image-height-sm: 220px;
+$image-height-md: 280px;
+$image-height-lg: 350px;
+
+// ============================================
+// HOVER EFFECTS
+// ============================================
+
+$hover-lift: -10px;
+$hover-scale: 1.02;
 

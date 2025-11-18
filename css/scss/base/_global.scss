@@ -5,32 +5,120 @@
 @use '../abstracts/colors' as colors;
 @use '../abstracts/variables' as vars;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
 body {
     font-family: vars.$primary-font;
-    background-color: colors.$primary-bg;
+    background-color: colors.$bg-primary;  // ✅ Cambiar de $primary-bg a $bg-primary
     color: colors.$text-color;
-    line-height: 1.7;
-    overflow-x: hidden;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+// ============================================
+// CONTAINER GLOBAL
+// ============================================
 
 .container {
-    max-width: 1200px;
+    width: 100%;
+    max-width: vars.$container-xl;
     margin: 0 auto;
-    padding: 0 vars.$spacing-lg;
-
-    @media (max-width: 768px) {
-        padding: 0 vars.$spacing-md;
-    }
+    padding: 0 vars.$spacing-md;
 }
+
+// ============================================
+// UTILITY CLASSES
+// ============================================
 
 .text-center {
     text-align: center;
 }
 
-.mt-50 {
-    margin-top: vars.$spacing-2xl;
+.text-left {
+    text-align: left;
 }
 
-.mt-30 {
-    margin-top: vars.$spacing-xl;
+.text-right {
+    text-align: right;
+}
+
+// ============================================
+// LINKS
+// ============================================
+
+a {
+    color: colors.$gold-color;
+    text-decoration: none;
+    transition: color vars.$transition-base;
+
+    &:hover {
+        color: colors.$light-gold;
+    }
+
+    &:focus-visible {
+        outline: 2px solid colors.$gold-color;
+        outline-offset: 4px;
+    }
+}
+
+// ============================================
+// IMAGES
+// ============================================
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+// ============================================
+// SCROLLBAR PERSONALIZADO
+// ============================================
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: colors.$bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+    background: colors.$gold-color;
+    border-radius: 5px;
+
+    &:hover {
+        background: colors.$light-gold;
+    }
+}
+
+// ============================================
+// SELECTION
+// ============================================
+
+::selection {
+    background-color: colors.$gold-color;
+    color: colors.$bg-primary;
+}
+
+::-moz-selection {
+    background-color: colors.$gold-color;
+    color: colors.$bg-primary;
 }

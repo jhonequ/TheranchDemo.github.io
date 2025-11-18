@@ -1,49 +1,27 @@
 // ==========================================
-// COLORES - THE RANCH
+// COLOR PALETTE
 // ==========================================
 
-// FONDOS
-$primary-bg: #1a1a1a;           /* Dark background principal */
-$secondary-bg: #222222;         /* Slightly lighter dark for sections */
-$tertiary-bg: #2a2a2a;          /* Even lighter para componentes */
+// Background Colors
+$bg-primary: #0a0a0a;           // ✅ AGREGAR ESTA
+$bg-secondary: #1a1a1a;         // ✅ AGREGAR ESTA
+$bg-tertiary: #2d2d2d;          // ✅ AGREGAR ESTA
 
-// TEXTOS
-$text-color: #f0f0f0;           /* Light text para dark backgrounds */
-$text-dark: #1a1a1a;            /* Dark text para light backgrounds */
-$text-muted: #a0a0a0;           /* Texto secundario desaturado */
+// Text Colors
+$text-color: #f0f0f0;           // Light text para dark backgrounds
+$text-dark: #2d2d2d;            // Dark text para light backgrounds
+$text-secondary: #a0a0a0;       // Texto secundario desaturado
 
-// COLORES DE MARCA (ORO)
-$gold-color: #B8860B;           /* Gold color from logo */
-$light-gold: #DAA520;           /* A brighter gold for accents */
-$gold-rgb: rgb(184, 134, 11);   /* RGB version para rgba */
+// Brand Colors
+$gold-color: #D4AF37;           // Gold color from logo
+$light-gold: #E8C468;           // Lighter gold for hover states
+$dark-gold: #B8941F;            // Darker gold for active states
 
-// ACENTOS
-$accent-color: #6a6a6a;         /* Subtle grey for minor details */
-$accent-light: #808080;         /* Lighter grey accent */
+// Accent Colors
+$accent-red: #8B0000;           // Dark red for accents
+$accent-green: #2F4F2F;         // Dark green for success states
 
-// BORDES
-$border-color: #333333;         /* Dark border for elements */
-$border-light: #444444;         /* Lighter border alternative */
-
-// COLORES NATURALES (COMPLEMENTARIOS)
-$natural-green: #3D5A56;        /* Earthy green for contrast */
-$natural-brown: #5E4C4C;        /* Earthy brown for contrast */
-
-// ESTADOS
-$success-color: #27ae60;        /* Verde para éxito */
-$error-color: #e74c3c;          /* Rojo para errores */
-$warning-color: #f39c12;        /* Naranja para advertencias */
-$info-color: #3498db;           /* Azul para información */
-
-// SOMBRAS CON COLORES
-$shadow-color: rgba(0, 0, 0, 0.3);
-$shadow-gold: rgba(184, 134, 11, 0.3);
-$shadow-gold-light: rgba(218, 165, 32, 0.3);
-
-// OVERLAYS
-$overlay-dark: rgba(0, 0, 0, 0.7);
-$overlay-light: rgba(255, 255, 255, 0.1);
-
-// GRADIENTES (opcional)
-$gradient-dark-to-light: linear-gradient(135deg, $primary-bg 0%, $secondary-bg 100%);
-$gradient-gold: linear-gradient(135deg, $gold-color 0%, $light-gold 100%);
+// Utility Colors
+$border-color: rgba(212, 175, 55, 0.2);  // Gold border with transparency
+$shadow-color: rgba(0, 0, 0, 0.5);       // Black shadow
+$overlay-color: rgba(0, 0, 0, 0.7);      // Overlay color

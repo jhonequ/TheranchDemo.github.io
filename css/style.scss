@@ -29,20 +29,41 @@
 @use 'scss/pages/index';
 
 // ============================================
-// ROOT VARIABLES (CSS Custom Properties)
+// CSS CUSTOM PROPERTIES (Variables CSS)
 // ============================================
 
 :root {
-    --primary-bg: #{colors.$primary-bg};
-    --secondary-bg: #{colors.$secondary-bg};
-    --tertiary-bg: #{colors.$tertiary-bg};
+    // ✅ CORREGIR: Cambiar $primary-bg por $bg-primary
+    --primary-bg: #{colors.$bg-primary};
+    --secondary-bg: #{colors.$bg-secondary};
+    --tertiary-bg: #{colors.$bg-tertiary};
+    
     --text-color: #{colors.$text-color};
+    --text-dark: #{colors.$text-dark};
+    --text-secondary: #{colors.$text-secondary};
+    
     --gold-color: #{colors.$gold-color};
     --light-gold: #{colors.$light-gold};
-    --accent-color: #{colors.$accent-color};
+    --dark-gold: #{colors.$dark-gold};
+    
     --border-color: #{colors.$border-color};
-    --natural-green: #{colors.$natural-green};
-    --natural-brown: #{colors.$natural-brown};
+    --shadow-color: #{colors.$shadow-color};
+    --overlay-color: #{colors.$overlay-color};
+    
+    // Spacing
+    --spacing-xs: #{vars.$spacing-xs};
+    --spacing-sm: #{vars.$spacing-sm};
+    --spacing-md: #{vars.$spacing-md};
+    --spacing-lg: #{vars.$spacing-lg};
+    --spacing-xl: #{vars.$spacing-xl};
+    --spacing-2xl: #{vars.$spacing-2xl};
+    --spacing-3xl: #{vars.$spacing-3xl};
+    --spacing-4xl: #{vars.$spacing-4xl};
+    
+    // Transitions
+    --transition-base: #{vars.$transition-base};
+    --transition-slow: #{vars.$transition-slow};
+    --transition-fast: #{vars.$transition-fast};
 }
 
 // ============================================
@@ -53,7 +74,7 @@
 .about-section {
     padding-top: 100px;
     padding-bottom: 100px;
-    background-color: colors.$primary-bg;
+    background-color: colors.$bg-primary;  // ✅ CAMBIO AQUÍ
 }
 
 .about-grid {
@@ -86,7 +107,7 @@
 
 // Restaurant
 .restaurant-section {
-    background-color: colors.$primary-bg;
+    background-color: colors.$bg-primary;  // ✅ CAMBIO AQUÍ
 }
 
 .restaurant-images {
@@ -99,20 +120,20 @@
 // Services
 .services-additional-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmin(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  // ✅ CORRECCIÓN: minmax (no minmin)
     gap: vars.$spacing-lg;
     margin-top: vars.$spacing-2xl;
 }
 
 // Contact
 .contact-section {
-    background-color: colors.$secondary-bg;
+    background-color: colors.$bg-secondary;  // ✅ CAMBIO AQUÍ
 }
 
 // Footer
 .footer {
-    background-color: colors.$primary-bg;
-    color: colors.$accent-color;
+    background-color: colors.$bg-primary;  // ✅ CAMBIO AQUÍ
+    color: colors.$gold-color;  // ✅ CAMBIO AQUÍ (antes era $accent-color)
     padding: vars.$spacing-2xl 0 vars.$spacing-lg;
     border-top: 1px solid colors.$border-color;
 }
