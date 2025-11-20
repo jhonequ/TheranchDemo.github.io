@@ -309,5 +309,832 @@
     }
 }
 
+// ============================================
+// HOTEL SECTION
+// ============================================
+
+.hotel-section {
+    background-color: colors.$bg-secondary;
+}
+
+// Hotel Plans Grid
+.hotel-plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: vars.$spacing-xl;
+    margin-top: vars.$spacing-2xl;
+    margin-bottom: vars.$spacing-3xl;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: vars.$spacing-lg;
+    }
+}
+
+// Plan Card
+.plan-card {
+    background-color: colors.$bg-tertiary;
+    border: 2px solid colors.$border-color;
+    border-radius: vars.$border-radius-lg;
+    padding: vars.$spacing-2xl;
+    text-align: vars.$text-align-center;
+    display: flex;
+    flex-direction: vars.$flex-column;
+    justify-content: vars.$justify-between;
+    transition: transform vars.$transition-base, 
+                border-color vars.$transition-base,
+                box-shadow vars.$transition-base;
+
+    &:hover {
+        transform: translateY(-5px);
+        border-color: colors.$gold-color;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    }
+
+    // Featured Plan
+    &.plan-featured {
+        border-color: colors.$gold-color;
+        background: linear-gradient(135deg, 
+                    rgba(212, 175, 55, 0.1) 0%, 
+                    rgba(45, 45, 45, 0.9) 100%);
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        transform: scale(1.05);
+
+        @media (max-width: 768px) {
+            transform: scale(1);
+        }
+
+        &:hover {
+            transform: translateY(-5px) scale(1.05);
+
+            @media (max-width: 768px) {
+                transform: translateY(-5px) scale(1);
+            }
+        }
+    }
+}
+
+.plan-header {
+    margin-bottom: vars.$spacing-lg;
+}
+
+.plan-title {
+    font-family: vars.$secondary-font;
+    font-size: vars.$font-size-2xl;
+    color: colors.$gold-color;
+    margin-bottom: vars.$spacing-md;
+    display: flex;
+    flex-direction: vars.$flex-column;
+    align-items: vars.$align-center;        // ✅ USANDO VARIABLE
+    text-align: vars.$text-align-center;    // ✅ USANDO VARIABLE
+}
+
+.plan-price {
+    font-size: vars.$font-size-3xl;
+    margin-bottom: vars.$spacing-md;
+    color: colors.$gold-color;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background: linear-gradient(90deg, 
+                    transparent 0%, 
+                    colors.$gold-color 50%, 
+                    transparent 100%);
+    }
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: vars.$font-size-base;
+    color: colors.$text-secondary;
+    text-align: vars.$text-align-left;
+    margin-bottom: vars.$spacing-lg;
+
+    li {
+        margin-bottom: vars.$spacing-sm;
+        position: relative;
+        padding-left: 20px;
+
+        &::before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2em;
+            line-height: 1;
+            color: colors.$gold-color;
+        }
+    }
+}
+
+.plan-cta {
+    text-align: vars.$text-align-center;
+
+    .btn {
+        display: inline-flex;
+        align-items: vars.$align-center;   
+        gap: vars.$spacing-sm;
+        padding: vars.$spacing-md vars.$spacing-lg;
+        font-size: vars.$font-size-lg;
+        border-radius: vars.$border-radius-md;
+        transition: background-color vars.$transition-base,
+                    color vars.$transition-base;
+
+        i {
+            transition: transform vars.$transition-base;
+        }
+
+        &:hover {
+            background-color: colors.$gold-color;
+            color: colors.$bg-primary;
+
+            i {
+                transform: translateX(5px);
+            }
+        }
+    }
+}
+
+// ============================================
+// ROOM CAROUSEL
+// ============================================
+
+.room-carousel-container {
+    margin-top: vars.$spacing-3xl;
+    padding: vars.$spacing-2xl;
+    background-color: colors.$bg-tertiary;
+    border: 1px solid colors.$border-color;
+    border-radius: vars.$border-radius-lg;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.carousel-title {
+    font-family: vars.$secondary-font;
+    font-size: vars.$font-size-2xl;
+    color: colors.$light-gold;
+    text-align: vars.$text-align-center;
+    margin-bottom: vars.$spacing-2xl;
+    padding-bottom: vars.$spacing-md;
+    border-bottom: 2px solid colors.$border-color;
+
+    @media (max-width: 768px) {
+        font-size: vars.$font-size-xl;
+    }
+}
+
+// Carousel Container
+.room-carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: vars.$border-radius-lg;
+}
+
+// Room Slide
+.room-slide {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: vars.$spacing-2xl;
+    align-items: vars.$align-center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &.active {
+        display: grid;
+        opacity: 1;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        gap: vars.$spacing-xl;
+    }
+}
+
+// Fade In Animation
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Room Image
+.room-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: vars.$border-radius-lg;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: vars.$align-center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        display: block;
+        border-radius: vars.$border-radius-lg;
+        transition: transform vars.$transition-slow,
+                    filter vars.$transition-base;
+
+        &:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        @media (max-width: 768px) {
+            max-height: 300px;
+        }
+    }
+}
+
+// Room Content
+.room-content {
+    display: flex;
+    flex-direction: vars.$flex-column;
+    justify-content: vars.$justify-center;
+    gap: vars.$spacing-lg;
+    padding: vars.$spacing-md 0;
+
+    @media (max-width: 1024px) {
+        text-align: vars.$text-align-center;
+    }
+}
+
+.room-title {
+    font-family: vars.$secondary-font;
+    font-size: vars.$font-size-2xl;
+    color: colors.$light-gold;
+    margin: 0;
+    padding-bottom: vars.$spacing-sm;
+    border-bottom: 2px solid colors.$border-color;
+
+    @media (max-width: 768px) {
+        font-size: vars.$font-size-xl;
+    }
+}
+
+.room-description {
+    font-size: vars.$font-size-base;
+    color: colors.$text-color;
+    line-height: 1.8;
+    text-align: vars.$text-align-justify;
+    margin: 0;
+
+    @media (max-width: 1024px) {
+        text-align: vars.$text-align-center;
+    }
+
+    @media (max-width: 768px) {
+        font-size: vars.$font-size-sm;
+    }
+}
+
+// Room Amenities
+.room-amenities {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: vars.$flex-column;
+    gap: vars.$spacing-sm;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: vars.$spacing-sm;
+        font-size: vars.$font-size-base;
+        color: colors.$text-color;
+        text-align: vars.$text-align-left;
+        padding: vars.$spacing-xs 0;
+        transition: color vars.$transition-base;
+
+        i {
+            color: colors.$gold-color;
+            font-size: 1.1em;
+            width: 20px;
+            flex-shrink: 0;
+        }
+
+        &:hover {
+            color: colors.$light-gold;
+
+            i {
+                color: colors.$light-gold;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            justify-content: vars.$justify-center;
+        }
+
+        @media (max-width: 768px) {
+            font-size: vars.$font-size-sm;
+        }
+    }
+}
+
+// ============================================
+// CAROUSEL CONTROLS
+// ============================================
+
+.carousel-controls {
+    display: flex;
+    align-items: vars.$align-center;
+    justify-content: vars.$justify-center;
+    gap: vars.$spacing-2xl;
+    margin-top: vars.$spacing-2xl;
+    padding-top: vars.$spacing-xl;
+    border-top: 1px solid colors.$border-color;
+}
+
+.carousel-btn {
+    background-color: colors.$bg-tertiary;
+    border: 2px solid colors.$gold-color;
+    color: colors.$gold-color;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: vars.$align-center;
+    justify-content: vars.$justify-center;
+    cursor: pointer;
+    transition: all vars.$transition-base;
+    font-size: vars.$font-size-xl;
+
+    &:hover {
+        background-color: colors.$gold-color;
+        color: colors.$bg-primary;
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        border-color: colors.$border-color;
+        color: colors.$text-secondary;
+
+        &:hover {
+            background-color: colors.$bg-tertiary;
+            color: colors.$text-secondary;
+            transform: scale(1);
+        }
+    }
+
+    @media (max-width: 768px) {
+        width: 40px;
+        height: 40px;
+        font-size: vars.$font-size-lg;
+    }
+}
+
+// Carousel Indicators
+.carousel-indicators {
+    display: flex;
+    gap: vars.$spacing-sm;
+    align-items: vars.$align-center;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: colors.$border-color;
+    cursor: pointer;
+    transition: all vars.$transition-base;
+
+    &:hover {
+        background-color: colors.$gold-color;
+        transform: scale(1.2);
+    }
+
+    &.active {
+        background-color: colors.$gold-color;
+        width: 30px;
+        border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+        width: 10px;
+        height: 10px;
+
+        &.active {
+            width: 24px;
+        }
+    }
+}
+
+// ============================================
+// RESTAURANT SECTION
+// ============================================
+
+.restaurant-section {
+    background-color: colors.$bg-primary;
+}
+
+// Restaurant Gallery (4 columnas iguales)
+.restaurant-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: vars.$spacing-lg;
+    margin-top: vars.$spacing-2xl;
+
+    @media (max-width: 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: vars.$spacing-md;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: vars.$spacing-sm;
+    }
+}
+
+// Gallery Item
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: vars.$border-radius-lg;
+    margin: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform vars.$transition-base,
+                box-shadow vars.$transition-base;
+    aspect-ratio: 4 / 3; // ✅ Mantiene proporción uniforme
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 40px rgba(212, 175, 55, 0.3);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform vars.$transition-slow,
+                    filter vars.$transition-base;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+        filter: brightness(1.2);
+    }
+}
+
+// Gallery Caption
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: vars.$spacing-md;
+    background: linear-gradient(to top, 
+                rgba(0, 0, 0, 0.9) 0%, 
+                rgba(0, 0, 0, 0.6) 60%, 
+                transparent 100%);
+    color: colors.$light-gold;
+    font-family: vars.$secondary-font;
+    font-size: vars.$font-size-base;
+    text-align: vars.$text-align-center;
+    transform: translateY(100%);
+    transition: transform vars.$transition-base;
+
+    .gallery-item:hover & {
+        transform: translateY(0);
+    }
+
+    @media (max-width: 1200px) {
+        font-size: vars.$font-size-sm;
+        padding: vars.$spacing-sm;
+    }
+
+    @media (max-width: 768px) {
+        font-size: vars.$font-size-sm;
+    }
+}
+
+// ============================================
+// SERVICES SECTION
+// ============================================
+
+.services-section {
+    background-color: colors.$bg-secondary;
+}
+
+// Services Grid
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: vars.$spacing-xl;
+    margin-top: vars.$spacing-2xl;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: vars.$spacing-lg;
+    }
+}
+
+// Service Card (Reutilizable)
+.service-card {
+    background-color: colors.$bg-tertiary;
+    border: 1px solid colors.$border-color;
+    border-radius: vars.$border-radius-lg;
+    padding: vars.$spacing-2xl;
+    text-align: vars.$text-align-center;
+    display: flex;
+    flex-direction: vars.$flex-column;
+    align-items: vars.$align-center;
+    gap: vars.$spacing-md;
+    transition: transform vars.$transition-base,
+                box-shadow vars.$transition-base,
+                border-color vars.$transition-base;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 40px rgba(212, 175, 55, 0.2);
+        border-color: colors.$gold-color;
+
+        .service-icon {
+            background-color: colors.$gold-color;
+            transform: scale(1.1) rotate(5deg);
+
+            i {
+                color: colors.$bg-primary;
+            }
+        }
+    }
+}
+
+// Service Icon
+.service-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: colors.$bg-primary;
+    border: 2px solid colors.$gold-color;
+    display: flex;
+    align-items: vars.$align-center;
+    justify-content: vars.$justify-center;
+    transition: all vars.$transition-base;
+
+    i {
+        font-size: vars.$font-size-3xl;
+        color: colors.$gold-color;
+        transition: color vars.$transition-base;
+    }
+
+    @media (max-width: 768px) {
+        width: 70px;
+        height: 70px;
+
+        i {
+            font-size: vars.$font-size-2xl;
+        }
+    }
+}
+
+// Service Title
+.service-title {
+    font-family: vars.$secondary-font;
+    font-size: vars.$font-size-xl;
+    color: colors.$light-gold;
+    margin: 0;
+
+    @media (max-width: 768px) {
+        font-size: vars.$font-size-lg;
+    }
+}
+
+// Service Description
+.service-description {
+    font-size: vars.$font-size-base;
+    color: colors.$text-secondary;
+    line-height: 1.6;
+    margin: 0;
+
+    @media (max-width: 768px) {
+        font-size: vars.$font-size-sm;
+    }
+}
+
+// ============================================
+// CONTACT SECTION
+// ============================================
+
+.contact-section {
+    background-color: colors.$bg-primary;
+}
+
+// Contact Grid
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr; // ✅ Mapa más grande (60% vs 32%)
+    gap: vars.$spacing-3xl;
+    margin-top: vars.$spacing-2xl;
+    align-items: vars.$align-start;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        gap: vars.$spacing-2xl;
+    }
+}
+
+// Contact Map
+.contact-map {
+    position: relative;
+    width: 100%;
+    height: 550px; // ✅ Aumentado de 500px a 550px
+    border-radius: vars.$border-radius-lg;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid colors.$border-color;
+    transition: box-shadow vars.$transition-base,
+                border-color vars.$transition-base;
+
+    &:hover {
+        box-shadow: 0 12px 40px rgba(212, 175, 55, 0.3);
+        border-color: colors.$gold-color;
+    }
+
+    iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    @media (max-width: 768px) {
+        height: 350px;
+    }
+}
+
+// Contact Info
+.contact-info {
+    background-color: colors.$bg-tertiary;
+    border: 1px solid colors.$border-color;
+    border-radius: vars.$border-radius-lg;
+    padding: vars.$spacing-xl; // ✅ Reducido de 2xl (60px) a xl (40px)
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    display: flex;
+    flex-direction: vars.$flex-column;
+    gap: vars.$spacing-md; // ✅ Reducido de xl (40px) a md (20px)
+}
+
+.contact-info-title {
+    font-family: vars.$secondary-font;
+    font-size: vars.$font-size-xl; // ✅ Reducido de 2xl (32px) a xl (24px)
+    color: colors.$light-gold;
+    margin: 0 0 vars.$spacing-md 0; // ✅ Reducido de lg (30px) a md (20px)
+    padding-bottom: vars.$spacing-sm; // ✅ Reducido de md (20px) a sm (15px)
+    border-bottom: 2px solid colors.$border-color;
+    text-align: vars.$text-align-center;
+
+    @media (max-width: 768px) {
+        font-size: vars.$font-size-lg;
+    }
+}
+
+// Contact Item
+.contact-item {
+    display: flex;
+    gap: vars.$spacing-sm; // ✅ Reducido de md (20px) a sm (15px)
+    align-items: vars.$align-start;
+    padding: vars.$spacing-sm; // ✅ Reducido de md (20px) a sm (15px)
+    border-radius: vars.$border-radius-md;
+    transition: background-color vars.$transition-base,
+                transform vars.$transition-base;
+
+    &:hover {
+        background-color: rgba(212, 175, 55, 0.05);
+        transform: translateX(5px);
+    }
+}
+
+// Contact Icon
+.contact-icon {
+    width: 45px;  // ✅ Reducido de 50px a 45px
+    height: 45px; // ✅ Reducido de 50px a 45px
+    min-width: 45px;
+    border-radius: 50%;
+    background-color: colors.$bg-primary;
+    border: 2px solid colors.$gold-color;
+    display: flex;
+    align-items: vars.$align-center;
+    justify-content: vars.$justify-center;
+    transition: all vars.$transition-base;
+
+    i {
+        font-size: vars.$font-size-lg; // ✅ Reducido de xl (24px) a lg (18px)
+        color: colors.$gold-color;
+        transition: color vars.$transition-base;
+    }
+
+    .contact-item:hover & {
+        background-color: colors.$gold-color;
+        transform: scale(1.1);
+
+        i {
+            color: colors.$bg-primary;
+        }
+    }
+
+    @media (max-width: 768px) {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+
+        i {
+            font-size: vars.$font-size-base;
+        }
+    }
+}
+
+// Contact Details
+.contact-details {
+    flex: 1;
+
+    h4 {
+        font-family: vars.$secondary-font;
+        font-size: vars.$font-size-base; // ✅ Reducido de lg (18px) a base (16px)
+        color: colors.$light-gold;
+        margin: 0 0 vars.$spacing-xs 0;
+
+        @media (max-width: 768px) {
+            font-size: vars.$font-size-sm;
+        }
+    }
+
+    p {
+        font-size: vars.$font-size-sm; // ✅ Reducido de base (16px) a sm (14px)
+        color: colors.$text-secondary;
+        margin: 0;
+        line-height: 1.5; // ✅ Reducido de 1.6 a 1.5
+
+        @media (max-width: 768px) {
+            font-size: vars.$font-size-xs;
+        }
+    }
+
+    a {
+        color: colors.$text-color;
+        text-decoration: none;
+        transition: color vars.$transition-base;
+
+        &:hover {
+            color: colors.$gold-color;
+        }
+    }
+}
+
+// Contact CTA
+.contact-cta {
+    text-align: vars.$text-align-center;
+    margin-top: vars.$spacing-3xl;
+    padding-top: vars.$spacing-2xl;
+    border-top: 1px solid colors.$border-color;
+
+    .btn {
+        display: inline-flex;
+        align-items: vars.$align-center;
+        gap: vars.$spacing-sm;
+        padding: vars.$spacing-lg vars.$spacing-2xl;
+        font-size: vars.$font-size-lg;
+
+        i {
+            font-size: vars.$font-size-xl;
+            transition: transform vars.$transition-base;
+        }
+
+        &:hover i {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        @media (max-width: 768px) {
+            padding: vars.$spacing-md vars.$spacing-xl;
+            font-size: vars.$font-size-base;
+        }
+    }
+}
+
 
 
