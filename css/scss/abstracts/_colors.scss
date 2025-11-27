@@ -11,6 +11,7 @@ $bg-tertiary: #2d2d2d;          // ✅ AGREGAR ESTA
 $text-color: #f0f0f0;           // Light text para dark backgrounds
 $text-dark: #2d2d2d;            // Dark text para light backgrounds
 $text-secondary: #a0a0a0;       // Texto secundario desaturado
+$text-muted: #999999;
 
 // Brand Colors
 $gold-color: #D4AF37;           // Gold color from logo
@@ -20,8 +21,13 @@ $dark-gold: #B8941F;            // Darker gold for active states
 // Accent Colors
 $accent-red: #8B0000;           // Dark red for accents
 $accent-green: #2F4F2F;         // Dark green for success states
+$accent-color: #cccccc;
+$border-color: #333333;
 
 // Utility Colors
 $border-color: rgba(212, 175, 55, 0.2);  // Gold border with transparency
 $shadow-color: rgba(0, 0, 0, 0.5);       // Black shadow
 $overlay-color: rgba(0, 0, 0, 0.7);      // Overlay color
+$overlay-color: rgba(0, 0, 0, 0.7);      // Overlay color
+$natural-green: #2E8B57;
+$natural-brown: #8B4513;

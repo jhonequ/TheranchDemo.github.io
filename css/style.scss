@@ -22,6 +22,7 @@
 // ============================================
 @use 'scss/components/menuStyle';
 @use 'scss/components/buttons';
+@use 'scss/components/footer'; 
 
 // ============================================
 // 4. PAGES
@@ -128,19 +129,4 @@
 // Contact
 .contact-section {
     background-color: colors.$bg-secondary;  // ✅ CAMBIO AQUÍ
-}
-
-// Footer
-.footer {
-    background-color: colors.$bg-primary;  // ✅ CAMBIO AQUÍ
-    color: colors.$gold-color;  // ✅ CAMBIO AQUÍ (antes era $accent-color)
-    padding: vars.$spacing-2xl 0 vars.$spacing-lg;
-    border-top: 1px solid colors.$border-color;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: vars.$spacing-2xl;
-    margin-bottom: vars.$spacing-2xl;
 }
