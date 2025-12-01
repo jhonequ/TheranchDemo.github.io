@@ -9,57 +9,29 @@
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords"
 		content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" />
 
-	<!-- 
-	//////////////////////////////////////////////////////
+	<!-- Animate.css -->
+	<!--<link rel="stylesheet" href="css/animate.css">-->
+	<!-- Icomoon Icon Fonts-->
+	<!--<link rel="stylesheet" href="css/icomoon.css">-->
+	<!-- Bootstrap  -->
+	<!--<link rel="stylesheet" href="css/bootstrap.css">-->
+	<!-- Flexslider  -->
+	<!--<link rel="stylesheet" href="css/flexslider.css">-->
 
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
 
-	//////////////////////////////////////////////////////
-	 -->
-
-	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="" />
-	<meta property="og:image" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:site_name" content="" />
-	<meta property="og:description" content="" />
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
+	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,600i,700"
 		rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/eventsCss/eventscss.css">
-	<link rel="stylesheet" href="css/eventsCss/EventHead.css">
-	<link rel="stylesheet" href="css/eventsCss/eventmenu.css">
-	<link rel="stylesheet" href="css/eventsCss/eventfooter.css">
-	<link rel="stylesheet" href="css/eventsCss/eventPortafolio.css">
 
-	<link rel="stylesheet" href="css/style.css">
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- Modernizr JS
+	<script src="js/modernizr-2.6.2.min.js"></script> -->
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -71,495 +43,662 @@
 
 	<div class="fh5co-loader"></div>
 
-	<header>
-		<div class="lineamenu">
-			<nav id="nav" class="nav">
-				<img src="icon/logo2.ico" alt="The Ranch" class="logomenu">
-				<ul class="menu">
-					<li><a href="../index.html" class="nav_link">Inicio</a></li>
-					<li><a href="index.html" class="nav_link">Eventos</a></li>
-					<li><a href="../Hotel/index.html" class="nav_link">Hospedaje</a></li>
-					<!--<li><a href="../Restaurante/index.html" class="nav_link">Restaurante</a></li>
-					<li><a href="#" class="nav_link">Servicios</a></li>-->
+	<header class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="../../index.html">
+					<img src="../../assets/logos/logos-the-ranch.png" alt="The Ranch Group Logo">
+				</a>
+			</div>
+
+			<nav class="main-nav">
+				<!-- Botón hamburguesa -->
+				<button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+					<i class="fas fa-bars"></i>
+				</button>
+
+				<!-- Menú de navegación -->
+				<ul class="nav-menu" id="navMenu">
+					<!-- Botón cerrar dentro del menú -->
+					<li class="nav-close-wrapper">
+						<button class="nav-close" id="navClose" aria-label="Cerrar menú">
+							<i class="fas fa-times"></i>
+						</button>
+					</li>
+
+					<li><a href="../../index.html#inicio">INICIO</a></li>
+					<li><a href="Eventos.html" class="active">EVENTOS</a></li>
+					<li><a href="../../index.html#hoteleria">HOTELERÍA</a></li>
+					<li><a href="../../index.html#restaurante">RESTAURANTE</a></li>
+					<li><a href="../../index.html#servicios-adicionales">SERVICIOS ESPECIALES</a></li>
+					<li><a href="../../index.html#contacto">CONTACTO</a></li>
 				</ul>
 			</nav>
 		</div>
-
-		<div class="eventHead">
-			<img src="images/events/entrada.jpg" alt="">
-			<div class="linea"></div>
-			<section class="descripcionHead">
-				<h1>The Ranch Eventos</h1>
-				<p class="p">The Ranch Hotel Boutique se caracteriza por realizar
-					eventos con un concepto único para quienes buscan
-					generar experiencias y disfrutar escenarios rodeados
-					de vegetación, jardines y ambientes diferentes
-					acompañados de un excelente servicio.
-					El éxito de todo tipo de evento se evidencia en el
-					bienestar transmitido y sentido por los invitados y
-					anfitriones.</p>
-				<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
-					target="_blank">
-					<button class="button">Solicitar Cita</button>
-				</a>
-			</section>
-		</div>
-
-		<img src="images/events/nieblina 2.png" class="nieblina" alt="">
-
 	</header>
 
+	<!-- Overlay para cerrar menú -->
+	<div class="nav-overlay" id="navOverlay"></div>
+
+	<!-- ============================================ -->
+	<!-- HERO SECTION - EVENTOS -->
+	<!-- ============================================ -->
+	<section class="events-hero">
+		<div class="events-hero-slider">
+			<!-- Las imágenes se cargarán dinámicamente -->
+			<div class="hero-slide active">
+				<img src="../../assets/images/eventos/imgEvents/entrada.jpg"
+					alt="The Ranch Eventos - Espacios únicos para celebraciones">
+			</div>
+			<div class="hero-slide">
+				<img src="../../assets/images/eventos/imgEvents/img1.jpg" alt="The Ranch Eventos - Vista 2">
+			</div>
+			<div class="hero-slide">
+				<img src="../../assets/images/eventos/imgEvents/img2.jpg" alt="The Ranch Eventos - Vista 3">
+			</div>
+			<div class="hero-slide">
+				<img src="../../assets/images/eventos/imgEvents/img3.jpg" alt="The Ranch Eventos - Vista 4">
+			</div>
+			<div class="hero-slide">
+				<img src="../../assets/images/eventos/imgEvents/img4.jpg" alt="The Ranch Eventos - Vista 5">
+			</div>
+		</div>
+
+		<!-- Botones de navegación -->
+		<button class="hero-nav-btn hero-prev" aria-label="Imagen anterior">
+			<i class="fas fa-chevron-left"></i>
+		</button>
+		<button class="hero-nav-btn hero-next" aria-label="Siguiente imagen">
+			<i class="fas fa-chevron-right"></i>
+		</button>
+
+		<!-- Indicadores -->
+		<div class="hero-indicators">
+			<span class="hero-indicator active" data-slide="0"></span>
+			<span class="hero-indicator" data-slide="1"></span>
+			<span class="hero-indicator" data-slide="2"></span>
+			<span class="hero-indicator" data-slide="3"></span>
+			<span class="hero-indicator" data-slide="4"></span>
+		</div>
+
+		<div class="events-hero-overlay"></div>
+
+		<div class="container">
+			<div class="events-hero-content">
+				<h1 class="events-hero-title">Eventos que Marcan la Historia</h1>
+				<p class="events-hero-description">
+					The Ranch Hotel Boutique es el escenario perfecto para eventos con un concepto único,
+					rodeados de vegetación exuberante y ambientes que inspiran. Cada detalle se cuida para
+					que tu celebración sea una experiencia mágica e inolvidable.
+				</p>
+
+				<div class="events-hero-stats">
+					<div class="stat-item">
+						<span class="stat-number">9</span>
+						<span class="stat-label">Locaciones Únicas</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">200</span>
+						<span class="stat-label">Capacidad Máxima</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">10+</span>
+						<span class="stat-label">Servicios Incluidos</span>
+					</div>
+				</div>
+
+				<div class="events-hero-cta">
+					<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20cotizar%20un%20evento"
+						class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+						<i class="fab fa-whatsapp"></i> Solicitar Cotización
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<main>
-		<section id="showerIconEvents" class="text-center py-2" data-aos="zoom-out" data-aos-duration="1500">
-			<div class="stats">
-
-				<div>
-					<ul>
-						<li><img src="icon/iconEvents/boda.png" alt=""></li>
-						<li class="stats-title">Bodas</li>
-					</ul>
+		<!-- ============================================ -->
+		<!-- CEREMONIES SECTION - TIPOS DE CEREMONIAS -->
+		<!-- ============================================ -->
+		<section class="events-ceremonies">
+			<div class="container">
+				<div class="ceremonies-header">
+					<h2 class="ceremonies-title">Ceremonias y Servicios</h2>
+					<p class="ceremonies-subtitle">
+						Ofrecemos una amplia gama de servicios profesionales para hacer de tu evento una experiencia
+						inolvidable
+					</p>
 				</div>
 
-				<div>
-					<ul>
-						<li><img src="icon/iconEvents/fotografo.png" alt=""></li>
-						<li class="stats-title">Fotografía y Video</li>
-					</ul>
-				</div>
+				<div class="ceremonies-grid">
+					<!-- Bodas -->
+					<div class="ceremony-card">
+						<div class="ceremony-icon">
+							<img src="icon/iconEvents/boda.png" alt="Bodas en The Ranch">
+						</div>
+						<h3 class="ceremony-title">Bodas</h3>
+					</div>
 
-				<div>
-					<ul>
-						<li><img src="icon/iconEvents/eventoempresarial.png" alt=""></li>
-						<li class="stats-title">Eventos Empresariales</li>
-					</ul>
-				</div>
+					<!-- 15 Años -->
+					<div class="ceremony-card">
+						<div class="ceremony-icon">
+							<img src="icon/iconEvents/quiceanios.png" alt="Quinceañeras">
+						</div>
+						<h3 class="ceremony-title">15 Años</h3>
+					</div>
 
-				<div>
-					<ul>
-						<li><img src="icon/iconEvents/mobilario.png" alt=""></li>
-						<li class="stats-title">Menaje y Mobiliario</li>
-					</ul>
-				</div>
+					<!-- Eventos Empresariales -->
+					<div class="ceremony-card">
+						<div class="ceremony-icon">
+							<img src="icon/iconEvents/eventoempresarial.png" alt="Eventos Empresariales">
+						</div>
+						<h3 class="ceremony-title">Eventos Empresariales</h3>
+					</div>
 
-				<div>
-					<ul>
-						<li><img src="icon/iconEvents/audiovisual.png" alt=""></li>
-						<li class="stats-title">Ayudas Audiovisuales</li>
-					</ul>
-				</div>
+					<!-- Cumpleaños -->
+					<div class="ceremony-card">
+						<div class="ceremony-icon">
+							<img src="icon/iconEvents/cumpleanios.png" alt="Celebraciones de cumpleaños">
+						</div>
+						<h3 class="ceremony-title">Cumpleaños</h3>
+					</div>
 
-				<div>
-					<ul>
-						<li><img src="icon/iconEvents/comunion.png" alt=""></li>
-						<li class="stats-title">Primera Comunión</li>
-					</ul>
-				</div>
+					<!-- Primera Comunión -->
+					<div class="ceremony-card">
+						<div class="ceremony-icon">
+							<img src="icon/iconEvents/comunion.png" alt="Primera Comunión">
+						</div>
+						<h3 class="ceremony-title">Primera Comunión</h3>
+					</div>
 
-				<div>
-					<ul>
-						<li><img src="icon/iconEvents/gastronomia.png" alt=""></li>
-						<li class="stats-title">Gastronomía</li>
-					</ul>
-				</div>
+					<!-- Fotografía y Video -->
+					<div class="ceremony-card">
+						<div class="ceremony-icon">
+							<img src="icon/iconEvents/fotografo.png" alt="Fotografía y Video profesional">
+						</div>
+						<h3 class="ceremony-title">Fotografía y Video</h3>
+					</div>
 
-				<div>
-					<ul>
-						<li><img src="icon/iconEvents/decoracion.png" alt=""></li>
-						<li class="stats-title">Decoración</li>
-					</ul>
-				</div>
+					<!-- Menaje y Mobiliario -->
+					<div class="ceremony-card">
+						<div class="ceremony-icon">
+							<img src="icon/iconEvents/mobilario.png" alt="Menaje y Mobiliario">
+						</div>
+						<h3 class="ceremony-title">Menaje y Mobiliario</h3>
+					</div>
 
-				<div>
-					<ul>
-						<li><img src="icon/iconEvents/quiceanios.png" alt=""></li>
-						<li class="stats-title">15 años</li>
-					</ul>
-				</div>
+					<!-- Gastronomía -->
+					<div class="ceremony-card">
+						<div class="ceremony-icon">
+							<img src="icon/iconEvents/gastronomia.png" alt="Gastronomía de alta calidad">
+						</div>
+						<h3 class="ceremony-title">Gastronomía</h3>
+					</div>
 
-				<div>
-					<ul>
-						<li><img src="icon/iconEvents/cumpleanios.png" alt=""></li>
-						<li class="stats-title">Cumpleaños</li>
-					</ul>
-				</div>
+					<!-- Ayudas Audiovisuales -->
+					<div class="ceremony-card">
+						<div class="ceremony-icon">
+							<img src="icon/iconEvents/audiovisual.png" alt="Ayudas Audiovisuales">
+						</div>
+						<h3 class="ceremony-title">Ayudas Audiovisuales</h3>
+					</div>
 
+					<!-- Decoración -->
+					<div class="ceremony-card">
+						<div class="ceremony-icon">
+							<img src="icon/iconEvents/decoracion.png" alt="Decoración personalizada">
+						</div>
+						<h3 class="ceremony-title">Decoración</h3>
+					</div>
+				</div>
 			</div>
 		</section>
 
-		<h1>LOCACIONES</h1>
-
-		<section class="content-img-right">
-			<div class="info-content-right">
-				<h2>Caba de vino</h2>
-				<p class="p">Donde el tiempo se detiene y la elegancia florece
-					<br><br>
-					Sumérgete en un mundo de encanto y sofisticación en nuestra Cava de Vino. Este espacio único,
-					con su arquitectura rústica y su ambiente acogedor, te transporta a una época pasada,
-					donde los sabores y las tradiciones se celebraban con pasión. Celebra tu boda, evento
-					empresarial o cualquier ocasión especial en un entorno que combina a la perfección la elegancia y la
-					calidez.
-				</p>
-
-				<h3>Capacidad</h3>
-
-				<ul>
-					<li>80 Personas en acomodación mesa imperial</li>
-					<li>100 Personas en acomodación tipo banquete</li>
-					<li>150 Personas en acomodación tipo coctel</li>
-					<li>200 Personas en acomodación tipo auditorio</li>
-				</ul>
-
-				<p class="p">*Las acomodaciones
-					pueden variar según
-					necesidad del evento</p>
-
-				<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
-					target="_blank">
-					<button class="button cita">Solicitar Cita</button>
-				</a>
-				<a href="gallery.html" target="_blank">
-					<button class="button cita1">Ver Espacio</button>
-				</a>
+		<!-- ============================================ -->
+		<!-- SECTION SEPARATOR - DECORATIVE DIVIDER -->
+		<!-- ============================================ -->
+		<div class="events-section-divider">
+			<div class="divider-line"></div>
+			<div class="divider-icon">
+				<i class="fas fa-map-marker-alt"></i>
 			</div>
-			<img src="images/Cava de vino/1002.jpg" class="info-img-right" alt="">
-		</section>
+			<div class="divider-line"></div>
+		</div>
 
-		<section class="content-img-left">
-			<img src="images/events/img4.jpg" class="info-img-left" alt="">
+		<!-- ============================================ -->
+		<!-- LOCATIONS SECTION - ESPACIOS PARA EVENTOS -->
+		<!-- ============================================ -->
+		<section class="events-locations">
+			<div class="container">
+				<div class="locations-header">
+					<h2 class="locations-title">Nuestras Locaciones</h2>
+					<p class="locations-subtitle">
+						Espacios únicos diseñados para convertir tu evento en una experiencia memorable
+					</p>
+				</div>
 
-			<div class="info-content-left">
-				<h2>GARDENS</h2>
-				<p class="p">Un oasis de tranquilidad para celebrar momentos especiales.
-					<br><br>
-					Imagina celebrar tu evento en un espacio íntimo y acogedor, rodeado de la belleza de la naturaleza.
-					Gardens te ofrece un ambiente mágico y romántico, perfecto para compartir momentos especiales con
-					tus seres queridos.
-					Nuestra decoración floral y nuestra iluminación cálida crean un ambiente mágico que te transportará
-					a un cuento de hadas.
-				</p>
+				<!-- Cava de Vino -->
+				<div class="location-item location-right">
+					<div class="location-content">
+						<h3 class="location-name">Cava de Vino</h3>
+						<p class="location-description">
+							Donde el tiempo se detiene y la elegancia florece. Sumérgete en un mundo de encanto y
+							sofiticación en nuestra Cava de Vino. Este espacio único, con su arquitectura rústica y su
+							ambiente acogedor, te transporta a una época pasada, donde los sabores y las tradiciones se
+							celebraban con pasión.
+						</p>
 
-				<h3>Capacidad</h3>
+						<div class="location-capacity">
+							<h4 class="capacity-title">Capacidad</h4>
+							<ul class="capacity-list">
+								<li><span class="capacity-number">80</span> Personas en acomodación mesa imperial</li>
+								<li><span class="capacity-number">100</span> Personas en acomodación tipo banquete</li>
+								<li><span class="capacity-number">150</span> Personas en acomodación tipo coctel</li>
+								<li><span class="capacity-number">200</span> Personas en acomodación tipo auditorio</li>
+							</ul>
+							<p class="capacity-note">*Las acomodaciones pueden variar según necesidad del evento</p>
+						</div>
 
-				<ul>
-					<li>24 Personas en acomodación mesa imperial</li>
-					<li>30 Personas en acomodación tipo banquete</li>
-					<li>40 Personas en acomodación tipo coctel</li>
-					<li>48 Personas en acomodación tipo auditorio</li>
-				</ul>
-				<p class="p">*Las acomodaciones
-					pueden variar según
-					necesidad del evento</p>
+						<div class="location-actions">
+							<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20más%20información%20sobre%20Cava%20de%20Vino"
+								class="btn-location btn-primary" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-whatsapp"></i> Solicitar Información
+							</a>
+							<a href="gallery.html" class="btn-location btn-secondary" target="_blank">
+								<i class="fas fa-images"></i> Ver Galería
+							</a>
+						</div>
+					</div>
+					<div class="location-image">
+						<div class="image-carousel">
+							<div class="carousel-track">
+								<img src="../../assets/images/eventos/imgCava_de_vino/1002.jpg" alt="Cava de Vino - The Ranch" class="carousel-img active">
+								<img src="../../assets/images/eventos/imgCava_de_vino/1006.jpg" alt="Cava de Vino Vista 2" class="carousel-img">
+								<img src="../../assets/images/eventos/imgCava_de_vino/638.jpg" alt="Cava de Vino Vista 3" class="carousel-img">
+							</div>
+							<button class="carousel-btn carousel-prev" aria-label="Imagen anterior">
+								<i class="fas fa-chevron-left"></i>
+							</button>
+							<button class="carousel-btn carousel-next" aria-label="Siguiente imagen">
+								<i class="fas fa-chevron-right"></i>
+							</button>
+							<div class="carousel-indicators">
+								<span class="indicator active" data-slide="0"></span>
+								<span class="indicator" data-slide="1"></span>
+								<span class="indicator" data-slide="2"></span>
+							</div>
+						</div>
+						<div class="image-overlay"></div>
+					</div>
+				</div>
 
-				<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
-					target="_blank">
-					<button class="button cita">Solicitar Cita</button>
-				</a>
-				<a href="#" target="_blank">
-					<button class="button cita1">Ver Espacio</button>
-				</a>
+				<!-- Gardens -->
+				<div class="location-item location-left">
+					<div class="location-image">
+						<div class="image-carousel">
+							<div class="carousel-track">
+								<img src="../../assets/images/eventos/imgGarden/176.JPG" alt="Gardens - The Ranch" class="carousel-img active">
+								<img src="../../assets/images/eventos/imgGarden/133.JPG" alt="Gardens Vista 2" class="carousel-img">
+								<img src="../../assets/images/eventos/imgGarden/282.JPG" alt="Gardens Vista 3" class="carousel-img">
+							</div>
+							<button class="carousel-btn carousel-prev" aria-label="Imagen anterior">
+								<i class="fas fa-chevron-left"></i>
+							</button>
+							<button class="carousel-btn carousel-next" aria-label="Siguiente imagen">
+								<i class="fas fa-chevron-right"></i>
+							</button>
+							<div class="carousel-indicators">
+								<span class="indicator active" data-slide="0"></span>
+								<span class="indicator" data-slide="1"></span>
+								<span class="indicator" data-slide="2"></span>
+							</div>
+						</div>
+						<div class="image-overlay"></div>
+					</div>
+					<div class="location-content">
+						<h3 class="location-name">Gardens</h3>
+						<p class="location-description">
+							Un oasis de tranquilidad para celebrar momentos especiales. Imagina celebrar tu evento en un
+							espacio íntimo y acogedor, rodeado de la belleza de la naturaleza. Gardens te ofrece un ambiente
+							mágico y romántico, perfecto para compartir momentos especiales con tus seres queridos.
+						</p>
+
+						<div class="location-capacity">
+							<h4 class="capacity-title">Capacidad</h4>
+							<ul class="capacity-list">
+								<li><span class="capacity-number">24</span> Personas en acomodación mesa imperial</li>
+								<li><span class="capacity-number">30</span> Personas en acomodación tipo banquete</li>
+								<li><span class="capacity-number">40</span> Personas en acomodación tipo coctel</li>
+								<li><span class="capacity-number">48</span> Personas en acomodación tipo auditorio</li>
+							</ul>
+							<p class="capacity-note">*Las acomodaciones pueden variar según necesidad del evento</p>
+						</div>
+
+						<div class="location-actions">
+							<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20más%20información%20sobre%20Gardens"
+								class="btn-location btn-primary" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-whatsapp"></i> Solicitar Información
+							</a>
+							<a href="#" class="btn-location btn-secondary">
+								<i class="fas fa-images"></i> Ver Galería
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Cava de Tequila -->
+				<div class="location-item location-right">
+					<div class="location-content">
+						<h3 class="location-name">Cava de Tequila</h3>
+						<p class="location-description">
+							¿Buscas el lugar ideal para celebrar una noche inolvidable? Cava de Tequila es tu destino.
+							Escápate de la rutina y descubre un lugar donde la elegancia se fusiona con la diversión. Nuestras
+							salas lounge, con sofás blancos y detalles en madera, te invitan a relajarte y disfrutar.
+						</p>
+
+						<div class="location-capacity">
+							<h4 class="capacity-title">Capacidad</h4>
+							<ul class="capacity-list">
+								<li><span class="capacity-number">130</span> Personas en acomodación tipo lounge</li>
+								<li><span class="capacity-number">160</span> Personas en acomodación tipo coctel</li>
+								<li><span class="capacity-number">200</span> Personas en acomodación tipo auditorio</li>
+							</ul>
+							<p class="capacity-note">*Las acomodaciones pueden variar según necesidad del evento</p>
+						</div>
+
+						<div class="location-actions">
+							<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20más%20información%20sobre%20Cava%20de%20Tequila"
+								class="btn-location btn-primary" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-whatsapp"></i> Solicitar Información
+							</a>
+							<a href="#" class="btn-location btn-secondary">
+								<i class="fas fa-images"></i> Ver Galería
+							</a>
+						</div>
+					</div>
+					<div class="location-image">
+						<div class="image-carousel">
+							<div class="carousel-track">
+								<img src="../../assets/images/eventos/imgCava_tequila/WhatsApp Image 2025-04-10 at 2.09.06 PM.jpeg" alt="Cava de Tequila - The Ranch" class="carousel-img active">
+								<img src="../../assets/images/eventos/imgCava_tequila/cabatequilanoche.jpeg" alt="Cava de Tequila Vista 2" class="carousel-img">
+								<img src="../../assets/images/eventos/imgCava_tequila/WhatsApp Image 2025-04-10 at 2.08.07 PM.jpeg" alt="Cava de Tequila Vista 3" class="carousel-img">
+							</div>
+							<button class="carousel-btn carousel-prev" aria-label="Imagen anterior">
+								<i class="fas fa-chevron-left"></i>
+							</button>
+							<button class="carousel-btn carousel-next" aria-label="Siguiente imagen">
+								<i class="fas fa-chevron-right"></i>
+							</button>
+							<div class="carousel-indicators">
+								<span class="indicator active" data-slide="0"></span>
+								<span class="indicator" data-slide="1"></span>
+								<span class="indicator" data-slide="2"></span>
+							</div>
+						</div>
+						<div class="image-overlay"></div>
+					</div>
+				</div>
+
+				<!-- La Huaka 
+				<div class="location-item location-left">
+					<div class="location-image">
+						<div class="image-carousel">
+							<div class="carousel-track">
+								<img src="../../assets/images/eventos/imgLa_Huaka/" alt="La Huaka - The Ranch" class="carousel-img active">
+								<img src="../../assets/images/eventos/imgLa_Huaka/imagen2.jpg" alt="La Huaka Vista 2" class="carousel-img">
+								<img src="../../assets/images/eventos/imgLa_Huaka/imagen3.jpg" alt="La Huaka Vista 3" class="carousel-img">
+							</div>
+							<button class="carousel-btn carousel-prev" aria-label="Imagen anterior">
+								<i class="fas fa-chevron-left"></i>
+							</button>
+							<button class="carousel-btn carousel-next" aria-label="Siguiente imagen">
+								<i class="fas fa-chevron-right"></i>
+							</button>
+							<div class="carousel-indicators">
+								<span class="indicator active" data-slide="0"></span>
+								<span class="indicator" data-slide="1"></span>
+								<span class="indicator" data-slide="2"></span>
+							</div>
+						</div>
+						<div class="image-overlay"></div>
+					</div>
+					<div class="location-content">
+						<h3 class="location-name">La Huaka</h3>
+						<p class="location-description">
+							Embárcate en un viaje culinario único en La Huaka, un lugar donde los sabores se fusionan con la
+							naturaleza en un entorno rústico y acogedor. Déjate envolver por el calor de nuestra chimenea
+							mientras disfrutas de platos exquisitos elaborados con ingredientes frescos y de temporada.
+						</p>
+
+						<div class="location-capacity">
+							<h4 class="capacity-title">Capacidad</h4>
+							<ul class="capacity-list">
+								<li><span class="capacity-number">100</span> Personas en acomodación tipo banquete</li>
+								<li><span class="capacity-number">150</span> Personas en acomodación tipo coctel</li>
+								<li><span class="capacity-number">200</span> Personas en acomodación tipo auditorio</li>
+							</ul>
+							<p class="capacity-note">*Las acomodaciones pueden variar según necesidad del evento</p>
+						</div>
+
+						<div class="location-actions">
+							<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20más%20información%20sobre%20La%20Huaka"
+								class="btn-location btn-primary" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-whatsapp"></i> Solicitar Información
+							</a>
+							<a href="#" class="btn-location btn-secondary">
+								<i class="fas fa-images"></i> Ver Galería
+							</a>
+						</div>
+					</div>
+				</div>-->
+
+				<!-- Salón de Coctel
+				<div class="location-item location-left">
+					<div class="location-image">
+						<div class="image-carousel">
+							<div class="carousel-track">
+								<img src="../../assets/images/eventos/imgRedonda/275.JPG" alt="Salón de Coctel - The Ranch" class="carousel-img active">
+								<img src="../../assets/images/eventos/imgRedonda/135.JPG" alt="Salón de Coctel Vista 2" class="carousel-img">
+								<img src="../../assets/images/eventos/imgRedonda/IMG_66481635379680690.jpg" alt="Salón de Coctel Vista 3" class="carousel-img">
+							</div>
+							<button class="carousel-btn carousel-prev" aria-label="Imagen anterior">
+								<i class="fas fa-chevron-left"></i>
+							</button>
+							<button class="carousel-btn carousel-next" aria-label="Siguiente imagen">
+								<i class="fas fa-chevron-right"></i>
+							</button>
+							<div class="carousel-indicators">
+								<span class="indicator active" data-slide="0"></span>
+								<span class="indicator" data-slide="1"></span>
+								<span class="indicator" data-slide="2"></span>
+							</div>
+						</div>
+						<div class="image-overlay"></div>
+					</div>
+					<div class="location-content">
+						<h3 class="location-name">Salón de Coctel</h3>
+						<p class="location-description">
+							Un lobby vintage que te transporta en el tiempo. Adéntrate en un mundo de elegancia y sofisticación
+							en el lobby de Salón Coctel. Aquí, el tiempo se detiene y te sumerges en un ambiente vintage que te
+							cautivará desde el primer momento.
+						</p>
+
+						<div class="location-capacity">
+							<h4 class="capacity-title">Capacidad</h4>
+							<ul class="capacity-list">
+								<li><span class="capacity-number">50</span> Personas ubicados tipo salas lounge</li>
+							</ul>
+							<p class="capacity-note">*Las acomodaciones pueden variar según necesidad del evento</p>
+						</div>
+
+						<div class="location-actions">
+							<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20más%20información%20sobre%20Salón%20de%20Coctel"
+								class="btn-location btn-primary" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-whatsapp"></i> Solicitar Información
+							</a>
+							<a href="#" class="btn-location btn-secondary">
+								<i class="fas fa-images"></i> Ver Galería
+							</a>
+						</div>
+					</div>					
+				</div>-->
+
+				<!-- Plaza Pastel 
+				<div class="location-item location-left">
+					<div class="location-image">
+						<div class="image-carousel">
+							<div class="carousel-track">
+								<img src="../../assets/images/eventos/imgPlaza_Pastel/imagen1.jpg" alt="Plaza Pastel - The Ranch" class="carousel-img active">
+								<img src="../../assets/images/eventos/imgPlaza_Pastel/imagen2.jpg" alt="Plaza Pastel Vista 2" class="carousel-img">
+								<img src="../../assets/images/eventos/imgPlaza_Pastel/imagen3.jpg" alt="Plaza Pastel Vista 3" class="carousel-img">
+							</div>
+							<button class="carousel-btn carousel-prev" aria-label="Imagen anterior">
+								<i class="fas fa-chevron-left"></i>
+							</button>
+							<button class="carousel-btn carousel-next" aria-label="Siguiente imagen">
+								<i class="fas fa-chevron-right"></i>
+							</button>
+							<div class="carousel-indicators">
+								<span class="indicator active" data-slide="0"></span>
+								<span class="indicator" data-slide="1"></span>
+								<span class="indicator" data-slide="2"></span>
+							</div>
+						</div>
+						<div class="image-overlay"></div>
+					</div>
+					<div class="location-content">
+						<h3 class="location-name">Plaza Pastel</h3>
+						<p class="location-description">
+						 Un viaje al pasado con un toque dulce. Embárcate en un viaje al pasado en Plaza Pastel, un lugar
+						 donde los colores pastel y los sabores dulces se fusionan para crear una experiencia única e
+						 inolvidable. Los tonos suaves y delicados crean una sensación de armonía y tranquilidad.
+						</p>
+
+						<div class="location-capacity">
+							<h4 class="capacity-title">Capacidad</h4>
+							<ul class="capacity-list">
+								<li><span class="capacity-number">50</span> Personas en acomodación tipo coctel</li>
+							</ul>
+							<p class="capacity-note">*Las acomodaciones pueden variar según necesidad del evento</p>
+						</div>
+
+						<div class="location-actions">
+							<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20más%20información%20sobre%20Plaza%20Pastel"
+								class="btn-location btn-primary" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-whatsapp"></i> Solicitar Información
+							</a>
+							<a href="#" class="btn-location btn-secondary">
+								<i class="fas fa-images"></i> Ver Galería
+							</a>
+						</div>
+					</div>
+				</div>-->
+
+				<!-- Salón Botanic -->
+				<div class="location-item location-left">
+					<div class="location-image">
+						<div class="image-carousel">
+							<div class="carousel-track">
+								<img src="../../assets/images/eventos/imgBotanic/164.JPG" alt="Salón Botanic - The Ranch" class="carousel-img active">
+								<img src="../../assets/images/eventos/imgBotanic/307.jpg" alt="Salón Botanic Vista 2" class="carousel-img">
+								<img src="../../assets/images/eventos/imgBotanic/165.JPG" alt="Salón Botanic Vista 3" class="carousel-img">
+							</div>
+							<button class="carousel-btn carousel-prev" aria-label="Imagen anterior">
+								<i class="fas fa-chevron-left"></i>
+							</button>
+							<button class="carousel-btn carousel-next" aria-label="Siguiente imagen">
+								<i class="fas fa-chevron-right"></i>
+							</button>
+							<div class="carousel-indicators">
+								<span class="indicator active" data-slide="0"></span>
+								<span class="indicator" data-slide="1"></span>
+								<span class="indicator" data-slide="2"></span>
+							</div>
+						</div>
+						<div class="image-overlay"></div>
+					</div>
+					<div class="location-content">
+						<h3 class="location-name">Salón Botanic</h3>
+						<p class="location-description">
+							Donde la naturaleza y la elegancia se encuentran. Nuestra estructura modular te permite crear el
+							ambiente perfecto para cualquier ocasión, desde bodas íntimas hasta grandes celebraciones
+							corporativas. Rodeados de naturaleza, podrás diseñar un evento a tu medida.
+						</p>
+
+						<div class="location-capacity">
+							<h4 class="capacity-title">Capacidad</h4>
+							<ul class="capacity-list">
+								<li><span class="capacity-number">80</span> Personas en acomodación mesa imperial</li>
+								<li><span class="capacity-number">100</span> Personas en acomodación tipo banquete</li>
+								<li><span class="capacity-number">150</span> Personas en acomodación tipo coctel</li>
+								<li><span class="capacity-number">200</span> Personas en acomodación tipo auditorio</li>
+							</ul>
+							<p class="capacity-note">*Las acomodaciones pueden variar según necesidad del evento</p>
+						</div>
+
+						<div class="location-actions">
+							<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20más%20información%20sobre%20Salón%20Botanic"
+								class="btn-location btn-primary" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-whatsapp"></i> Solicitar Información
+							</a>
+							<a href="#" class="btn-location btn-secondary">
+								<i class="fas fa-images"></i> Ver Galería
+							</a>
+						</div>
+					</div>					
+				</div>
 			</div>
-
 		</section>
-
-		<section class="content-img-right">
-			<div class="info-content-right">
-				<h2>CAVA DE TEQUILA</h2>
-				<p class="p">¿Buscas el lugar ideal para celebrar una noche inolvidable? Cava de Tequila es tu destino.
-					<br><br>
-					Escápate de la rutina y descubre un lugar donde la elegancia se fusiona con la diversión.
-					Cava de Tequila te ofrece un ambiente sofisticado y acogedor, inspirado en los campos de agave.
-					Nuestras salas lounge, con sofás blancos y detalles en madera,
-					te invitan a relajarte, disfrutar de una copa de tequila y de una pista de baile.
-				</p>
-
-				<h3>Capacidad</h3>
-
-				<ul>
-					<li>130 Personas en acomodación tipo lounge</li>
-					<li>160 Personas en acomodación tipo coctel</li>
-					<li>200 Personas en acomodación tipo auditorio</li>
-				</ul>
-
-				<p class="p">*Las acomodaciones
-					pueden variar según
-					necesidad del evento</p>
-
-				<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
-					target="_blank">
-					<button class="button cita">Solicitar Cita</button>
-				</a>
-				<a href="#" target="_blank">
-					<button class="button cita1">Ver Espacio</button>
-				</a>
-			</div>
-			<img src="images/events/Celebbraciones.jpg" class="info-img-right" alt="">
-		</section>
-
-		<section class="content-img-left">
-			<img src="images/events/img11.png" class="info-img-left" alt="">
-
-			<div class="info-content-left">
-				<h2>LA HUAKA</h2>
-				<p class="p">Embárcate en un viaje culinario único en La Huaka, un lugar donde los sabores se fusionan con
-					la naturaleza en un entorno rústico y acogedor. Déjate envolver por el calor de nuestra chimenea
-					mientras disfrutas de platos exquisitos elaborados con ingredientes frescos y de temporada.
-				</p>
-
-				<h3>Capacidad</h3>
-
-				<ul>
-					<li>100 Personas en acomodación tipo banquete</li>
-					<li>150 Personas en acomodación tipo coctel</li>
-					<li>200 Personas en acomodación tipo auditorio</li>
-				</ul>
-				<p class="p">*Las acomodaciones
-					pueden variar según
-					necesidad del evento</p>
-				<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
-					target="_blank">
-					<button class="button cita">Solicitar Cita</button>
-				</a>
-				<a href="#" target="_blank">
-					<button class="button cita1">Ver Espacio</button>
-				</a>
-			</div>
-
-		</section>
-
-		<section class="content-img-right">
-			<div class="info-content-right">
-				<h2>SALÓN DE COCTEL</h2>
-				<p class="p">Un lobby vintage que te transporta en el tiempo, adéntrate en un mundo de elegancia
-					y sofisticación en el lobby de Salón Coctel. Aquí, el tiempo se detiene
-					y te sumerges en un ambiente vintage que te cautivará desde el primer momento.</p>
-
-				<h3>Capacidad</h3>
-
-				<ul>
-					<li>50 personas ubicados tipo salas lounge</li>
-				</ul>
-
-				<p class="p">*Las acomodaciones
-					pueden variar según
-					necesidad del evento</p>
-
-				<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
-					target="_blank">
-					<button class="button cita">Solicitar Cita</button>
-				</a>
-				<a href="#" target="_blank">
-					<button class="button cita1">Ver Espacio</button>
-				</a>
-			</div>
-			<img src="images/events/coctel.jpg" class="info-img-right" alt="">
-		</section>
-
-		<section class="content-img-left">
-			<img src="images/events/img10.jpg" class="info-img-left" alt="">
-
-			<div class="info-content-left">
-				<h2>PLAZA PASTEL</h2>
-				<p class="p">Un viaje al pasado con un toque dulce.
-					<br>
-					Embárcate en un viaje al pasado en Plaza Pastel, un lugar donde los colores pastel
-					y los sabores dulces se fusionan para crear una experiencia única e inolvidable.
-					Déjate seducir por la paleta de colores pastel que envuelve cada rincón de Plaza Pastel.
-					Los tonos suaves y delicados crean una sensación de armonía y tranquilidad que te transportará a un
-					mundo de ensueño.
-				</p>
-
-				<h3>Capacidad</h3>
-
-				<ul>
-					<li>50 Personas en acomodación tipo coctel</li>
-				</ul>
-				<p class="p">*Las acomodaciones
-					pueden variar según
-					necesidad del evento</p>
-				<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
-					target="_blank">
-					<button class="button cita">Solicitar Cita</button>
-				</a>
-				<a href="#" target="_blank">
-					<button class="button cita1">Ver Espacio</button>
-				</a>
-			</div>
-
-		</section>
-
-		<section class="content-img-right">
-			<div class="info-content-right">
-				<h2>Salon botanic</h2>
-				<p class="p">
-					Donde la naturaleza y la elegancia se encuentran, nuestra estructura modular te permite crear el
-					ambiente perfecto para cualquier ocasión,
-					desde bodas íntimas hasta grandes celebraciones corporativas.
-					Rodeados de naturaleza, podrás diseñar un evento a tu medida y crear recuerdos inolvidables.
-				</p>
-
-				<h3>Capacidad</h3>
-
-				<ul>
-					<li>80 Personas en acomodación mesa imperial</li>
-					<li>100 Personas en acomodación tipo banquete</li>
-					<li>150 Personas en acomodación tipo coctel</li>
-					<li>200 Personas en acomodación tipo auditorio</li>
-				</ul>
-
-				<p class="p">*Las acomodaciones
-					pueden variar según
-					necesidad del evento</p>
-
-				<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
-					target="_blank">
-					<button class="button cita">Solicitar Cita</button>
-				</a>
-				<a href="#" target="_blank">
-					<button class="button cita1">Ver Espacio</button>
-				</a>
-			</div>
-			<img src="images/events/img5.jpg" class="info-img-right" alt="">
-		</section>
-
-		<!--<h1 data-aos="fade-up" data-aos-duration="1000">LOCACIONES DE CEREMONIA</h1>-->
-
-		<section class="content-img-left">
-			<img src="images/events/img9.jpg" class="info-img-left" alt="">
-
-			<div class="info-content-left">
-				<h2>CAPILLA</h2>
-				<p class="p"> Es un espacio único y encantador, diseñado para celebrar los momentos más especiales de tu vida.
-					Con su arquitectura colonial y su entorno natural, Capilla te ofrece un escenario perfecto para
-					tu boda, evento corporativo o celebración familiar,brindándote un ambiente íntimo y
-					acogedor para compartir con tus seres queridos.</p>
-
-				<h3>Capacidad</h3>
-
-				<ul>
-					<li>80 Personas</li>
-				</ul>
-				<p class="p">*Las acomodaciones
-					pueden variar según
-					necesidad del evento</p>
-				<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
-					target="_blank">
-					<button class="button cita">Solicitar Cita</button>
-				</a>
-				<a href="#" target="_blank">
-					<button class="button cita1">Ver Espacio</button>
-				</a>
-			</div>
-
-		</section>
-
-		<section class="content-img-right">
-			<div class="info-content-right">
-				<h2>ELEMENTS</h2>
-				<p class="p">
-					Un espacio mágico para celebrar tu amor en armonía con la naturaleza, te invitamos a celebrar tu
-					amor en un entorno natural y mágico,
-					donde los cuatro elementos se unen para crear una experiencia única y memorable. Nuestro espacio
-					está diseñado
-					para conectarte con la naturaleza y permitirte vivir un momento de conexión profunda con tu pareja y
-					el universo.
-				</p>
-
-				<h3>Capacidad</h3>
-
-				<ul>
-					<li>200 Personas</li>
-				</ul>
-
-				<p class="p">*Las acomodaciones
-					pueden variar según
-					necesidad del evento</p>
-
-				<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
-					target="_blank">
-					<button class="button cita">Solicitar Cita</button>
-				</a>
-				<a href="#" target="_blank">
-					<button class="button cita1">Ver Espacio</button>
-				</a>
-			</div>
-			<img src="images/events/elements.jpg" class="info-img-right" alt="">
-		</section>
-
 	</main>
 
-	<footer id="fh5co-footer" role="contentinfo" class="fh5co-section">
+	<footer class="footer">
 		<div class="container">
-			<div class="row row-pb-md">
-				<div class="col-md-3 fh5co-widget">
-					<h4>The Ranch Group</h4>
-					<p class="p">Nuestro mayor logro se basa en el acompañamiento y
-						en la calidad de las experiencias contenidas durante
-						el desarrollo de cada momento mágico.
-						Somos un espacio encantado lleno de naturaleza y
-						hermosos espacios para crear
-						diferentes ambientes, con fácil acceso y variedad de
-						servicios
-					</p>
+			<div class="footer-grid">
+				<div class="footer-about">
+					<img src="../../assets/logos/logos-the-ranch.png" alt="The Ranch Group Logo" class="footer-logo">
+					<p>The Ranch es el destino exclusivo donde la elegancia y la naturaleza se fusionan para crear
+						experiencias únicas e inolvidables.</p>
 				</div>
-				<!-- 				<div class="col-md-2 col-md-push-1 fh5co-widget">
-					<h4>Links</h4>
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Menu</a></li>
-						<li><a href="#">Gallery</a></li>
-					</ul>
-				</div> -->
-
-				<!-- 		<div class="col-md-2 col-md-push-1 fh5co-widget">
-					<h4>Categories</h4>
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Servicios</a></li>
-						<li><a href="#">Real Estate</a></li>
-						<li><a href="#">Personal</a></li>
-						<li><a href="#">Business</a></li>
-						<li><a href="#">e-Commerce</a></li>
-					</ul>
-				</div> -->
-
-				<div class="col-md-3 col-md-push-1 fh5co-widget">
-					<h4>Contact Information</h4>
-					<ul class="fh5co-footer-links">
-						<li>The Ranch Hotel <br> Santa Elena Vereda Pantanillo</li>
-						<li><a href="tel://3233454530">+57 3233454530</a></li>
-						<li><a href="mailto:theranchboutique@gmail.com">theranchboutique@gmail.com</a></li>
-						<li><a href="http://https://theranchgroup.com">theranchgroup.com</a></li>
+				<div class="footer-links">
+					<h4>Explora</h4>
+					<ul>
+						<li><a href="#eventos">Eventos</a></li>
+						<li><a href="#hoteleria">Hotelería</a></li>
+						<li><a href="#restaurante">Restaurante</a></li>
+						<li><a href="#servicios-adicionales">Servicios Especiales</a></li>
 					</ul>
 				</div>
-
-				<div class="col-md-2 col-md-push-1 fh5co-widget">
-					<h4>Ubicación</h4>
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4716.940300296729!2d-75.49158757969506!3d6.203129256692126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e469d7d2d544e7b%3A0xfdec30027c4ca674!2sThe%20Ranch%20Hotel%20Boutique!5e0!3m2!1ses-419!2sco!4v1727750943307!5m2!1ses-419!2sco"
-						width="525" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<div class="footer-contact">
+					<h4>Contacto</h4>
+					<p><i class="fas fa-map-marker-alt icon-gold"></i> Vereda Pantanillo, Santa Elena, Antioquia,
+						Colombia 050017</p>
+					<p><i class="fas fa-phone icon-gold"></i> +57 323 345 4530</p>
+					<p><i class="fas fa-envelope icon-gold"></i> theranchboutique@gmail.com</p>
+				</div>
+				<div class="footer-social">
+					<h4>Síguenos</h4>
+					<!-- ✅ AGREGAR ESTE DIV CONTENEDOR -->
+					<div>
+						<a href="https://www.facebook.com/theranchhotelboutique"
+							aria-label="Visitar Facebook de The Ranch" target="_blank" rel="noopener noreferrer">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+						<a href="https://www.instagram.com/theranch_hotelboutique?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+							aria-label="Visitar Instagram de The Ranch" target="_blank" rel="noopener noreferrer">
+							<i class="fab fa-instagram"></i>
+						</a>
+						<a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
+							aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer">
+							<i class="fab fa-whatsapp"></i>
+						</a>
+					</div>
 				</div>
 			</div>
-
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; 2024 The Ranch Group. All Rights Reserved.</small>
-						<small class="block">Designed by Jhones</small>
-					</p>
-					<p>
-					<ul class="fh5co-social-icons">
-						
-						<li><a href="https://www.facebook.com/theranchhotelboutique" target="_blank"><i class="icon-facebook2"></i></a></li>
-						<!-- 
-						<li><a href="#"><i class="icon-twitter2"></i></a></li>
-						<li><a href="#"><i class="icon-linkedin2"></i></a></li> -->
-						<li><a href="https://www.instagram.com/theranch_hotelboutique?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="icon-instagram"></i></a></li>
-					</ul>
-					</p>
-				</div>
+			<div class="footer-bottom">
+				<p>&copy; <span id="current-year"></span> The Ranch Group. Todos los derechos reservados.</p>
+				<p>Diseñado con pasión por la naturaleza y la elegancia.</p>
 			</div>
-
 		</div>
 	</footer>
 
@@ -567,20 +706,25 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
 	</div>
 
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Main -->
-	<script src="js/main.js"></script>
+	<!-- jQuery 
+	<script src="js/jquery.min.js"></script>-->
+	<!-- jQuery Easing 
+	<script src="js/jquery.easing.1.3.js"></script>-->
+	<!-- Bootstrap 
+	<script src="js/bootstrap.min.js"></script>-->
+	<!-- Waypoints 
+	<script src="js/jquery.waypoints.min.js"></script>-->
+	<!-- Waypoints 
+	<script src="js/jquery.stellar.min.js"></script>-->
+	<!-- Flexslider 
+	<script src="js/jquery.flexslider-min.js"></script>-->
+	<!-- Main 
+	<script src="js/main.js"></script>-->
+
+	<script src="../../js/appMenu.js"></script>
+	<script src="../../js/appFooter.js"></script>
+	<script src="../../js/carouselLocations.js"></script>
+	<script src="../../js/heroBanner.js"></script>
 
 </body>
 
