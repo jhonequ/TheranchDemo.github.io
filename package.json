@@ -1,0 +1,12 @@
+{
+  "name": "theranch-web",
+  "version": "1.0.0",
+  "scripts": {
+    "sass": "sass css/style.scss css/styles.css",
+    "sass:watch": "sass --watch css:css",
+    "sass:build": "sass css/style.scss css/styles.css --style=compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}

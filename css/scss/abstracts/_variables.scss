@@ -1,0 +1,168 @@
+// ==================== TIPOGRAFÍA ====================
+$primary-font: 'Open Sans', sans-serif;
+$secondary-font: 'Playfair Display', serif;
+$mono-font: 'Courier New', monospace;
+
+// Tamaños de fuente
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-2xl: 32px;
+$font-size-3xl: 48px;
+
+// ============================================
+// FONT WEIGHTS
+// ============================================
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// ============================================
+// TEXT ALIGNMENT
+// ============================================
+
+$text-align-left: left;
+$text-align-center: center;
+$text-align-right: right;
+$text-align-justify: justify;
+
+// ============================================
+// FLEXBOX/GRID ALIGNMENT (align-items)
+// ============================================
+
+$align-start: flex-start;
+$align-center: center;
+$align-end: flex-end;
+$align-stretch: stretch;
+$align-baseline: baseline;
+
+// ============================================
+// FLEXBOX/GRID JUSTIFICATION (justify-content)
+// ============================================
+
+$justify-start: flex-start;
+$justify-center: center;
+$justify-end: flex-end;
+$justify-between: space-between;
+$justify-around: space-around;
+$justify-evenly: space-evenly;
+
+// ============================================
+// PLACE ITEMS (align-items + justify-content combinados)
+// ============================================
+
+$place-start: start;
+$place-center: center;
+$place-end: end;
+$place-stretch: stretch;
+
+// ============================================
+// FLEX DIRECTION
+// ============================================
+
+$flex-row: row;
+$flex-row-reverse: row-reverse;
+$flex-column: column;
+$flex-column-reverse: column-reverse;
+
+// ============================================
+// FLEX WRAP
+// ============================================
+
+$flex-nowrap: nowrap;
+$flex-wrap: wrap;
+$flex-wrap-reverse: wrap-reverse;
+
+// ==================== ESPACIADOS ====================
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 30px;
+$spacing-xl: 40px;
+$spacing-2xl: 60px;
+$spacing-3xl: 80px;
+$spacing-4xl: 100px;
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+$spacing-2xl: 3rem;     // 48px
+
+
+// ==================== BORDES Y SOMBRAS ====================
+$border-width: 1px;
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-width: 1px;
+
+$box-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+$box-shadow-md: 0 4px 15px rgba(0, 0, 0, 0.4);
+$box-shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.5);
+$box-shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.6);
+
+// ==================== TRANSICIONES ====================
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+$transition-fast: 0.15s ease;
+
+// ==================== Z-INDEX ====================
+$z-fixed: 1000;
+$z-modal: 2000;
+$z-tooltip: 3000;
+
+// ==================== CONTENEDORES ====================
+$container-sm: 540px;
+$container-md: 720px;
+$container-lg: 960px;
+$container-xl: 1140px;
+$container-xxl: 1320px;
+
+// ==================== BREAKPOINTS ====================
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1200px;
+
+// ============================================
+// CARD & GRID VARIABLES
+// ============================================
+
+$card-min-width: 280px;
+$card-border-radius: $border-radius-lg;
+$card-padding: $spacing-2xl;
+$card-gap: $spacing-xl;
+
+// ============================================
+// IMAGE SIZES
+// ============================================
+
+$image-height-sm: 220px;
+$image-height-md: 280px;
+$image-height-lg: 350px;
+
+// ============================================
+// HOVER EFFECTS
+// ============================================
+
+$hover-lift: -10px;
+$hover-scale: 1.02;
+
+// ============================================
+// EVENTOS SECTION
+// ============================================
+
+// Tamaños específicos de eventos
+$events-hero-height: 35em;
+$events-location-height: 350px;
+$events-border-radius-curved: 250px;
+
+// Opacidad overlay eventos
+$events-overlay-opacity: 0.75;
+

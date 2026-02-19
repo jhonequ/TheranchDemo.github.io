@@ -1,0 +1,132 @@
+// ============================================
+// BUTTONS
+// ============================================
+
+@use '../abstracts/colors' as colors;
+@use '../abstracts/variables' as vars;
+
+.btn {
+    display: inline-block;
+    padding: vars.$spacing-lg vars.$spacing-xl;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: vars.$font-weight-semibold;
+    transition: background-color vars.$transition-base, 
+                color vars.$transition-base, 
+                border-color vars.$transition-base, 
+                transform 0.2s ease;
+    border: 2px solid transparent;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+
+    &:active {
+        transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+        outline: 2px solid colors.$gold-color;
+        outline-offset: 4px;
+    }
+}
+
+// ============================================
+// PRIMARY BUTTON
+// ============================================
+
+.btn-primary {
+    background-color: colors.$gold-color;
+    color: colors.$bg-primary;  // ✅ CORRECTO: $bg-primary
+
+    &:hover {
+        background-color: colors.$light-gold;
+        color: colors.$bg-primary;  // ✅ CORRECTO: $bg-primary
+    }
+
+    &:active {
+        background-color: colors.$dark-gold;
+    }
+}
+
+// ============================================
+// SECONDARY BUTTON
+// ============================================
+
+.btn-secondary {
+    background-color: transparent;
+    color: colors.$gold-color;
+    border-color: colors.$gold-color;
+
+    &:hover {
+        background-color: colors.$gold-color;
+        color: colors.$bg-primary;  // ✅ CORRECTO: $bg-primary
+    }
+
+    &:active {
+        background-color: colors.$dark-gold;
+        border-color: colors.$dark-gold;
+    }
+}
+
+// ============================================
+// OUTLINE BUTTON
+// ============================================
+
+.btn-outline {
+    background-color: transparent;
+    color: colors.$text-color;
+    border-color: colors.$text-color;
+
+    &:hover {
+        background-color: colors.$text-color;
+        color: colors.$bg-primary;
+    }
+}
+
+// ============================================
+// GHOST BUTTON
+// ============================================
+
+.btn-ghost {
+    background-color: transparent;
+    color: colors.$gold-color;
+    border: none;
+
+    &:hover {
+        background-color: rgba(212, 175, 55, 0.1);
+        color: colors.$light-gold;
+    }
+}
+
+// ============================================
+// BUTTON SIZES
+// ============================================
+
+.btn-sm {
+    padding: vars.$spacing-sm vars.$spacing-lg;
+    font-size: vars.$font-size-sm;
+}
+
+.btn-lg {
+    padding: vars.$spacing-xl vars.$spacing-2xl;
+    font-size: vars.$font-size-lg;
+}
+
+// ============================================
+// UTILITY CLASSES
+// ============================================
+
+.disabled-link {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.icon-gold {
+    color: colors.$gold-color;
+    margin-right: vars.$spacing-sm;
+}

@@ -1,0 +1,42 @@
+// ==========================================
+// COLOR PALETTE
+// ==========================================
+
+// Background Colors
+$bg-primary: #0a0a0a;           // ✅ AGREGAR ESTA
+$bg-secondary: #1a1a1a;         // ✅ AGREGAR ESTA
+$bg-tertiary: #2d2d2d;          // ✅ AGREGAR ESTA
+
+// Text Colors
+$text-color: #f0f0f0;           // Light text para dark backgrounds
+$text-dark: #2d2d2d;            // Dark text para light backgrounds
+$text-secondary: #a0a0a0;       // Texto secundario desaturado
+$text-muted: #999999;
+
+// Brand Colors
+$gold-color: #D4AF37;           // Gold color from logo
+$light-gold: #E8C468;           // Lighter gold for hover states
+$dark-gold: #B8941F;            // Darker gold for active states
+
+// Accent Colors
+$accent-red: #8B0000;           // Dark red for accents
+$accent-green: #2F4F2F;         // Dark green for success states
+$accent-color: #cccccc;
+$border-color: #333333;
+
+// Utility Colors
+$border-color: rgba(212, 175, 55, 0.2);  // Gold border with transparency
+$shadow-color: rgba(0, 0, 0, 0.5);       // Black shadow
+$overlay-color: rgba(0, 0, 0, 0.7);      // Overlay color
+$overlay-color: rgba(0, 0, 0, 0.7);      // Overlay color
+$natural-green: #2E8B57;
+$natural-brown: #8B4513;
+
+// Colores específicos para la página de eventos
+$events-bg-primary: #0B1D27;
+$events-bg-overlay: #675d36;
+$events-gold: #ede29e;
+$events-gold-dark: #756b44;
+$events-gold-darker: #746f52;
+$events-text-light: #B1B5B8;
+$events-shadow-gold: #FBF9A7;

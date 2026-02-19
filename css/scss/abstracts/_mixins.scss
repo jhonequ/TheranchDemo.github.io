@@ -1,0 +1,51 @@
+// ============================================
+// MIXINS - THE RANCH
+// ============================================
+
+@use 'variables' as vars;
+
+// Responsive breakpoints
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == 'mobile' {
+        @media (max-width: #{vars.$breakpoint-mobile}) {
+            @content;
+        }
+    } @else if $breakpoint == 'tablet' {
+        @media (max-width: #{vars.$breakpoint-tablet}) {
+            @content;
+        }
+    } @else if $breakpoint == 'desktop' {
+        @media (min-width: #{vars.$breakpoint-desktop}) {
+            @content;
+        }
+    } @else if $breakpoint == 'large' {
+        @media (min-width: #{vars.$breakpoint-large}) {
+            @content;
+        }
+    }
+}
+
+// Flexbox center
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Smooth transition
+@mixin smooth-transition($property: all, $duration: vars.$transition-base) {
+    transition: $property $duration;
+}
+
+// Box shadow levels
+@mixin box-shadow($level: 'base') {
+    @if $level == 'sm' {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    } @else if $level == 'base' {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    } @else if $level == 'md' {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    } @else if $level == 'lg' {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+}

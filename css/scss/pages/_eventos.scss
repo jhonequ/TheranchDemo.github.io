@@ -1,0 +1,1815 @@
+// ============================================
+// EVENTOS PAGE - SPECIFIC STYLES
+// ============================================
+
+@use '../abstracts/colors' as colors;
+@use '../abstracts/variables' as vars;
+
+// ============================================
+// BODY BACKGROUND FOR EVENTOS PAGE
+// ============================================
+
+body {
+    background-color: colors.$events-bg-primary; // ✅ Fondo principal para toda la página
+    min-height: 100vh;
+}
+
+// ============================================
+// EVENTS HERO SECTION
+// ============================================
+
+.events-hero {
+    position: relative;
+    width: 100%;
+    height: vars.$events-hero-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: colors.$events-bg-primary; // ✅ Fondo del hero
+    
+    &-slider {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.1);
+            border-image: fill 300px linear-gradient(#0003, #000);
+        }
+    }
+    
+    &-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(colors.$events-bg-overlay, 0.85) 0%,
+            rgba(colors.$events-bg-overlay, 0.75) 50%,
+            rgba(colors.$events-bg-overlay, 0.85) 100%
+        );
+        width: 70%;
+        height: 75%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        box-shadow: 
+            0 20px 60px rgba(0, 0, 0, 0.5),
+            0 0 0 1px rgba(colors.$events-gold, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(2px);
+        
+        &::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(
+                45deg,
+                transparent 0%,
+                rgba(colors.$events-gold, 0.1) 25%,
+                transparent 50%,
+                rgba(colors.$events-gold, 0.1) 75%,
+                transparent 100%
+            );
+            border-radius: 12px;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        
+        @media (max-width: vars.$breakpoint-tablet) {
+            width: 85%;
+            height: 80%;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: vars.$breakpoint-mobile) {
+            width: 90%;
+            height: 85%;
+            border-radius: 6px;
+        }
+    }
+    
+    .container {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    &-content {
+        max-width: 60em;
+        padding: vars.$spacing-lg;
+        border-radius: vars.$border-radius-lg;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        
+        @media (max-width: vars.$breakpoint-tablet) {
+            padding: vars.$spacing-md;
+        }
+        
+        @media (max-width: vars.$breakpoint-mobile) {
+            padding: vars.$spacing-sm;
+        }
+    }
+    
+    &-title {
+        font-size: clamp(1.5rem, 2.5vw, 2.625em);
+        font-family: "Merriweather", serif;
+        font-weight: 700;
+        font-style: italic;
+        color: colors.$events-gold;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: vars.$spacing-md;
+        line-height: 1.2;
+        text-shadow: 
+            0 2px 10px rgba(0, 0, 0, 0.4),
+            0 0 20px rgba(colors.$events-gold, 0.3);
+        letter-spacing: 1px;
+        
+        @media (max-width: vars.$breakpoint-tablet) {
+            font-size: clamp(1.3rem, 2vw, 2.1em);
+            margin-bottom: vars.$spacing-sm;
+        }
+        
+        @media (max-width: vars.$breakpoint-mobile) {
+            font-size: clamp(1.1rem, 1.8vw, 1.6em);
+        }
+    }
+    
+    &-description {
+        width: 100%;
+        max-width: 55em;
+        padding: 0 vars.$spacing-md;
+        text-align: justify;
+        font-family: "Merriweather", serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: clamp(0.85rem, 1vw, 1.125em);
+        color: rgba(colors.$text-color, 0.95);
+        margin-bottom: vars.$spacing-lg;
+        line-height: 1.6;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        
+        @media (max-width: vars.$breakpoint-tablet) {
+            font-size: clamp(0.8rem, 0.95vw, 1.05em);
+            padding: 0 vars.$spacing-sm;
+            margin-bottom: vars.$spacing-md;
+        }
+        
+        @media (max-width: vars.$breakpoint-mobile) {
+            font-size: clamp(0.75rem, 0.9vw, 1em);
+            text-align: left;
+            margin-bottom: vars.$spacing-sm;
+        }
+    }
+    
+    &-stats {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: vars.$spacing-xl;
+        margin-bottom: vars.$spacing-lg;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: vars.$spacing-md 0;
+        
+        @media (max-width: vars.$breakpoint-tablet) {
+            gap: vars.$spacing-lg;
+            margin-bottom: vars.$spacing-md;
+        }
+        
+        @media (max-width: vars.$breakpoint-mobile) {
+            gap: vars.$spacing-md;
+            margin-bottom: vars.$spacing-sm;
+        }
+    }
+    
+    &-cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: vars.$spacing-sm;
+    }
+}
+
+// Estadísticas del Hero
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: vars.$spacing-xs;
+    padding: vars.$spacing-md vars.$spacing-lg;
+    position: relative;
+    transition: transform 0.3s ease;
+    
+    &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: calc(vars.$spacing-lg * -0.5);
+        top: 50%;
+        transform: translateY(-50%);
+        height: 60%;
+        width: 1px;
+        background: linear-gradient(
+            to bottom,
+            transparent,
+            rgba(colors.$events-gold, 0.3),
+            transparent
+        );
+        
+        @media (max-width: vars.$breakpoint-tablet) {
+            display: none;
+        }
+    }
+    
+    &:hover {
+        transform: translateY(-3px);
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        padding: vars.$spacing-sm;
+    }
+    
+    .stat-number {
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: vars.$font-weight-bold;
+        color: colors.$events-gold;
+        font-family: "Merriweather", serif;
+        line-height: 1;
+        text-shadow: 
+            0 2px 8px rgba(0, 0, 0, 0.4),
+            0 0 15px rgba(colors.$events-gold, 0.4);
+        
+        @media (max-width: vars.$breakpoint-mobile) {
+            font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+        }
+    }
+    
+    .stat-label {
+        font-size: clamp(0.7rem, 1vw, 0.875rem);
+        color: colors.$events-text-light;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        font-weight: vars.$font-weight-semibold;
+        text-align: center;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        
+        @media (max-width: vars.$breakpoint-mobile) {
+            font-size: clamp(0.65rem, 0.9vw, 0.8rem);
+            letter-spacing: 0.5px;
+        }
+    }
+}
+
+// Botones de eventos
+.btn-primary {
+    text-align: center;
+    border: none;
+    background: linear-gradient(
+        135deg,
+        colors.$events-gold 0%,
+        colors.$events-gold-dark 100%
+    );
+    color: colors.$events-bg-primary;
+    padding: calc(vars.$spacing-sm * 1.05) calc(vars.$spacing-xl * 1.05);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: vars.$font-weight-bold;
+    font-size: calc(0.95em * 1.05);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: vars.$spacing-sm;
+    box-shadow: 
+        0 4px 15px rgba(colors.$events-gold, 0.3),
+        0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+        );
+        transition: left 0.5s ease;
+    }
+    
+    &:hover::before {
+        left: 100%;
+    }
+    
+    i {
+        font-size: 1.2em;
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        padding: calc(vars.$spacing-xs * 1.05) calc(vars.$spacing-lg * 1.05);
+        font-size: calc(0.85em * 1.05);
+    }
+    
+    &:hover {
+        background: linear-gradient(
+            135deg,
+            colors.$events-gold-dark 0%,
+            colors.$events-gold-darker 100%
+        );
+        transform: translateY(-3px);
+        box-shadow: 
+            0 6px 20px rgba(colors.$events-gold, 0.4),
+            0 3px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 
+            0 3px 10px rgba(colors.$events-gold, 0.3),
+            0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// Niebla decorativa
+.nieblina {
+    width: 100%;
+    height: 10em;
+    margin-top: -0.10%;
+}
+
+// ============================================
+// EVENTS SERVICES SECTION
+// ============================================
+
+.events-services {
+    padding: vars.$spacing-3xl 0;
+    background-color: colors.$events-bg-primary;
+}
+
+.services-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: vars.$spacing-xl;
+    margin-top: vars.$spacing-2xl;
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: vars.$spacing-lg;
+    }
+}
+
+.service-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: vars.$spacing-lg;
+    transition: transform vars.$transition-base;
+    
+    &:hover {
+        transform: translateY(-10px);
+        
+        .service-icon-wrapper img {
+            filter: drop-shadow(0 0 20px colors.$events-shadow-gold);
+            transform: scale(1.1);
+        }
+    }
+}
+
+.service-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin-bottom: vars.$spacing-md;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: brightness(0.9);
+        transition: all vars.$transition-base;
+    }
+}
+
+.service-icon-title {
+    font-size: vars.$font-size-base;
+    color: colors.$text-color;
+    font-weight: vars.$font-weight-semibold;
+    transition: color vars.$transition-base;
+    
+    .service-icon-item:hover & {
+        color: colors.$events-gold;
+    }
+}
+
+// ============================================
+// EVENTS LOCATIONS SECTION
+// ============================================
+
+.events-locations {
+    padding: vars.$spacing-3xl 0;
+    background-color: colors.$events-bg-primary;
+    
+    h1 {
+        margin-top: 2%;
+        margin-bottom: vars.$spacing-3xl;
+        text-transform: uppercase;
+        color: colors.$events-shadow-gold;
+        font-size: 3em;
+        font-family: "Merriweather", serif;
+        font-weight: 700;
+        font-style: italic;
+        text-align: center;
+    }
+}
+
+// Contenedores de ubicación alternados
+.content-img-right,
+.content-img-left {
+    height: vars.$events-location-height;
+    max-width: 100%;
+    color: colors.$text-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 7%;
+    margin-bottom: 12%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        flex-direction: column;
+        height: auto;
+        margin-bottom: vars.$spacing-3xl;
+    }
+}
+
+.info-content-right,
+.info-content-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    padding: vars.$spacing-3xl vars.$spacing-xl;
+    color: colors.$text-color;
+    position: relative;
+    margin: 0 130px;
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        width: 100%;
+        margin: 0;
+        padding: vars.$spacing-xl vars.$spacing-lg;
+    }
+    
+    h2 {
+        color: colors.$events-shadow-gold;
+        text-transform: uppercase;
+        margin-bottom: vars.$spacing-lg;
+        font-size: 2em;
+        font-family: "Merriweather", serif;
+    }
+    
+    h3 {
+        color: colors.$text-color;
+        text-transform: uppercase;
+        margin-bottom: vars.$spacing-lg;
+        margin-top: vars.$spacing-lg;
+        font-size: 1.3em;
+    }
+    
+    p {
+        color: colors.$events-text-light;
+        font-size: 1em;
+        line-height: 1.7;
+        margin-bottom: vars.$spacing-md;
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: vars.$spacing-md 0;
+        
+        li {
+            margin: vars.$spacing-xs 0;
+            color: colors.$events-text-light;
+            padding-left: vars.$spacing-lg;
+            position: relative;
+            
+            &::before {
+                content: '✓';
+                position: absolute;
+                left: 0;
+                color: colors.$events-gold;
+                font-weight: vars.$font-weight-bold;
+            }
+        }
+    }
+}
+
+// Imágenes de locación
+.info-img-right,
+.info-img-left {
+    display: flex;
+    width: 40%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 1em colors.$events-shadow-gold;
+    transition: transform 0.4s cubic-bezier(.4,2,.6,1);
+    object-fit: cover;
+    border-radius: vars.$events-border-radius-curved;
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        width: 100%;
+        height: 300px;
+        border-radius: vars.$border-radius-lg;
+        margin-bottom: vars.$spacing-lg;
+    }
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.info-img-right {
+    justify-content: flex-end;
+    border-top-left-radius: vars.$events-border-radius-curved;
+    border-bottom-left-radius: vars.$events-border-radius-curved;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        border-radius: vars.$border-radius-lg;
+    }
+}
+
+.info-img-left {
+    justify-content: flex-start;
+    border-top-right-radius: vars.$events-border-radius-curved;
+    border-bottom-right-radius: vars.$events-border-radius-curved;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        border-radius: vars.$border-radius-lg;
+    }
+}
+
+// Botones de acción de locación
+.button.cita {
+    width: 130px;
+    background-color: colors.$events-gold;
+    color: colors.$events-bg-primary; // ✅ Color de texto con fondo principal
+    border: none;
+    padding: vars.$spacing-sm vars.$spacing-lg;
+    border-radius: vars.$border-radius-sm;
+    cursor: pointer;
+    font-weight: vars.$font-weight-semibold;
+    transition: all vars.$transition-base;
+    display: inline-block;
+    text-align: center;
+    margin-right: vars.$spacing-md;
+    
+    &:hover {
+        background-color: colors.$events-gold-darker;
+        color: colors.$text-color;
+        transform: translateY(-2px);
+    }
+}
+
+.button.cita1 {
+    width: 180px;
+    background-color: transparent;
+    color: colors.$events-gold;
+    border: 2px solid colors.$events-gold;
+    padding: vars.$spacing-sm vars.$spacing-lg;
+    border-radius: vars.$border-radius-sm;
+    cursor: pointer;
+    font-weight: vars.$font-weight-semibold;
+    transition: all vars.$transition-base;
+    display: inline-block;
+    text-align: center;
+    
+    &:hover {
+        background-color: colors.$events-gold;
+        color: colors.$events-bg-primary; // ✅ Color de texto con fondo principal
+        transform: translateY(-2px);
+    }
+}
+
+// Nota de capacidad
+.capacity-note {
+    font-size: 0.85em;
+    color: colors.$events-text-light;
+    font-style: italic;
+    margin-top: vars.$spacing-md;
+}
+
+// ============================================
+// MAIN CONTENT AREA
+// ============================================
+
+main {
+    background-color: colors.$events-bg-primary; // ✅ Fondo para el main
+    min-height: 100vh;
+}
+
+
+// ============================================
+// EVENTS CEREMONIES SECTION - TIPOS DE CEREMONIAS
+// ============================================
+
+.events-ceremonies {
+    padding: vars.$spacing-4xl 0;
+    background-color: colors.$events-bg-primary;
+    position: relative;
+    
+    // Línea decorativa superior
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(colors.$events-gold, 0.3),
+            transparent
+        );
+    }
+}
+
+// Header de la sección
+.ceremonies-header {
+    text-align: center;
+    margin-bottom: vars.$spacing-3xl;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ceremonies-title {
+    font-size: clamp(2rem, 4vw, 3em);
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: italic;
+    color: colors.$events-gold;
+    text-transform: uppercase;
+    margin-bottom: vars.$spacing-md;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        font-size: clamp(1.8rem, 3.5vw, 2.5em);
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        font-size: clamp(1.5rem, 3vw, 2em);
+    }
+}
+
+.ceremonies-subtitle {
+    font-size: clamp(1rem, 1.5vw, 1.2em);
+    color: colors.$events-text-light;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    line-height: 1.6;
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        font-size: clamp(0.9rem, 1.3vw, 1.1em);
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        font-size: clamp(0.85rem, 1.2vw, 1em);
+    }
+}
+
+// Grid de ceremonias
+.ceremonies-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: vars.$spacing-xl;
+    
+    @media (max-width: vars.$breakpoint-desktop) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: vars.$spacing-lg;
+    }
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: vars.$spacing-md;
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: vars.$spacing-sm;
+    }
+}
+
+// Tarjeta de ceremonia
+.ceremony-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: vars.$spacing-xl;
+    background: linear-gradient(
+        135deg,
+        rgba(colors.$events-bg-overlay, 0.1) 0%,
+        rgba(colors.$events-bg-overlay, 0.05) 100%
+    );
+    border-radius: vars.$border-radius-md;
+    border: 1px solid rgba(colors.$events-gold, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    
+    // Efecto de brillo en hover
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+            circle,
+            rgba(colors.$events-gold, 0.1) 0%,
+            transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    
+    &:hover {
+        transform: translateY(-10px);
+        border-color: rgba(colors.$events-gold, 0.4);
+        box-shadow: 
+            0 10px 30px rgba(0, 0, 0, 0.3),
+            0 0 20px rgba(colors.$events-shadow-gold, 0.2);
+        background: linear-gradient(
+            135deg,
+            rgba(colors.$events-bg-overlay, 0.15) 0%,
+            rgba(colors.$events-bg-overlay, 0.08) 100%
+        );
+        
+        &::before {
+            opacity: 1;
+        }
+        
+        .ceremony-icon img {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 20px colors.$events-shadow-gold);
+        }
+        
+        .ceremony-title {
+            color: colors.$events-shadow-gold;
+            text-shadow: 0 0 10px rgba(colors.$events-shadow-gold, 0.5);
+        }
+    }
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        padding: vars.$spacing-lg;
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        padding: vars.$spacing-md;
+    }
+}
+
+// Icono de ceremonia
+.ceremony-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: vars.$spacing-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        width: 70px;
+        height: 70px;
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        width: 60px;
+        height: 60px;
+        margin-bottom: vars.$spacing-sm;
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: brightness(0.95);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+// Título de ceremonia
+.ceremony-title {
+    font-size: clamp(0.9rem, 1.2vw, 1.2em);
+    font-family: "Merriweather", serif;
+    font-weight: 600;
+    color: colors.$events-gold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    line-height: 1.4;
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        font-size: clamp(0.85rem, 1.1vw, 1.1em);
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        font-size: clamp(0.75rem, 1vw, 0.95em);
+        letter-spacing: 0.3px;
+    }
+}
+
+// ============================================
+// SECTION DIVIDER - SEPARADOR DECORATIVO
+// ============================================
+
+.events-section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: vars.$spacing-4xl 0;
+    gap: vars.$spacing-xl;
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        padding: vars.$spacing-3xl 0;
+        gap: vars.$spacing-lg;
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        padding: vars.$spacing-2xl 0;
+        gap: vars.$spacing-md;
+    }
+}
+
+.divider-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(colors.$events-gold, 0.4) 20%,
+        rgba(colors.$events-gold, 0.6) 50%,
+        rgba(colors.$events-gold, 0.4) 80%,
+        transparent
+    );
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        height: 1px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(colors.$events-shadow-gold, 0.8),
+            transparent
+        );
+        filter: blur(1px);
+    }
+}
+
+.divider-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        135deg,
+        rgba(colors.$events-bg-overlay, 0.3),
+        rgba(colors.$events-bg-overlay, 0.1)
+    );
+    border: 2px solid rgba(colors.$events-gold, 0.4);
+    border-radius: 50%;
+    color: colors.$events-gold;
+    font-size: 1.2rem;
+    box-shadow: 
+        0 0 20px rgba(colors.$events-shadow-gold, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -8px;
+        border: 1px solid rgba(colors.$events-gold, 0.15);
+        border-radius: 50%;
+        animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    i {
+        filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+    }
+}
+
+@keyframes pulse-ring {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(1.15);
+    }
+}
+
+// ============================================
+// LOCATIONS SECTION - DISEÑO TIPO LIBRO CON SEPARACIÓN DE RESPONSABILIDADES
+// ============================================
+
+// Header de locaciones
+.locations-header {
+    text-align: center;
+    margin-bottom: vars.$spacing-3xl;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 vars.$spacing-lg;
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        margin-bottom: vars.$spacing-2xl;
+    }
+}
+
+.locations-title {
+    font-size: clamp(2rem, 3.5vw, 3em);
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: italic;
+    color: colors.$events-shadow-gold;
+    text-transform: uppercase;
+    margin-bottom: vars.$spacing-md;
+    text-shadow: 0 2px 15px rgba(colors.$events-shadow-gold, 0.3);
+    letter-spacing: 2px;
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        font-size: clamp(1.8rem, 3vw, 2.5em);
+        letter-spacing: 1.5px;
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        font-size: clamp(1.6rem, 2.8vw, 2.2em);
+        letter-spacing: 1px;
+    }
+}
+
+.locations-subtitle {
+    font-size: clamp(0.95rem, 1.2vw, 1.1em);
+    color: colors.$events-text-light;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    line-height: 1.6;
+    text-align: center; // ✅ CENTRADO
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        font-size: clamp(0.9rem, 1.1vw, 1em);
+    }
+}
+
+// CONFIGURACIÓN BASE PARA AMBOS LADOS
+.location-item {
+    display: flex;
+    gap: 0;
+    margin-bottom: vars.$spacing-4xl;
+    align-items: stretch;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpLocation 0.8s ease forwards;
+    min-height: 550px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 
+        0 15px 50px rgba(0, 0, 0, 0.4),
+        0 5px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    
+    @media (max-width: vars.$breakpoint-desktop) {
+        min-height: 500px;
+    }
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        flex-direction: column !important;
+        margin-bottom: vars.$spacing-3xl;
+        min-height: auto;
+    }
+    
+    &:hover {
+        box-shadow: 
+            0 20px 60px rgba(0, 0, 0, 0.5),
+            0 10px 30px rgba(colors.$events-gold, 0.2);
+        transform: translateY(-5px);
+    }
+}
+
+// ============================================
+// IMAGEN A LA DERECHA (CONTENIDO | IMAGEN)
+// ============================================
+.location-right {
+    flex-direction: row; // Contenido a la izquierda, imagen a la derecha
+    
+    // Sombra central simulando libro
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(58.33% - 7.5px);
+        width: 15px;
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(0, 0, 0, 0.15) 20%,
+            rgba(0, 0, 0, 0.25) 50%,
+            rgba(0, 0, 0, 0.15) 80%,
+            transparent 100%
+        );
+        z-index: 5;
+        pointer-events: none;
+        
+        @media (max-width: vars.$breakpoint-tablet) {
+            display: none;
+        }
+    }
+    
+    // Contenido del lado izquierdo
+    .location-content {
+        flex: 1.4;
+        padding: vars.$spacing-2xl vars.$spacing-xl;
+        background: linear-gradient(
+            135deg,
+            rgba(colors.$events-bg-overlay, 0.12) 0%,
+            rgba(colors.$events-bg-overlay, 0.06) 50%,
+            rgba(colors.$events-bg-overlay, 0.08) 100%
+        );
+        border: 1px solid rgba(colors.$events-gold, 0.15);
+        border-right: none; // Se conecta con la imagen
+        
+        @media (max-width: vars.$breakpoint-desktop) {
+            padding: vars.$spacing-xl vars.$spacing-lg;
+        }
+        
+        @media (max-width: vars.$breakpoint-tablet) {
+            padding: vars.$spacing-xl;
+            border-right: 1px solid rgba(colors.$events-gold, 0.15);
+            border-bottom: none;
+        }
+        
+        @media (max-width: vars.$breakpoint-mobile) {
+            padding: vars.$spacing-lg vars.$spacing-md;
+        }
+    }
+    
+    // Imagen del lado derecho
+    .location-image {
+        flex: 1;
+        border: 1px solid rgba(colors.$events-gold, 0.15);
+        border-left: none; // Se conecta con el contenido
+        border-radius: 0;
+        
+        @media (max-width: vars.$breakpoint-tablet) {
+            border-left: 1px solid rgba(colors.$events-gold, 0.15);
+            border-top: none;
+        }
+    }
+}
+
+// ============================================
+// IMAGEN A LA IZQUIERDA (IMAGEN | CONTENIDO)
+// ============================================
+.location-left {
+    flex-direction: row; // ✅ Mantener row normal
+    
+    // Sombra central simulando libro (lado derecho de la imagen)
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(41.67% - 7.5px); // ✅ Ahora está del lado de la imagen (1 de flex)
+        width: 15px;
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(0, 0, 0, 0.15) 20%,
+            rgba(0, 0, 0, 0.25) 50%,
+            rgba(0, 0, 0, 0.15) 80%,
+            transparent 100%
+        );
+        z-index: 5;
+        pointer-events: none;
+        
+        @media (max-width: vars.$breakpoint-tablet) {
+            display: none;
+        }
+    }
+    
+    // ✅ Imagen aparece PRIMERO (lado izquierdo)
+    .location-image {
+        flex: 1;
+        order: 1; // ✅ Va primero
+        border: 1px solid rgba(colors.$events-gold, 0.15);
+        border-right: none; // Se conecta con el contenido
+        border-radius: 0;
+        
+        @media (max-width: vars.$breakpoint-tablet) {
+            border-right: 1px solid rgba(colors.$events-gold, 0.15);
+            border-top: none;
+            order: 0;
+        }
+    }
+    
+    // ✅ Contenido aparece SEGUNDO (lado derecho)
+    .location-content {
+        flex: 1.4;
+        order: 2; // ✅ Va segundo
+        padding: vars.$spacing-2xl vars.$spacing-xl;
+        background: linear-gradient(
+            135deg,
+            rgba(colors.$events-bg-overlay, 0.12) 0%,
+            rgba(colors.$events-bg-overlay, 0.06) 50%,
+            rgba(colors.$events-bg-overlay, 0.08) 100%
+        );
+        border: 1px solid rgba(colors.$events-gold, 0.15);
+        border-left: none; // Se conecta con la imagen
+        
+        @media (max-width: vars.$breakpoint-desktop) {
+            padding: vars.$spacing-xl vars.$spacing-lg;
+        }
+        
+        @media (max-width: vars.$breakpoint-tablet) {
+            padding: vars.$spacing-xl;
+            border-left: 1px solid rgba(colors.$events-gold, 0.15);
+            border-bottom: none;
+            order: 0;
+        }
+        
+        @media (max-width: vars.$breakpoint-mobile) {
+            padding: vars.$spacing-lg vars.$spacing-md;
+        }
+    }
+}
+
+// ============================================
+// ESTILOS COMUNES PARA CONTENIDO (AMBOS LADOS)
+// ============================================
+.location-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    // Línea decorativa superior
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+            90deg,
+            rgba(colors.$events-gold, 0.6) 0%,
+            rgba(colors.$events-gold, 0.9) 50%,
+            rgba(colors.$events-gold, 0.6) 100%
+        );
+    }
+    
+    // Textura de papel
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.05) 0%,
+            transparent 70%
+        );
+        opacity: 0.2;
+        pointer-events: none;
+    }
+}
+
+// ============================================
+// ESTILOS COMUNES PARA IMÁGENES (AMBOS LADOS)
+// ============================================
+.location-image {
+    position: relative;
+    overflow: hidden;
+    background: colors.$events-bg-primary;
+    min-height: 550px;
+    
+    @media (max-width: vars.$breakpoint-desktop) {
+        min-height: 500px;
+    }
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        width: 100%;
+        min-height: 400px;
+        flex: none;
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        min-height: 320px;
+    }
+    
+    .location-item:hover & {
+        box-shadow: 
+            0 15px 50px rgba(0, 0, 0, 0.4),
+            0 0 30px rgba(colors.$events-shadow-gold, 0.3);
+    }
+}
+
+// Título de locación
+.location-name {
+    font-family: "Merriweather", serif;
+    font-size: clamp(1.8rem, 2.4vw, 2.6em); // Aumentado de 1.6rem a 1.8rem, de 2.4em a 2.6em
+    font-weight: 700;
+    font-style: italic;
+    color: colors.$events-shadow-gold;
+    text-transform: uppercase;
+    margin-bottom: vars.$spacing-md;
+    letter-spacing: 1.5px;
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        bottom: -8px;
+        left: 0;
+        background: linear-gradient(
+            90deg,
+            colors.$events-gold 0%,
+            rgba(colors.$events-gold, 0.5) 70%,
+            transparent 100%
+        );
+    }
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        font-size: clamp(1.6rem, 2.2vw, 2.2em); // Aumentado de 1.4rem a 1.6rem
+        letter-spacing: 1px;
+    }
+}
+
+// Descripción de locación
+.location-description {
+    font-family: "Merriweather", serif;
+    font-size: clamp(1.1rem, 1.2vw, 1.25em); // Aumentado de 0.9rem a 1.1rem, de 1.05em a 1.25em
+    font-weight: 300;
+    color: colors.$events-text-light;
+    line-height: 1.8;
+    margin-bottom: vars.$spacing-lg;
+    text-align: justify;
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        text-align: left;
+        font-size: clamp(1.05rem, 1.15vw, 1.2em); // Aumentado de 0.85rem a 1.05rem
+    }
+}
+
+// Sección de capacidad
+.location-capacity {
+    margin-top: vars.$spacing-lg;
+    padding: vars.$spacing-md 0;
+    border-top: 1px solid rgba(colors.$events-gold, 0.2);
+    border-bottom: 1px solid rgba(colors.$events-gold, 0.2);
+}
+
+.capacity-title {
+    font-family: "Merriweather", serif;
+    font-size: clamp(1.2rem, 1.3vw, 1.4em); // Aumentado de 1rem a 1.2rem, de 1.2em a 1.4em
+    font-weight: 600;
+    color: colors.$events-gold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: vars.$spacing-sm;
+}
+
+.capacity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+        font-family: "Merriweather", serif;
+        font-size: clamp(1.05rem, 1.15vw, 1.2em); // Aumentado de 0.85rem a 1.05rem, de 1em a 1.2em
+        font-weight: 300;
+        color: colors.$events-text-light;
+        padding: vars.$spacing-xs 0;
+        padding-left: vars.$spacing-md;
+        position: relative;
+        
+        &::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: colors.$events-gold;
+            font-size: 0.7em;
+        }
+        
+        @media (max-width: vars.$breakpoint-mobile) {
+            font-size: clamp(1rem, 1.1vw, 1.15em); // Aumentado de 0.8rem a 1rem
+        }
+    }
+}
+
+.capacity-number {
+    font-weight: 600;
+    color: colors.$events-shadow-gold;
+    font-size: 1.1em;
+}
+
+.capacity-note {
+    font-family: "Merriweather", serif;
+    font-size: clamp(0.95rem, 1.05vw, 1.1em); // Aumentado de 0.75rem a 0.95rem, de 0.9em a 1.1em
+    font-style: italic;
+    color: rgba(colors.$events-text-light, 0.7);
+    margin-top: vars.$spacing-sm;
+}
+
+// Botones de acción
+.location-actions {
+    display: flex;
+    gap: vars.$spacing-md;
+    margin-top: vars.$spacing-lg;
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        flex-direction: column;
+        gap: vars.$spacing-sm;
+    }
+}
+
+.btn-location {
+    flex: 1;
+    padding: vars.$spacing-md vars.$spacing-lg;
+    font-family: "Merriweather", serif;
+    font-size: clamp(0.75rem, 0.85vw, 0.9em); // Restaurado al tamaño original
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: vars.$spacing-sm;
+    
+    i {
+        font-size: 1.1em;
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        padding: vars.$spacing-sm vars.$spacing-md;
+        font-size: clamp(0.8rem, 0.9vw, 0.95em);
+    }
+    
+    &.btn-primary {
+        background: linear-gradient(
+            135deg,
+            colors.$events-gold 0%,
+            colors.$events-gold-dark 100%
+        );
+        color: colors.$events-bg-primary;
+        border: 2px solid colors.$events-gold;
+        
+        &:hover {
+            background: linear-gradient(
+                135deg,
+                colors.$events-shadow-gold 0%,
+                colors.$events-gold 100%
+            );
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(colors.$events-gold, 0.4);
+        }
+        
+        &:active {
+            transform: translateY(0);
+        }
+    }
+    
+    &.btn-secondary {
+        background: transparent;
+        color: colors.$events-gold;
+        border: 2px solid colors.$events-gold;
+        
+        &:hover {
+            background: colors.$events-gold;
+            color: colors.$events-bg-primary;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(colors.$events-gold, 0.3);
+        }
+        
+        &:active {
+            transform: translateY(0);
+        }
+    }
+}
+
+// ============================================
+// CARRUSEL DE IMÁGENES (COMÚN PARA AMBOS LADOS)
+// ============================================
+.image-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(0.98);
+    border-radius: 0;
+    
+    &.active {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 1;
+    }
+    
+    .location-item:hover & {
+        filter: brightness(1.05);
+    }
+}
+
+// Botones de navegación
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(
+        135deg,
+        rgba(colors.$events-bg-overlay, 0.9),
+        rgba(colors.$events-bg-overlay, 0.7)
+    );
+    border: 2px solid rgba(colors.$events-gold, 0.6);
+    border-radius: 50%;
+    color: colors.$events-gold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(colors.$events-shadow-gold, 0.2);
+    backdrop-filter: blur(4px);
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        width: 38px;
+        height: 38px;
+        font-size: 0.95rem;
+    }
+    
+    &:hover {
+        background: linear-gradient(
+            135deg,
+            colors.$events-gold,
+            colors.$events-gold-dark
+        );
+        color: colors.$events-bg-primary;
+        border-color: colors.$events-shadow-gold;
+        box-shadow: 
+            0 6px 20px rgba(colors.$events-gold, 0.4),
+            0 0 30px rgba(colors.$events-shadow-gold, 0.3);
+        transform: translateY(-50%) scale(1.1);
+    }
+    
+    &:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+}
+
+.carousel-prev {
+    left: 20px;
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        left: 10px;
+    }
+}
+
+.carousel-next {
+    right: 20px;
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        right: 10px;
+    }
+}
+
+// Indicadores
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+    background: rgba(colors.$events-bg-overlay, 0.7);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(colors.$events-gold, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &:hover {
+        background: rgba(colors.$events-gold, 0.7);
+        transform: scale(1.2);
+    }
+    
+    &.active {
+        background: colors.$events-gold;
+        box-shadow: 0 0 10px rgba(colors.$events-shadow-gold, 0.6);
+        
+        &::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border: 2px solid rgba(colors.$events-gold, 0.3);
+            border-radius: 50%;
+        }
+    }
+}
+
+// Overlay de imagen
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(colors.$events-bg-primary, 0.3) 0%,
+        transparent 50%,
+        rgba(colors.$events-gold, 0.1) 100%
+    );
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.location-item:hover .image-overlay {
+    opacity: 0.3;
+}
+
+// Animaciones del carrusel
+.carousel-img.flipping-out {
+    animation: flipOut 0.4s ease forwards;
+}
+
+.carousel-img.flipping-in {
+    animation: flipIn 0.4s ease forwards;
+}
+
+@keyframes flipOut {
+    from {
+        opacity: 1;
+        transform: scale(1) rotateY(0deg);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8) rotateY(90deg);
+    }
+}
+
+@keyframes flipIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) rotateY(-90deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotateY(0deg);
+    }
+}
+
+@keyframes fadeInUpLocation {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// ============================================
+// HERO SLIDER - BANNER AUTOMÁTICO
+// ============================================
+
+.events-hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    
+    &.active {
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+// Botones de navegación del hero
+.hero-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(colors.$events-gold, 0.2);
+    border: 2px solid rgba(colors.$events-gold, 0.5);
+    color: colors.$events-gold;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    backdrop-filter: blur(5px);
+    
+    &:hover {
+        background: rgba(colors.$events-gold, 0.4);
+        border-color: colors.$events-gold;
+        transform: translateY(-50%) scale(1.1);
+    }
+    
+    &:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+    
+    @media (max-width: vars.$breakpoint-tablet) {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
+
+.hero-prev {
+    left: 20px;
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        left: 10px;
+    }
+}
+
+.hero-next {
+    right: 20px;
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        right: 10px;
+    }
+}
+
+// Indicadores del hero
+.hero-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 12px;
+    background: rgba(colors.$events-bg-primary, 0.5);
+    padding: 10px 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        bottom: 20px;
+        gap: 8px;
+        padding: 8px 15px;
+    }
+}
+
+.hero-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(colors.$events-gold, 0.3);
+    border: 2px solid rgba(colors.$events-gold, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: rgba(colors.$events-gold, 0.5);
+        transform: scale(1.2);
+    }
+    
+    &.active {
+        background: colors.$events-gold;
+        border-color: colors.$events-shadow-gold;
+        box-shadow: 0 0 10px rgba(colors.$events-shadow-gold, 0.5);
+    }
+    
+    @media (max-width: vars.$breakpoint-mobile) {
+        width: 10px;
+        height: 10px;
+    }
+}

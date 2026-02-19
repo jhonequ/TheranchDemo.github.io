@@ -1,0 +1,134 @@
+// ============================================
+// THE RANCH - MAIN STYLESHEET
+// ============================================
+
+// ============================================
+// 1. ABSTRACTS
+// ============================================
+@use 'scss/abstracts/colors' as colors;
+@use 'scss/abstracts/variables' as vars;
+@use 'scss/abstracts/mixins' as mixins;
+
+// ============================================
+// 2. BASE
+// ============================================
+@use 'scss/base/reset';
+@use 'scss/base/typography';
+@use 'scss/base/global';
+@use 'scss/base/animations';
+
+// ============================================
+// 3. COMPONENTS
+// ============================================
+@use 'scss/components/menuStyle';
+@use 'scss/components/buttons';
+@use 'scss/components/footer'; 
+
+// ============================================
+// 4. PAGES
+// ============================================
+@use 'scss/pages/index';
+@use 'scss/pages/eventos';
+@use 'scss/pages/gallery';
+
+// ============================================
+// CSS CUSTOM PROPERTIES (Variables CSS)
+// ============================================
+
+:root {
+    // ✅ CORREGIR: Cambiar $primary-bg por $bg-primary
+    --primary-bg: #{colors.$bg-primary};
+    --secondary-bg: #{colors.$bg-secondary};
+    --tertiary-bg: #{colors.$bg-tertiary};
+    
+    --text-color: #{colors.$text-color};
+    --text-dark: #{colors.$text-dark};
+    --text-secondary: #{colors.$text-secondary};
+    
+    --gold-color: #{colors.$gold-color};
+    --light-gold: #{colors.$light-gold};
+    --dark-gold: #{colors.$dark-gold};
+    
+    --border-color: #{colors.$border-color};
+    --shadow-color: #{colors.$shadow-color};
+    --overlay-color: #{colors.$overlay-color};
+    
+    // Spacing
+    --spacing-xs: #{vars.$spacing-xs};
+    --spacing-sm: #{vars.$spacing-sm};
+    --spacing-md: #{vars.$spacing-md};
+    --spacing-lg: #{vars.$spacing-lg};
+    --spacing-xl: #{vars.$spacing-xl};
+    --spacing-2xl: #{vars.$spacing-2xl};
+    --spacing-3xl: #{vars.$spacing-3xl};
+    --spacing-4xl: #{vars.$spacing-4xl};
+    
+    // Transitions
+    --transition-base: #{vars.$transition-base};
+    --transition-slow: #{vars.$transition-slow};
+    --transition-fast: #{vars.$transition-fast};
+}
+
+// ============================================
+// ADDITIONAL SECTIONS (Temporal - Mover a archivos separados)
+// ============================================
+
+// About Section
+.about-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: colors.$bg-primary;  // ✅ CAMBIO AQUÍ
+}
+
+.about-grid {
+    display: flex;
+    align-items: center;
+    gap: vars.$spacing-2xl;
+    flex-wrap: wrap;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+// Event Highlights
+.event-highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: vars.$spacing-lg;
+    margin-top: vars.$spacing-2xl;
+}
+
+// Hotel Plans
+.hotel-plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: vars.$spacing-lg;
+    margin-top: vars.$spacing-2xl;
+}
+
+// Restaurant
+.restaurant-section {
+    background-color: colors.$bg-primary;  // ✅ CAMBIO AQUÍ
+}
+
+.restaurant-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: vars.$spacing-lg;
+    margin-top: vars.$spacing-2xl;
+}
+
+// Services
+.services-additional-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  // ✅ CORRECCIÓN: minmax (no minmin)
+    gap: vars.$spacing-lg;
+    margin-top: vars.$spacing-2xl;
+}
+
+// Contact
+.contact-section {
+    background-color: colors.$bg-secondary;  // ✅ CAMBIO AQUÍ
+}
