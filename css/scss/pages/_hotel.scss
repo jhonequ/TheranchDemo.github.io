@@ -1,0 +1,750 @@
+// ============================================
+// HOTEL PAGE STYLES - Elegant Design
+// Inspired by luxury hotel aesthetics
+// ============================================
+
+@use '../abstracts/variables' as vars;
+
+// ============================================
+// HOTEL COLOR PALETTE
+// ============================================
+
+$hotel-gold-elegant: #C69C6D;
+$hotel-gold-darker: #A0784D;
+$hotel-green-deep: #3A5A40;
+$hotel-green-darker: #2E4731;
+$hotel-neutral-light: #FDFDFD;
+$hotel-neutral-dark: #333333;
+$hotel-neutral-soft-gray: #EFEFEF;
+$hotel-text-medium: #666666;
+$hotel-text-light: #555555;
+
+// ============================================
+// BODY OVERRIDE FOR HOTEL PAGE
+// ============================================
+
+body {
+    background-color: $hotel-neutral-soft-gray;
+}
+
+// ============================================
+// HOTEL HERO BANNER
+// ============================================
+
+.hotel-hero-section {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../../assets/images/seccion_hotel/Cuarto1.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    margin-top: 80px; // Space for fixed header
+
+    @media (max-width: 768px) {
+        height: 300px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: -1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 20;
+        text-align: center;
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            margin: 0;
+
+            @media (max-width: 768px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: white;
+            margin-top: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+            @media (max-width: 768px) {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+// ============================================
+// ROOM SEARCH BAR
+// ============================================
+
+.room-search-bar {
+    background-color: $hotel-neutral-light;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 2rem;
+    margin-top: -80px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+        padding: 1.5rem;
+        margin-top: -60px;
+    }
+
+    input,
+    select {
+        border: 1px solid #E0E0E0;
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        color: $hotel-neutral-dark;
+        flex-grow: 1;
+        min-width: 150px;
+        font-family: vars.$primary-font;
+
+        &:focus {
+            outline: none;
+            border-color: $hotel-gold-elegant;
+        }
+    }
+
+    button {
+        background-color: $hotel-gold-elegant;
+        color: white;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-family: vars.$primary-font;
+
+        &:hover {
+            background-color: $hotel-gold-darker;
+        }
+    }
+}
+
+// ============================================
+// HOTEL INTRO SECTION
+// ============================================
+
+.hotel-intro-section {
+    background-color: $hotel-neutral-light;
+    padding: 3rem 0 2rem;
+
+    .section-header {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        color: $hotel-gold-elegant;
+        margin-bottom: 1rem;
+        font-family: vars.$secondary-font;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    .section-description {
+        font-size: 1.1rem;
+        color: $hotel-neutral-dark;
+        line-height: 1.8;
+    }
+}
+
+// ============================================
+// ROOMS SECTION
+// ============================================
+
+.rooms-section {
+    background-color: $hotel-neutral-soft-gray;
+    padding: 3rem 0 4rem;
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        max-width: 1400px;
+        margin: 0 auto;
+
+        @media (max-width: 968px) {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+}
+
+// ============================================
+// ROOM CARD
+// ============================================
+
+.room-card {
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    }
+}
+
+// ============================================
+// ROOM IMAGE
+// ============================================
+
+.room-card-image-container {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+
+    @media (max-width: 768px) {
+        height: 300px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+}
+
+.room-card:hover .room-card-image-container img {
+    transform: scale(1.05);
+}
+
+// Room Badge
+.room-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: $hotel-gold-elegant;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+
+    &.room-badge-premium {
+        background-color: $hotel-green-deep;
+    }
+
+    &.room-badge-luxury {
+        background: linear-gradient(135deg, $hotel-gold-elegant, $hotel-gold-darker);
+    }
+
+    &.room-badge-family {
+        background-color: #2E8B57;
+    }
+}
+
+// ============================================
+// ROOM CONTENT
+// ============================================
+
+.room-card-info {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (max-width: 640px) {
+        padding: 1.5rem;
+    }
+}
+
+.room-header {
+    margin-bottom: 1rem;
+}
+
+.room-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: $hotel-gold-elegant;
+    margin-bottom: 0.5rem;
+    font-family: vars.$secondary-font;
+
+    @media (max-width: 768px) {
+        font-size: 1.5rem;
+    }
+}
+
+// Room Price
+.room-price {
+    font-family: vars.$secondary-font;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $hotel-green-deep;
+    margin-bottom: 0.5rem;
+
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
+
+    span {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: $hotel-text-medium;
+    }
+}
+
+// Room Description
+.room-description {
+    color: $hotel-neutral-dark;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+// ============================================
+// ROOM AMENITIES
+// ============================================
+
+.room-amenities {
+    margin-top: 1rem;
+
+    h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $hotel-gold-elegant;
+        margin-bottom: 0.75rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+
+        @media (max-width: 640px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        font-size: 0.95rem;
+        color: $hotel-text-light;
+
+        i {
+            color: $hotel-gold-elegant;
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+            min-width: 20px;
+        }
+    }
+}
+
+// ============================================
+// ROOM ACTIONS
+// ============================================
+
+.room-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    .btn {
+        width: 100%;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        font-size: 1.1rem;
+        border: none;
+        cursor: pointer;
+        font-family: vars.$primary-font;
+
+        &.btn-primary {
+            background-color: $hotel-green-deep;
+            color: white;
+
+            &:hover {
+                background-color: $hotel-green-darker;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(58, 90, 64, 0.3);
+            }
+        }
+
+        i {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+// ============================================
+// HOTEL PLANS SECTION
+// ============================================
+
+.hotel-plans-section {
+    background-color: $hotel-neutral-light;
+    padding: 4rem 0;
+
+    .section-header {
+        max-width: 900px;
+        margin: 0 auto 3rem;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        color: $hotel-gold-elegant;
+        margin-bottom: 1rem;
+        font-family: vars.$secondary-font;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    .section-description {
+        font-size: 1.1rem;
+        color: $hotel-neutral-dark;
+        line-height: 1.8;
+    }
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+// ============================================
+// PLAN CARD
+// ============================================
+
+.plan-card {
+    background-color: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    border: 2px solid transparent;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    &.plan-featured {
+        border-color: $hotel-gold-elegant;
+        transform: scale(1.05);
+
+        @media (max-width: 1024px) {
+            transform: scale(1);
+        }
+
+        &:hover {
+            transform: scale(1.08) translateY(-5px);
+
+            @media (max-width: 1024px) {
+                transform: translateY(-5px);
+            }
+        }
+    }
+}
+
+.plan-badge-top {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $hotel-gold-elegant;
+    color: white;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.plan-header {
+    margin-bottom: 2rem;
+}
+
+.plan-title {
+    font-size: 2rem;
+    color: $hotel-gold-elegant;
+    margin-bottom: 1.5rem;
+    font-family: vars.$secondary-font;
+    font-weight: 700;
+}
+
+.plan-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+
+    .price-label {
+        font-size: 0.85rem;
+        color: $hotel-text-medium;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .price-amount {
+        font-size: 2.5rem;
+        color: $hotel-green-deep;
+        font-weight: 700;
+        font-family: vars.$secondary-font;
+    }
+
+    .price-period {
+        font-size: 0.9rem;
+        color: $hotel-text-medium;
+    }
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    text-align: left;
+
+    li {
+        padding: 0.75rem 0;
+        color: $hotel-neutral-dark;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.95rem;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        i {
+            color: $hotel-gold-elegant;
+            font-size: 1.1rem;
+            min-width: 20px;
+        }
+    }
+}
+
+.plan-action {
+    margin-top: 2rem;
+
+    .btn {
+        width: 100%;
+        padding: 0.85rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        font-family: vars.$primary-font;
+
+        &.btn-primary {
+            background-color: $hotel-green-deep;
+            color: white;
+
+            &:hover {
+                background-color: $hotel-green-darker;
+            }
+        }
+
+        &.btn-secondary {
+            background-color: transparent;
+            color: $hotel-green-deep;
+            border: 2px solid $hotel-green-deep;
+
+            &:hover {
+                background-color: $hotel-green-deep;
+                color: white;
+            }
+        }
+    }
+}
+
+// ============================================
+// HOTEL CTA SECTION
+// ============================================
+
+.hotel-cta-section {
+    background: linear-gradient(135deg, $hotel-green-deep 0%, $hotel-green-darker 100%);
+    padding: 4rem 0;
+    text-align: center;
+    color: white;
+
+    .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 1rem;
+
+        h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            font-family: vars.$secondary-font;
+
+            @media (max-width: 768px) {
+                font-size: 2rem;
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-family: vars.$primary-font;
+
+            &.btn-primary {
+                background-color: $hotel-gold-elegant;
+                color: white;
+
+                &:hover {
+                    background-color: $hotel-gold-darker;
+                    transform: translateY(-2px);
+                }
+            }
+
+            &.btn-secondary {
+                background-color: white;
+                color: $hotel-green-deep;
+
+                &:hover {
+                    background-color: $hotel-neutral-soft-gray;
+                    transform: translateY(-2px);
+                }
+            }
+
+            i {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+// ============================================
+// WHATSAPP FLOATING BUTTON
+// ============================================
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: $hotel-green-deep;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    &:hover {
+        background-color: $hotel-green-darker;
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    i {
+        font-size: 32px;
+    }
+
+    @media (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+
+        i {
+            font-size: 26px;
+        }
+    }
+}

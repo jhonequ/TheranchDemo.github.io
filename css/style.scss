@@ -30,6 +30,8 @@
 @use 'scss/pages/index';
 @use 'scss/pages/eventos';
 @use 'scss/pages/gallery';
+@use 'scss/pages/restaurante';
+@use 'scss/pages/hotel';
 
 // ============================================
 // CSS CUSTOM PROPERTIES (Variables CSS)
@@ -40,6 +42,7 @@
     --primary-bg: #{colors.$bg-primary};
     --secondary-bg: #{colors.$bg-secondary};
     --tertiary-bg: #{colors.$bg-tertiary};
+    
     
     --text-color: #{colors.$text-color};
     --text-dark: #{colors.$text-dark};

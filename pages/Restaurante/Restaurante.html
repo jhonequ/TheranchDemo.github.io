@@ -1,181 +1,851 @@
-<!-- Diseño tipo restaurante elegante, inspirado en la imagen proporcionada -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurante - The Ranch</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    body {
-      background-color: #1a2a32;
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Restaurante Gardens - Gastronomía Única | The Ranch Hotel Boutique</title>
+    <meta name="description" content="Descubre la experiencia gastronómica de The Ranch. Cocina de autor con ingredientes frescos, platos signature del chef y sabores locales en un ambiente natural único.">
+    <meta name="keywords" content="restaurante medellin, gastronomía antioquia, cocina de autor, the ranch, restaurante boutique, chef signature, comida gourmet">
+    <meta name="author" content="The Ranch Hotel Boutique">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theranch.com/restaurante">
+    <meta property="og:title" content="Restaurante Gardens - The Ranch Hotel Boutique">
+    <meta property="og:description" content="Experiencia gastronómica única con cocina de autor y sabores locales">
+    <meta property="og:image" content="../../assets/images/seccion_restaurante/bbig1.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Restaurante Gardens - The Ranch">
+    <meta name="twitter:description" content="Gastronomía única en ambiente natural">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../css/style.css">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://theranch.com/restaurante">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Restaurante Gardens - The Ranch",
+      "image": "https://theranch.com/assets/images/seccion_restaurante/bbig1.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Vereda Pantanillo, Santa Elena",
+        "addressLocality": "Medellín",
+        "addressRegion": "Antioquia",
+        "postalCode": "050017",
+        "addressCountry": "CO"
+      },
+      "telephone": "+573233454530",
+      "servesCuisine": "Cocina de Autor, Colombiana, Internacional",
+      "priceRange": "$$-$$$",
+      "openingHours": "Mo-Su 08:00-22:00"
     }
-    .gold-text {
-      color: #C69C6D;
-    }
-    .gold-bg {
-      background-color: #C69C6D;
-    }
-    .gold-border {
-      border-color: #C69C6D;
-    }
-  </style>
+    </script>
 </head>
-<body class="font-serif text-white">
 
-  <!-- Header -->
-  <header class="w-full bg-[#16222A] py-6 px-8 flex justify-between items-center shadow-lg">
-    <div class="flex items-center gap-3">
-      <img src="https://placehold.co/48x48/222/fff?text=R" alt="Logo" class="rounded-full border-2 gold-border">
-      <span class="text-2xl font-bold gold-text tracking-widest">RESTRO</span>
-    </div>
-    <nav class="hidden md:flex gap-8 text-lg">
-      <a href="#" class="hover:text-[#C69C6D] transition">Home</a>
-      <a href="#" class="hover:text-[#C69C6D] transition">About</a>
-      <a href="#" class="hover:text-[#C69C6D] transition">Menu</a>
-      <a href="#" class="hover:text-[#C69C6D] transition">Services</a>
-      <a href="#" class="hover:text-[#C69C6D] transition">Contact</a>
-    </nav>
-    <button class="gold-bg text-white px-5 py-2 rounded font-semibold hover:bg-[#a0784d] transition">Book a Table</button>
-  </header>
+<body>
+    <!-- ============================================ -->
+    <!-- HEADER -->
+    <!-- ============================================ -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../assets/logos/logos-the-ranch.png" alt="The Ranch Group Logo">
+                </a>
+            </div>
 
-  <!-- Hero Section -->
-  <section class="relative bg-[#1a2a32] overflow-hidden">
-    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Restaurante" class="absolute inset-0 w-full h-full object-cover opacity-30 z-0">
-    <div class="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center py-16 px-4">
-      <div class="flex-1">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          <span class="gold-text">The Best Food</span><br>
-          For the Best Moments
-        </h2>
-        <p class="mb-8 text-lg text-gray-200">Bienvenido a nuestro restaurante, donde la elegancia y el sabor se encuentran para crear experiencias inolvidables.</p>
-        <a href="#" class="inline-block gold-bg text-white px-8 py-3 rounded font-semibold hover:bg-[#a0784d] transition">Ver menú</a>
-      </div>
-      <div class="flex-1 flex justify-center mt-10 md:mt-0">
-        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Chef" class="rounded-xl shadow-2xl border-4 gold-border w-72 h-80 object-cover bg-[#222]">
-      </div>
-    </div>
-  </section>
+            <nav class="main-nav">
+                <!-- Botón hamburguesa -->
+                <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
 
-  <!-- Features Section -->
-  <section class="bg-[#19232b] py-16">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 px-4">
-      <div class="flex-1 flex justify-center">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=300&q=80" alt="Chef" class="rounded-full border-4 gold-border w-48 h-48 object-cover bg-[#222]">
-      </div>
-      <div class="flex-1">
-        <h3 class="text-2xl font-bold mb-4">You will Find Happiness and Food Here.</h3>
-        <ul class="space-y-4 text-lg">
-          <li class="flex items-center gap-3">
-            <i class="fas fa-leaf gold-text"></i>
-            Only fresh food: Ingredientes seleccionados y frescos cada día.
-          </li>
-          <li class="flex items-center gap-3">
-            <i class="fas fa-certificate gold-text"></i>
-            Quality certified: Cocina de autor y estándares internacionales.
-          </li>
-          <li class="flex items-center gap-3">
-            <i class="fas fa-utensils gold-text"></i>
-            Wide range of dishes: Platos internacionales y especialidades locales.
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+                <!-- Menú de navegación -->
+                <ul class="nav-menu" id="navMenu">
+                    <!-- Botón cerrar dentro del menú -->
+                    <li class="nav-close-wrapper">
+                        <button class="nav-close" id="navClose" aria-label="Cerrar menú">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </li>
 
-  <!-- Special Dishes Section -->
-  <section class="bg-[#1a2a32] py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <h3 class="text-3xl font-bold text-center mb-10">Try our Special Dishes</h3>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div class="bg-[#222] rounded-xl overflow-hidden shadow-lg">
-          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Chicken Fry" class="w-full h-40 object-cover">
-          <div class="p-4">
-            <h4 class="font-bold gold-text mb-2">Chicken Fry</h4>
-            <p class="text-gray-300 text-sm">Crujiente y jugoso, servido con salsa especial.</p>
-          </div>
+                    <li><a href="../../index.html#inicio">INICIO</a></li>
+                    <li><a href="../Eventos/Eventos.html">EVENTOS</a></li>
+                    <li><a href="../../index.html#hoteleria">HOTELERÍA</a></li>
+                    <li><a href="Restaurante.html" class="active">RESTAURANTE</a></li>
+                    <li><a href="../../index.html#servicios-adicionales">SERVICIOS ESPECIALES</a></li>
+                    <li><a href="../../index.html#contacto">CONTACTO</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="bg-[#222] rounded-xl overflow-hidden shadow-lg">
-          <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Seafood" class="w-full h-40 object-cover">
-          <div class="p-4">
-            <h4 class="font-bold gold-text mb-2">Seafood Mix</h4>
-            <p class="text-gray-300 text-sm">Delicias del mar con toque gourmet.</p>
-          </div>
-        </div>
-        <div class="bg-[#222] rounded-xl overflow-hidden shadow-lg">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Soup" class="w-full h-40 object-cover">
-          <div class="p-4">
-            <h4 class="font-bold gold-text mb-2">Creamy Soup</h4>
-            <p class="text-gray-300 text-sm">Sopa cremosa con vegetales frescos.</p>
-          </div>
-        </div>
-        <div class="bg-[#222] rounded-xl overflow-hidden shadow-lg">
-          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Sandwich" class="w-full h-40 object-cover">
-          <div class="p-4">
-            <h4 class="font-bold gold-text mb-2">Special Sandwich</h4>
-            <p class="text-gray-300 text-sm">Pan artesanal, papas y salsa de la casa.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Menu Section -->
-  <section class="bg-[#19232b] py-16">
-    <div class="max-w-5xl mx-auto px-4">
-      <h3 class="text-3xl font-bold text-center mb-8">Choose Your Specials Menu</h3>
-      <div class="flex flex-wrap justify-center gap-8 mb-8">
-        <span class="flex flex-col items-center gold-text"><i class="fas fa-coffee text-2xl mb-1"></i>Breakfast</span>
-        <span class="flex flex-col items-center gold-text"><i class="fas fa-bread-slice text-2xl mb-1"></i>Starters</span>
-        <span class="flex flex-col items-center gold-text"><i class="fas fa-drumstick-bite text-2xl mb-1"></i>Main Course</span>
-        <span class="flex flex-col items-center gold-text"><i class="fas fa-ice-cream text-2xl mb-1"></i>Desserts</span>
-        <span class="flex flex-col items-center gold-text"><i class="fas fa-wine-glass text-2xl mb-1"></i>Drinks</span>
-      </div>
-      <div class="bg-[#222] rounded-xl p-6 shadow-lg">
-        <table class="w-full text-left">
-          <thead>
-            <tr class="border-b border-gray-600">
-              <th class="py-2 gold-text">Plato</th>
-              <th class="py-2 gold-text">Descripción</th>
-              <th class="py-2 gold-text">Precio</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b border-gray-700">
-              <td class="py-2">Eco Chicken Filet Garlic</td>
-              <td class="py-2 text-gray-300">Filete de pollo con ajo, ensalada fresca</td>
-              <td class="py-2 gold-text">$17</td>
-            </tr>
-            <tr class="border-b border-gray-700">
-              <td class="py-2">Seafood Pasta</td>
-              <td class="py-2 text-gray-300">Pasta con mariscos y salsa cremosa</td>
-              <td class="py-2 gold-text">$21</td>
-            </tr>
-            <tr>
-              <td class="py-2">Special Soup</td>
-              <td class="py-2 text-gray-300">Sopa del día con ingredientes frescos</td>
-              <td class="py-2 gold-text">$11</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
+    <!-- Overlay para cerrar menú -->
+    <div class="nav-overlay" id="navOverlay"></div>
 
-  <!-- Footer -->
-  <footer class="bg-[#16222A] text-gray-400 py-8 mt-10">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-4">
-      <div class="mb-4 md:mb-0">
-        <span class="gold-text font-bold text-lg">RESTRO</span> &copy; 2025. Designed by Juvel Khan
-      </div>
-      <div class="flex gap-4">
-        <a href="#" class="hover:text-[#C69C6D]"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="hover:text-[#C69C6D]"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="hover:text-[#C69C6D]"><i class="fab fa-google-plus-g"></i></a>
-        <a href="#" class="hover:text-[#C69C6D]"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-  </footer>
+    <!-- ============================================ -->
+    <!-- HERO SECTION - RESTAURANTE -->
+    <!-- ============================================ -->
+    <section class="events-hero restaurant-hero">
+        <div class="events-hero-slider">
+            <div class="hero-slide active">
+                <img src="../../assets/images/seccion_restaurante/bbig1.jpg" alt="Restaurante Gardens The Ranch - Platos Signature">
+            </div>
+            <div class="hero-slide">
+                <img src="../../assets/images/seccion_restaurante/bbig8.jpg" alt="Ambiente acogedor Restaurante The Ranch">
+            </div>
+            <div class="hero-slide">
+                <img src="../../assets/images/seccion_restaurante/bbig3.jpg" alt="Experiencia gastronómica The Ranch">
+            </div>
+            <div class="hero-slide">
+                <img src="../../assets/images/seccion_restaurante/bbig5.jpg" alt="Ingredientes frescos The Ranch">
+            </div>
+        </div>
+
+        <!-- Botones de navegación -->
+        <button class="hero-nav-btn hero-prev" aria-label="Imagen anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="hero-nav-btn hero-next" aria-label="Siguiente imagen">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Indicadores -->
+        <div class="hero-indicators">
+            <span class="hero-indicator active" data-slide="0"></span>
+            <span class="hero-indicator" data-slide="1"></span>
+            <span class="hero-indicator" data-slide="2"></span>
+            <span class="hero-indicator" data-slide="3"></span>
+        </div>
+
+        <div class="events-hero-overlay"></div>
+
+        <div class="container">
+            <div class="events-hero-content">
+                <h1 class="events-hero-title">Gastronomía Única: Creaciones del Chef</h1>
+                <p class="events-hero-description">
+                    En The Ranch, el arte culinario se encuentra con la naturaleza. Nuestro restaurante Gardens te invita a
+                    un viaje de sabores, donde la gastronomía única de la zona se transforma en creaciones propias
+                    de nuestro chef, utilizando ingredientes frescos y de temporada.
+                </p>
+
+                <div class="events-hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Platos en Menú</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Ingredientes Frescos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5★</span>
+                        <span class="stat-label">Experiencia Gourmet</span>
+                    </div>
+                </div>
+
+                <div class="events-hero-cta">
+                    <a href="#menu" class="btn btn-primary">
+                        <span>Ver Nuestro Menú</span>
+                        <i class="fas fa-utensils"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola,%20quiero%20reservar%20en%20el%20restaurante" 
+                       class="btn btn-secondary" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Reservar Mesa</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- INTRODUCCIÓN - FILOSOFÍA CULINARIA -->
+    <!-- ============================================ -->
+    <section class="section about-section">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">Donde los Sabores Cuentan Historias</h2>
+                <p class="section-description">
+                    Nuestro chef fusiona tradición y modernidad para crear experiencias gastronómicas únicas. 
+                    Cada plato es una obra de arte elaborada con pasión, utilizando productos locales de la más alta calidad.
+                </p>
+            </header>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3 class="highlight-title">Nuestra Propuesta Gastronómica</h3>
+                    <ul class="features-list">
+                        <li>
+                            <i class="fas fa-leaf icon-gold"></i>
+                            <div>
+                                <strong>Ingredientes Locales Frescos</strong>
+                                <p>Trabajamos con productores locales para garantizar la frescura y calidad de cada ingrediente.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-award icon-gold"></i>
+                            <div>
+                                <strong>Cocina de Autor</strong>
+                                <p>Platos signature creados exclusivamente por nuestro chef con técnicas innovadoras.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-seedling icon-gold"></i>
+                            <div>
+                                <strong>Sostenibilidad</strong>
+                                <p>Comprometidos con prácticas sostenibles y responsables con el medio ambiente.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-wine-glass icon-gold"></i>
+                            <div>
+                                <strong>Maridaje Perfecto</strong>
+                                <p>Selección curada de vinos y bebidas para complementar cada experiencia.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="../../assets/images/seccion_restaurante/page2_img1.jpg" alt="Chef preparando platos en The Ranch">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- MENÚ - CATEGORÍAS Y PLATOS -->
+    <!-- ============================================ -->
+    <section id="menu" class="section menu-section">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">Nuestro Menú</h2>
+                <p class="section-description">
+                    Explora nuestra selección de platos cuidadosamente elaborados, donde cada bocado es una celebración de sabores.
+                </p>
+            </header>
+
+            <!-- Tabs/Categorías -->
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-category="all">
+                    <i class="fas fa-utensils"></i>
+                    <span>Todos</span>
+                </button>
+                <button class="menu-tab" data-category="breakfast">
+                    <i class="fas fa-coffee"></i>
+                    <span>Desayunos</span>
+                </button>
+                <button class="menu-tab" data-category="starters">
+                    <i class="fas fa-bread-slice"></i>
+                    <span>Entradas</span>
+                </button>
+                <button class="menu-tab" data-category="mains">
+                    <i class="fas fa-drumstick-bite"></i>
+                    <span>Platos Fuertes</span>
+                </button>
+                <button class="menu-tab" data-category="desserts">
+                    <i class="fas fa-ice-cream"></i>
+                    <span>Postres</span>
+                </button>
+                <button class="menu-tab" data-category="drinks">
+                    <i class="fas fa-wine-glass"></i>
+                    <span>Bebidas</span>
+                </button>
+            </div>
+
+            <!-- Grid de Platos -->
+            <div class="menu-grid">
+                
+                <!-- DESAYUNOS -->
+                <article class="menu-card" data-category="breakfast">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page2_img2.jpg" alt="Desayuno Campestre The Ranch" loading="lazy">
+                        <span class="menu-badge badge-special">Chef's Special</span>
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Desayuno Campestre</h3>
+                        <p class="menu-card-description">
+                            Huevos orgánicos, arepa de maíz, queso fresco, fruta de temporada y café de la región.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$38.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="breakfast">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page2_img3.jpg" alt="Pancakes Artesanales" loading="lazy">
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Pancakes Artesanales</h3>
+                        <p class="menu-card-description">
+                            Pancakes esponjosos con miel de abejas local, frutos rojos y mantequilla de maní.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$32.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="breakfast">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page2_img4.jpg" alt="Bowl Energético" loading="lazy">
+                        <span class="menu-badge badge-vegetarian">Vegetariano</span>
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Bowl Energético</h3>
+                        <p class="menu-card-description">
+                            Açaí, granola casera, coco rallado, banana, chía y semillas de calabaza.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$35.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ENTRADAS -->
+                <article class="menu-card" data-category="starters">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page2_img5.jpg" alt="Bruschetta Trilogía" loading="lazy">
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Bruschetta Trilogía</h3>
+                        <p class="menu-card-description">
+                            Tradicional con tomate, setas silvestres y queso de cabra con miel.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$28.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="starters">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page2_img6.jpg" alt="Ceviche Andino" loading="lazy">
+                        <span class="menu-badge badge-special">Chef's Special</span>
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Ceviche Andino</h3>
+                        <p class="menu-card-description">
+                            Trucha de la región marinada en cítricos, aguacate, cilantro y maíz tostado.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$42.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="starters">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page2_img7.jpg" alt="Ensalada Gardens" loading="lazy">
+                        <span class="menu-badge badge-vegetarian">Vegetariano</span>
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Ensalada Gardens</h3>
+                        <p class="menu-card-description">
+                            Mix de lechugas orgánicas, quinoa, nueces pecanas, arándanos y vinagreta de frutos rojos.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$32.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PLATOS FUERTES -->
+                <article class="menu-card" data-category="mains">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page2_img8.jpg" alt="Lomo de Res Premium" loading="lazy">
+                        <span class="menu-badge badge-special">Chef's Special</span>
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Lomo de Res Premium</h3>
+                        <p class="menu-card-description">
+                            Lomo importado 250g, puré de papa trufado, espárragos asados y reducción de vino tinto.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$78.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="mains">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page2_img9.jpg" alt="Trucha al Ajillo" loading="lazy">
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Trucha al Ajillo</h3>
+                        <p class="menu-card-description">
+                            Trucha fresca de la región, arroz al coco, plátano maduro y ensalada de la casa.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$52.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="mains">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page3_img1.jpg" alt="Risotto de Hongos" loading="lazy">
+                        <span class="menu-badge badge-vegetarian">Vegetariano</span>
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Risotto de Hongos Silvestres</h3>
+                        <p class="menu-card-description">
+                            Arroz Arborio, mix de hongos frescos, parmesano, trufa y aceite de hierbas.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$48.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="mains">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page4_img1.jpg" alt="Pollo al Curry" loading="lazy">
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Pollo al Curry Thai</h3>
+                        <p class="menu-card-description">
+                            Pechuga de pollo, curry rojo, leche de coco, vegetales salteados y arroz jazmín.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$45.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="mains">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page4_img2.jpg" alt="Pasta Carbonara Gourmet" loading="lazy">
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Pasta Carbonara Gourmet</h3>
+                        <p class="menu-card-description">
+                            Fettuccine fresco, panceta artesanal, huevo orgánico, parmesano y pimienta negra.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$42.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="mains">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page4_img3.jpg" alt="Salmón Teriyaki" loading="lazy">
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Salmón Teriyaki</h3>
+                        <p class="menu-card-description">
+                            Filete de salmón con glaseado teriyaki, wok de vegetales y arroz integral.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$65.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- POSTRES -->
+                <article class="menu-card" data-category="desserts">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page4_img4.jpg" alt="Cheesecake Frutos Rojos" loading="lazy">
+                        <span class="menu-badge badge-special">Chef's Special</span>
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Cheesecake de Frutos Rojos</h3>
+                        <p class="menu-card-description">
+                            Base de galleta, crema de queso, coulis de frutos del bosque y menta fresca.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$22.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="desserts">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page4_img5.jpg" alt="Brownie Chocolate" loading="lazy">
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Brownie de Chocolate Belga</h3>
+                        <p class="menu-card-description">
+                            Brownie caliente, helado de vainilla, salsa de caramelo y nueces pecanas.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$20.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="desserts">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page4_img6.jpg" alt="Tiramisú Clásico" loading="lazy">
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Tiramisú Clásico</h3>
+                        <p class="menu-card-description">
+                            Capas de bizcocho, café espresso, mascarpone y cacao en polvo.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$24.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BEBIDAS -->
+                <article class="menu-card" data-category="drinks">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page1_img6.jpg" alt="Café Specialty" loading="lazy">
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Café Specialty de la Región</h3>
+                        <p class="menu-card-description">
+                            Café de origen único, tostado medio, notas frutales y chocolate.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$8.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="drinks">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/page1_img7.jpg" alt="Limonada de Hierbabuena" loading="lazy">
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Limonada de Hierbabuena</h3>
+                        <p class="menu-card-description">
+                            Limones frescos, hierbabuena del jardín, panela y hielo picado.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$12.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="drinks">
+                    <figure class="menu-card-image">
+                        <img src="../../assets/images/seccion_restaurante/bbig1.jpg" alt="Vino Tinto Reserva" loading="lazy">
+                        <span class="menu-badge badge-special">Premium</span>
+                    </figure>
+                    <div class="menu-card-content">
+                        <h3 class="menu-card-title">Vino Tinto Reserva (Copa)</h3>
+                        <p class="menu-card-description">
+                            Selección de vinos tintos premium, cuerpo completo y taninos suaves.
+                        </p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price">$18.000 COP</span>
+                            <button class="btn-add-cart" aria-label="Agregar al carrito">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- EXPERIENCIAS ESPECIALES -->
+    <!-- ============================================ -->
+    <section class="section services-section">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">Experiencias Gastronómicas Únicas</h2>
+                <p class="section-description">
+                    Más allá del menú, ofrecemos experiencias culinarias diseñadas para crear momentos inolvidables.
+                </p>
+            </header>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie icon-gold"></i>
+                    </div>
+                    <h3 class="service-title">Chef Privado</h3>
+                    <p class="service-description">
+                        Nuestro chef prepara un menú personalizado en la privacidad de tu habitación o área exclusiva.
+                    </p>
+                    <a href="https://api.whatsapp.com/send?phone=573233454530&text=Quiero%20información%20sobre%20Chef%20Privado" 
+                       class="service-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Más información <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wine-bottle icon-gold"></i>
+                    </div>
+                    <h3 class="service-title">Cata de Vinos & Maridaje</h3>
+                    <p class="service-description">
+                        Degustación guiada de vinos seleccionados con aperitivos especialmente diseñados para armonizar.
+                    </p>
+                    <a href="https://api.whatsapp.com/send?phone=573233454530&text=Quiero%20información%20sobre%20Cata%20de%20Vinos" 
+                       class="service-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Más información <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-birthday-cake icon-gold"></i>
+                    </div>
+                    <h3 class="service-title">Cenas Románticas</h3>
+                    <p class="service-description">
+                        Experiencia íntima con decoración especial, menú degustación y ambientación personalizada.
+                    </p>
+                    <a href="https://api.whatsapp.com/send?phone=573233454530&text=Quiero%20reservar%20una%20Cena%20Romántica" 
+                       class="service-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Más información <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling icon-gold"></i>
+                    </div>
+                    <h3 class="service-title">Menús Especiales</h3>
+                    <p class="service-description">
+                        Opciones vegetarianas, veganas, sin gluten y para alergias. Adaptamos el menú a tus necesidades.
+                    </p>
+                    <a href="https://api.whatsapp.com/send?phone=573233454530&text=Necesito%20menú%20especial" 
+                       class="service-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Más información <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- HORARIOS Y RESERVAS -->
+    <!-- ============================================ -->
+    <section class="section contact-section">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">Horarios y Reservas</h2>
+                <p class="section-description">
+                    Estamos abiertos todos los días para ofrecerte la mejor experiencia gastronómica.
+                </p>
+            </header>
+
+            <div class="contact-grid schedule-grid">
+                <div class="contact-info">
+                    <h3 class="contact-info-title">Horarios de Atención</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-sun icon-gold"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Desayuno</h4>
+                            <p>Lunes a Domingo<br>7:00 AM - 11:00 AM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-cloud-sun icon-gold"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Almuerzo</h4>
+                            <p>Lunes a Domingo<br>12:00 PM - 4:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-moon icon-gold"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Cena</h4>
+                            <p>Lunes a Domingo<br>6:00 PM - 10:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone icon-gold"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Reservas</h4>
+                            <p><a href="tel:+573233454530">+57 323 345 4530</a></p>
+                            <p><a href="mailto:theranchboutique@gmail.com">theranchboutique@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reservation-cta">
+                    <h3 class="cta-title">¿Listo para una Experiencia Única?</h3>
+                    <p class="cta-description">
+                        Reserva tu mesa y déjanos sorprenderte con nuestra propuesta gastronómica. 
+                        Te esperamos en el corazón de la naturaleza.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola,%20quiero%20reservar%20una%20mesa%20en%20el%20restaurante" 
+                           class="btn btn-primary btn-large" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Reservar por WhatsApp</span>
+                        </a>
+                        <a href="../../index.html#contacto" class="btn btn-secondary btn-large">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contactar por Email</span>
+                        </a>
+                    </div>
+                    <p class="cta-note">
+                        <i class="fas fa-info-circle"></i>
+                        Recomendamos reservar con anticipación, especialmente fines de semana y festivos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="../../assets/logos/logos-the-ranch.png" alt="The Ranch Group Logo" class="footer-logo">
+                    <p>The Ranch es el destino exclusivo donde la elegancia y la naturaleza se fusionan para crear
+                        experiencias únicas e inolvidables.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Explora</h4>
+                    <ul>
+                        <li><a href="../Eventos/Eventos.html">Eventos</a></li>
+                        <li><a href="../../index.html#hoteleria">Hotelería</a></li>
+                        <li><a href="Restaurante.html">Restaurante</a></li>
+                        <li><a href="../../index.html#servicios-adicionales">Servicios Especiales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt icon-gold"></i> Vereda Pantanillo, Santa Elena, Antioquia,
+                        Colombia 050017</p>
+                    <p><i class="fas fa-phone icon-gold"></i> +57 323 345 4530</p>
+                    <p><i class="fas fa-envelope icon-gold"></i> theranchboutique@gmail.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div>
+                        <a href="https://www.facebook.com/theranchhotelboutique" 
+                           aria-label="Visitar Facebook de The Ranch" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/theranch_hotelboutique?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                           aria-label="Visitar Instagram de The Ranch" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
+                           aria-label="Contactar por WhatsApp" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> The Ranch Group. Todos los derechos reservados.</p>
+                <p>Diseñado con pasión por la naturaleza y la elegancia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- SCRIPTS -->
+    <!-- ============================================ -->
+    <script src="../../js/appMenu.js"></script>
+    <script src="../../js/appFooter.js"></script>
+    <script src="restaurante.js"></script>
 </body>
+
 </html>

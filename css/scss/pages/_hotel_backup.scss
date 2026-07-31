@@ -1,0 +1,563 @@
+// ============================================
+// HOTEL PAGE STYLES
+// Inspired by elegant hotel design
+// ============================================
+
+@use '../abstracts/colors' as colors;
+@use '../abstracts/variables' as vars;
+
+// ============================================
+// HOTEL COLOR PALETTE
+// ============================================
+
+$hotel-gold-elegant: #C69C6D;
+$hotel-gold-darker: #A0784D;
+$hotel-green-deep: #3A5A40;
+$hotel-green-darker: #2E4731;
+$hotel-neutral-light: #FDFDFD;
+$hotel-neutral-dark: #333333;
+$hotel-neutral-soft-gray: #EFEFEF;
+$hotel-footer-dark: #222222;
+
+// ============================================
+// HOTEL HERO SECTION
+// ============================================
+
+.hotel-hero-section {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: vars.$align-center;
+    justify-content: vars.$justify-center;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url('../../../assets/images/seccion_hotel/Cuarto1.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index: 1;
+        filter: brightness(0.6);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: vars.$spacing-2xl vars.$spacing-lg;
+        text-align: vars.$text-align-center;
+        color: colors.$text-color;
+        max-width: 800px;
+        margin: 0 auto;
+
+        h1 {
+            font-size: 4.5em;
+            margin-bottom: vars.$spacing-lg;
+            color: colors.$gold-color;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+
+            @media (max-width: 768px) {
+                font-size: 2.5em;
+            }
+        }
+
+        p {
+            font-size: 1.4em;
+            font-weight: vars.$font-weight-light;
+
+            @media (max-width: 768px) {
+                font-size: 1.1em;
+            }
+        }
+    }
+}
+
+// ============================================
+// HOTEL INTRO SECTION
+// ============================================
+
+.hotel-intro-section {
+    background-color: colors.$bg-primary;
+    padding: vars.$spacing-2xl 0;
+
+    .section-header {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
+
+// ============================================
+// ROOMS SECTION
+// ============================================
+
+.rooms-section {
+    background-color: colors.$bg-secondary;
+    padding: vars.$spacing-3xl 0;
+}
+
+// ============================================
+// ROOM CARD
+// ============================================
+
+.room-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: vars.$spacing-2xl;
+    background-color: colors.$bg-tertiary;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: vars.$spacing-3xl;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 32px rgba(212, 175, 55, 0.3);
+    }
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    // Alternate layout for every other room card
+    &.room-card-reverse {
+        .room-image {
+            order: 2;
+
+            @media (max-width: 1024px) {
+                order: 1;
+            }
+        }
+
+        .room-content {
+            order: 1;
+
+            @media (max-width: 1024px) {
+                order: 2;
+            }
+        }
+    }
+}
+
+// ============================================
+// ROOM IMAGE
+// ============================================
+
+.room-image {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    min-height: 450px;
+
+    @media (max-width: 1024px) {
+        min-height: 300px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+}
+
+// Room Badge
+.room-badge {
+    position: absolute;
+    top: vars.$spacing-lg;
+    left: vars.$spacing-lg;
+    background-color: colors.$gold-color;
+    color: colors.$bg-primary;
+    padding: vars.$spacing-sm vars.$spacing-lg;
+    border-radius: 25px;
+    font-weight: vars.$font-weight-semibold;
+    font-size: vars.$font-size-sm;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    &.room-badge-premium {
+        background-color: colors.$light-gold;
+    }
+
+    &.room-badge-luxury {
+        background: linear-gradient(135deg, colors.$gold-color, colors.$light-gold);
+    }
+
+    &.room-badge-family {
+        background-color: colors.$natural-green;
+    }
+}
+
+// ============================================
+// ROOM CONTENT
+// ============================================
+
+.room-content {
+    padding: vars.$spacing-2xl;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+        padding: vars.$spacing-lg;
+    }
+}
+
+// Room Header
+.room-header {
+    margin-bottom: vars.$spacing-lg;
+}
+
+.room-title {
+    font-size: vars.$font-size-3xl;
+    color: colors.$gold-color;
+    margin-bottom: vars.$spacing-sm;
+    font-family: vars.$secondary-font;
+    font-weight: vars.$font-weight-bold;
+
+    @media (max-width: 768px) {
+        font-size: vars.$font-size-2xl;
+    }
+}
+
+// Room Price
+.room-price {
+    display: flex;
+    align-items: baseline;
+    gap: vars.$spacing-sm;
+    margin-top: vars.$spacing-sm;
+
+    .price-amount {
+        font-size: vars.$font-size-3xl;
+        color: colors.$gold-color;
+        font-weight: vars.$font-weight-bold;
+        font-family: vars.$secondary-font;
+
+        @media (max-width: 768px) {
+            font-size: vars.$font-size-2xl;
+        }
+    }
+
+    .price-period {
+        font-size: vars.$font-size-base;
+        color: colors.$text-secondary;
+    }
+}
+
+// Room Description
+.room-description {
+    color: colors.$text-color;
+    line-height: 1.8;
+    margin-bottom: vars.$spacing-lg;
+}
+
+// ============================================
+// ROOM AMENITIES
+// ============================================
+
+.room-amenities {
+    margin: vars.$spacing-lg 0;
+}
+
+.amenities-title {
+    font-size: vars.$font-size-lg;
+    color: colors.$gold-color;
+    margin-bottom: vars.$spacing-md;
+    font-weight: vars.$font-weight-semibold;
+}
+
+.amenities-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: vars.$spacing-md;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: vars.$spacing-sm;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        color: colors.$text-color;
+        font-size: vars.$font-size-sm;
+
+        i {
+            color: colors.$gold-color;
+            margin-right: vars.$spacing-sm;
+            font-size: vars.$font-size-lg;
+            min-width: 20px;
+        }
+    }
+}
+
+// ============================================
+// ROOM ACTIONS
+// ============================================
+
+.room-actions {
+    display: flex;
+    gap: vars.$spacing-md;
+    margin-top: vars.$spacing-lg;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
+    .btn {
+        flex: 1;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: vars.$spacing-sm;
+
+        i {
+            font-size: vars.$font-size-lg;
+        }
+    }
+}
+
+// ============================================
+// HOTEL PLANS SECTION
+// ============================================
+
+.hotel-plans-section {
+    background-color: colors.$bg-primary;
+    padding: vars.$spacing-3xl 0;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: vars.$spacing-2xl;
+    margin-top: vars.$spacing-3xl;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+// ============================================
+// PLAN CARD
+// ============================================
+
+.plan-card {
+    background-color: colors.$bg-tertiary;
+    border-radius: 15px;
+    padding: vars.$spacing-2xl;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+    }
+
+    &.plan-featured {
+        border: 2px solid colors.$gold-color;
+        transform: scale(1.05);
+
+        @media (max-width: 1024px) {
+            transform: scale(1);
+        }
+
+        &:hover {
+            transform: scale(1.08) translateY(-8px);
+
+            @media (max-width: 1024px) {
+                transform: translateY(-8px);
+            }
+        }
+
+        .plan-badge-top {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: colors.$gold-color;
+            color: colors.$bg-primary;
+            padding: vars.$spacing-sm vars.$spacing-lg;
+            border-radius: 20px;
+            font-weight: vars.$font-weight-bold;
+            font-size: vars.$font-size-sm;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+.plan-header {
+    margin-bottom: vars.$spacing-xl;
+}
+
+.plan-title {
+    font-size: vars.$font-size-2xl;
+    color: colors.$gold-color;
+    margin-bottom: vars.$spacing-lg;
+    font-family: vars.$secondary-font;
+    font-weight: vars.$font-weight-bold;
+}
+
+.plan-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: vars.$spacing-xs;
+
+    .price-label {
+        font-size: vars.$font-size-sm;
+        color: colors.$text-secondary;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .price-amount {
+        font-size: vars.$font-size-3xl;
+        color: colors.$gold-color;
+        font-weight: vars.$font-weight-bold;
+        font-family: vars.$secondary-font;
+    }
+
+    .price-period {
+        font-size: vars.$font-size-sm;
+        color: colors.$text-secondary;
+    }
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: vars.$spacing-xl 0;
+    text-align: left;
+
+    li {
+        padding: vars.$spacing-md 0;
+        color: colors.$text-color;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        display: flex;
+        align-items: center;
+        gap: vars.$spacing-md;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        i {
+            color: colors.$gold-color;
+            font-size: vars.$font-size-lg;
+            min-width: 20px;
+        }
+    }
+}
+
+.plan-action {
+    margin-top: vars.$spacing-xl;
+
+    .btn {
+        width: 100%;
+    }
+}
+
+// ============================================
+// HOTEL CTA SECTION
+// ============================================
+
+.hotel-cta-section {
+    background: linear-gradient(135deg, colors.$bg-primary 0%, colors.$bg-secondary 100%);
+    padding: vars.$spacing-3xl 0;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h2 {
+        font-size: vars.$font-size-3xl;
+        color: colors.$gold-color;
+        margin-bottom: vars.$spacing-lg;
+        font-family: vars.$secondary-font;
+
+        @media (max-width: 768px) {
+            font-size: vars.$font-size-2xl;
+        }
+    }
+
+    p {
+        font-size: vars.$font-size-lg;
+        color: colors.$text-color;
+        margin-bottom: vars.$spacing-2xl;
+        line-height: 1.8;
+    }
+}
+
+.cta-buttons {
+    display: flex;
+    gap: vars.$spacing-lg;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .btn {
+        padding: vars.$spacing-lg vars.$spacing-2xl;
+    }
+}
+
+// ============================================
+// WHATSAPP FLOATING BUTTON
+// ============================================
+
+.whatsapp-float {
+    position: fixed;
+    bottom: vars.$spacing-2xl;
+    right: vars.$spacing-2xl;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+    }
+
+    i {
+        font-size: 30px;
+    }
+
+    @media (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+        bottom: vars.$spacing-lg;
+        right: vars.$spacing-lg;
+
+        i {
+            font-size: 24px;
+        }
+    }
+}

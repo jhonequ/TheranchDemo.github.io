@@ -1,0 +1,500 @@
+// ============================================
+// RESTAURANTE PAGE STYLES
+// ============================================
+
+@use '../abstracts/colors' as colors;
+@use '../abstracts/variables' as vars;
+
+// ============================================
+// MENU TABS - CATEGORÍAS
+// ============================================
+
+.menu-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: vars.$spacing-md;
+    margin-bottom: vars.$spacing-3xl;
+    padding: 0 vars.$spacing-md;
+
+    @media (max-width: 768px) {
+        gap: vars.$spacing-sm;
+    }
+}
+
+.menu-tab {
+    display: flex;
+    align-items: center;
+    gap: vars.$spacing-sm;
+    padding: vars.$spacing-sm vars.$spacing-lg;
+    background-color: transparent;
+    border: 2px solid colors.$border-color;
+    border-radius: 50px;
+    color: colors.$text-color;
+    font-family: vars.$primary-font;
+    font-size: vars.$font-size-base;
+    font-weight: vars.$font-weight-semibold;
+    cursor: pointer;
+    transition: all vars.$transition-base;
+    white-space: nowrap;
+
+    i {
+        font-size: 1.2em;
+        color: colors.$gold-color;
+        transition: transform vars.$transition-base;
+    }
+
+    &:hover {
+        border-color: colors.$gold-color;
+        background-color: rgba(198, 156, 109, 0.1);
+        transform: translateY(-2px);
+
+        i {
+            transform: scale(1.1);
+        }
+    }
+
+    &.active {
+        background-color: colors.$gold-color;
+        border-color: colors.$gold-color;
+        color: colors.$bg-primary;
+
+        i {
+            color: colors.$bg-primary;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: vars.$spacing-xs vars.$spacing-md;
+        font-size: vars.$font-size-sm;
+
+        span {
+            display: none;
+        }
+
+        i {
+            margin: 0;
+        }
+    }
+}
+
+// ============================================
+// MENU GRID - CARDS DE PLATOS
+// ============================================
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: vars.$spacing-xl;
+    margin-top: vars.$spacing-2xl;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: vars.$spacing-lg;
+        padding: 0 vars.$spacing-md;
+    }
+
+    @media (min-width: 769px) and (max-width: 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.menu-card {
+    background-color: colors.$bg-secondary;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px colors.$shadow-color;
+    transition: all vars.$transition-base;
+    opacity: 0;
+    transform: translateY(20px);
+
+    &.animate-in {
+        animation: fadeInUp 0.6s ease forwards;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 24px rgba(198, 156, 109, 0.3);
+
+        .menu-card-image img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.menu-card-image {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background-color: colors.$bg-tertiary;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform vars.$transition-slow;
+    }
+}
+
+.menu-badge {
+    position: absolute;
+    top: vars.$spacing-md;
+    right: vars.$spacing-md;
+    padding: vars.$spacing-xs vars.$spacing-sm;
+    background-color: colors.$gold-color;
+    color: colors.$bg-primary;
+    font-size: vars.$font-size-xs;
+    font-weight: vars.$font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+
+    &.badge-special {
+        background: linear-gradient(135deg, colors.$gold-color, colors.$dark-gold);
+    }
+
+    &.badge-vegetarian {
+        background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    }
+
+    &.badge-premium {
+        background: linear-gradient(135deg, #9C27B0, #6A1B9A);
+    }
+}
+
+.menu-card-content {
+    padding: vars.$spacing-lg;
+}
+
+.menu-card-title {
+    font-family: vars.$secondary-font;
+    font-size: vars.$font-size-lg;
+    color: colors.$gold-color;
+    margin-bottom: vars.$spacing-sm;
+    text-align: left;
+    font-weight: vars.$font-weight-bold;
+}
+
+.menu-card-description {
+    color: colors.$text-secondary;
+    font-size: vars.$font-size-sm;
+    line-height: 1.6;
+    margin-bottom: vars.$spacing-lg;
+    min-height: 60px;
+}
+
+.menu-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: vars.$spacing-md;
+    border-top: 1px solid colors.$border-color;
+}
+
+.menu-price {
+    font-family: vars.$secondary-font;
+    font-size: vars.$font-size-xl;
+    color: colors.$gold-color;
+    font-weight: vars.$font-weight-bold;
+}
+
+.btn-add-cart {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: colors.$gold-color;
+    color: colors.$bg-primary;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all vars.$transition-base;
+    font-size: 1.1em;
+
+    &:hover {
+        background-color: colors.$light-gold;
+        transform: rotate(90deg);
+    }
+
+    &:active {
+        transform: scale(0.95) rotate(90deg);
+    }
+}
+
+// ============================================
+// FEATURES LIST
+// ============================================
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: vars.$spacing-xl 0;
+
+    li {
+        display: flex;
+        gap: vars.$spacing-md;
+        margin-bottom: vars.$spacing-lg;
+        padding-bottom: vars.$spacing-lg;
+        border-bottom: 1px solid colors.$border-color;
+
+        &:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        i {
+            font-size: 1.5em;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        strong {
+            color: colors.$gold-color;
+            display: block;
+            margin-bottom: vars.$spacing-xs;
+            font-size: vars.$font-size-lg;
+        }
+
+        p {
+            color: colors.$text-secondary;
+            margin: 0;
+            line-height: 1.6;
+        }
+    }
+}
+
+// ============================================
+// SCHEDULE GRID
+// ============================================
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: vars.$spacing-3xl;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        gap: vars.$spacing-2xl;
+    }
+}
+
+.reservation-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: vars.$spacing-2xl;
+    background: linear-gradient(135deg, rgba(198, 156, 109, 0.1), rgba(198, 156, 109, 0.05));
+    border-radius: 12px;
+    border: 1px solid colors.$border-color;
+}
+
+.cta-title {
+    font-family: vars.$secondary-font;
+    font-size: vars.$font-size-2xl;
+    color: colors.$gold-color;
+    margin-bottom: vars.$spacing-md;
+}
+
+.cta-description {
+    color: colors.$text-secondary;
+    font-size: vars.$font-size-base;
+    line-height: 1.8;
+    margin-bottom: vars.$spacing-xl;
+    max-width: 500px;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: vars.$spacing-md;
+    width: 100%;
+    max-width: 400px;
+}
+
+.btn-large {
+    padding: vars.$spacing-md vars.$spacing-xl;
+    font-size: vars.$font-size-lg;
+    min-width: 100%;
+
+    i {
+        font-size: 1.3em;
+    }
+}
+
+.cta-note {
+    display: flex;
+    align-items: center;
+    gap: vars.$spacing-sm;
+    color: colors.$text-secondary;
+    font-size: vars.$font-size-sm;
+    margin-top: vars.$spacing-lg;
+    padding: vars.$spacing-sm vars.$spacing-md;
+    background-color: rgba(198, 156, 109, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid colors.$gold-color;
+
+    i {
+        color: colors.$gold-color;
+    }
+}
+
+// ============================================
+// SERVICES GRID (Experiencias Especiales)
+// ============================================
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: vars.$spacing-xl;
+    margin-top: vars.$spacing-2xl;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: vars.$spacing-lg;
+    }
+}
+
+.service-card {
+    background-color: colors.$bg-secondary;
+    padding: vars.$spacing-2xl;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid colors.$border-color;
+    transition: all vars.$transition-base;
+
+    &:hover {
+        border-color: colors.$gold-color;
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(198, 156, 109, 0.2);
+
+        .service-icon i {
+            transform: scale(1.1) rotate(5deg);
+        }
+    }
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto vars.$spacing-lg;
+    background: linear-gradient(135deg, rgba(198, 156, 109, 0.2), rgba(198, 156, 109, 0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+        font-size: 2.5em;
+        transition: transform vars.$transition-base;
+    }
+}
+
+.service-title {
+    font-family: vars.$secondary-font;
+    font-size: vars.$font-size-xl;
+    color: colors.$gold-color;
+    margin-bottom: vars.$spacing-md;
+}
+
+.service-description {
+    color: colors.$text-secondary;
+    line-height: 1.7;
+    margin-bottom: vars.$spacing-lg;
+    min-height: 80px;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: vars.$spacing-xs;
+    color: colors.$gold-color;
+    font-weight: vars.$font-weight-semibold;
+    text-decoration: none;
+    transition: all vars.$transition-base;
+
+    i {
+        transition: transform vars.$transition-base;
+    }
+
+    &:hover {
+        color: colors.$light-gold;
+
+        i {
+            transform: translateX(5px);
+        }
+    }
+}
+
+// ============================================
+// ANIMATIONS
+// ============================================
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+// ============================================
+// RESPONSIVE ADJUSTMENTS
+// ============================================
+
+@media (max-width: 768px) {
+    .menu-section {
+        padding-top: vars.$spacing-2xl;
+        padding-bottom: vars.$spacing-2xl;
+    }
+
+    .menu-card-image {
+        height: 200px;
+    }
+
+    .menu-card-title {
+        font-size: vars.$font-size-base;
+    }
+
+    .menu-price {
+        font-size: vars.$font-size-lg;
+    }
+}
+
+// ============================================
+// PRINT STYLES (para menú impreso)
+// ============================================
+
+@media print {
+    .menu-tabs,
+    .btn-add-cart,
+    .header,
+    .footer,
+    .nav-overlay {
+        display: none !important;
+    }
+
+    .menu-card {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
