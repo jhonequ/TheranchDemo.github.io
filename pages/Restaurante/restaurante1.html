@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Our Menu 2 - Delici Restaurant | The Ranch Group</title>
+    <meta name="description" content="Explora Nuestro Menú 2 en Delici Restaurant - The Ranch. Selección organizada por carruseles interactivos de Entradas, Platos Fuertes, Bebidas y Postres.">
+    <meta name="keywords" content="restaurante medellin, carrusel de menu, entradas, plato fuerte, bebidas, postres, menu de autor, delici restaurant, wagyu, lobster tortellini, the ranch">
+    <meta name="author" content="The Ranch Hotel Boutique">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theranch.com/restaurante/restaurante1.html">
+    <meta property="og:title" content="Our Menu 2 - Delici Restaurant | The Ranch">
+    <meta property="og:description" content="Menú gastronómico exclusivo con carruseles navegables de 8 cartas por cada sesión.">
+    <meta property="og:image" content="../../assets/images/seccion_restaurante/bbig1.jpg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/restaurante1.css">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Delici Restaurant - The Ranch",
+      "image": "https://theranch.com/assets/images/seccion_restaurante/bbig1.jpg",
+      "telephone": "+573233454530",
+      "servesCuisine": "Gourmet, International, Author Cuisine",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Vereda Pantanillo, Santa Elena",
+        "addressLocality": "Medellín",
+        "addressRegion": "Antioquia",
+        "addressCountry": "CO"
+      }
+    }
+    </script>
+</head>
+
+<body style="background-color: #080808; color: #ffffff; margin: 0; font-family: 'Open Sans', sans-serif;">
+
+    <!-- HEADER IDÉNTICO A INDEX.HTML -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../assets/logos/logos-the-ranch.png" alt="The Ranch Group Logo">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <!-- Botón hamburguesa -->
+                <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Menú de navegación -->
+                <ul class="nav-menu" id="navMenu">
+                    <!-- BOTÓN CERRAR DENTRO DEL MENÚ -->
+                    <li class="nav-close-wrapper">
+                        <button class="nav-close" id="navClose" aria-label="Cerrar menú">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </li>
+
+                    <li><a href="../../index.html#inicio">INICIO</a></li>
+                    <li><a href="../Eventos/Eventos.html">EVENTOS</a></li>
+                    <li><a href="../Hotel/Hotel.html">HOTELERÍA</a></li>
+                    <li><a href="Restaurante.html" class="active">RESTAURANTE</a></li>
+                    <li><a href="../../index.html#servicios-adicionales">SERVICIOS ESPECIALES</a></li>
+                    <li><a href="../../index.html#contacto">CONTACTO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Overlay para cerrar menú al hacer click fuera -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- HERO SUB-BANNER -->
+    <section class="rest1-hero">
+        <div class="hero-content">
+            <span class="hero-subtitle">DELICIOUS & TASTY</span>
+            <h1 class="hero-title">Our Menu 2</h1>
+            <div class="hero-divider">
+                <i class="fas fa-utensils"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PRINCIPAL DE MENÚ ORGANIZADA EN CARRUSELES POR SESIÓN -->
+    <section class="rest1-menu-section" id="specialMenu">
+        
+        <!-- Elementos orgánicos decorativos flotantes -->
+        <img src="../../assets/images/seccion_restaurante/icon1.png" alt="Especias Decorativas" class="floating-decor decor-left-top">
+        <img src="../../assets/images/seccion_restaurante/icon2.png" alt="Ingredientes Frescos" class="floating-decor decor-right-top">
+        <img src="../../assets/images/seccion_restaurante/icon3.png" alt="Chili Pepper" class="floating-decor decor-right-mid">
+
+        <div class="container">
+            <!-- Header Centrado -->
+            <div class="section-header-center">
+                <span class="badge-tag">SPECIAL OFFER</span>
+                <h2 class="main-heading">Best Special Menu</h2>
+            </div>
+
+            <!-- NAVEGACIÓN Y FILTRO POR SESIÓN / CATEGORÍA -->
+            <div class="rest1-category-container">
+                <!-- Botones Desktop -->
+                <div class="rest1-category-tabs" id="categoryTabs">
+                    <button class="category-tab-btn active" data-category="all">
+                        <i class="fas fa-th-large"></i> TODAS LAS SESIONES
+                    </button>
+                    <button class="category-tab-btn" data-category="entradas">
+                        <i class="fas fa-utensils"></i> ENTRADAS
+                    </button>
+                    <button class="category-tab-btn" data-category="plato-fuerte">
+                        <i class="fas fa-drumstick-bite"></i> PLATO FUERTE
+                    </button>
+                    <button class="category-tab-btn" data-category="bebidas">
+                        <i class="fas fa-glass-martini-alt"></i> BEBIDAS
+                    </button>
+                    <button class="category-tab-btn" data-category="postres">
+                        <i class="fas fa-ice-cream"></i> POSTRES
+                    </button>
+                </div>
+
+                <!-- Selector Hamburguesa Móvil (Dropdown de Categorías) -->
+                <div class="category-hamburger-wrapper">
+                    <button class="category-hamburger-btn" id="categoryHamburgerBtn">
+                        <div class="cat-btn-left">
+                            <i class="fas fa-bars"></i>
+                            <span id="selectedCategoryLabel">TODAS LAS SESIONES</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+
+                    <ul class="category-dropdown-list" id="categoryDropdownList">
+                        <li>
+                            <button data-category="all" class="active">
+                                <i class="fas fa-th-large"></i> TODAS LAS SESIONES
+                            </button>
+                        </li>
+                        <li>
+                            <button data-category="entradas">
+                                <i class="fas fa-utensils"></i> ENTRADAS
+                            </button>
+                        </li>
+                        <li>
+                            <button data-category="plato-fuerte">
+                                <i class="fas fa-drumstick-bite"></i> PLATO FUERTE
+                            </button>
+                        </li>
+                        <li>
+                            <button data-category="bebidas">
+                                <i class="fas fa-glass-martini-alt"></i> BEBIDAS
+                            </button>
+                        </li>
+                        <li>
+                            <button data-category="postres">
+                                <i class="fas fa-ice-cream"></i> POSTRES
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTENEDORES DE CARRUSEL POR CADA SESIÓN -->
+            <div id="carouselsWrapper">
+                
+                <!-- ==================== CARRUSEL 1: ENTRADAS (8 CARTAS) ==================== -->
+                <div class="category-carousel-block" data-category-block="entradas">
+                    <div class="category-carousel-header">
+                        <div class="cat-title-text"><i class="fas fa-utensils"></i> Entradas (8 Platos)</div>
+                        <div class="carousel-nav-btns">
+                            <button class="carousel-arrow-btn prev-btn" data-carousel="carousel-entradas" aria-label="Anterior">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-arrow-btn next-btn" data-carousel="carousel-entradas" aria-label="Siguiente">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-track-container">
+                        <div class="carousel-track" id="carousel-entradas">
+                            <!-- Carta 1 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page2_img1.jpg" alt="Greek Salad"></div>
+                                <h3 class="dish-name">Greek Salad</h3>
+                                <p class="dish-desc">Avocado, kale, roast beef, feta cheese, cucumber, onion, red pepper...</p>
+                                <span class="dish-price">$39.00</span>
+                            </div>
+                            <!-- Carta 2 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page2_img3.jpg" alt="Butternut Pumpkin Soup"></div>
+                                <h3 class="dish-name">Butternut Pumpkin Soup</h3>
+                                <p class="dish-desc">Avocado with red onion, tomatoes, roasted red pepper, organic herbs...</p>
+                                <span class="dish-price">$15.00</span>
+                            </div>
+                            <!-- Carta 3 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page2_img5.jpg" alt="Artisan Greek Salad"></div>
+                                <h3 class="dish-name">Artisan Greek Salad</h3>
+                                <p class="dish-desc">Avocado with crab meat, red onion, roast pepper, herbs dressing...</p>
+                                <span class="dish-price">$39.00</span>
+                            </div>
+                            <!-- Carta 4 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page1_img3.jpg" alt="Sopa Cremosa de Calabaza"></div>
+                                <h3 class="dish-name">Sopa Cremosa de Calabaza</h3>
+                                <p class="dish-desc">Crema suave de calabaza asada, semillas tostadas y toque de moscada...</p>
+                                <span class="dish-price">$14.00</span>
+                            </div>
+                            <!-- Carta 5 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page1_img1.jpg" alt="Bruschetta de Tomates"></div>
+                                <h3 class="dish-name">Bruschetta Gourmet</h3>
+                                <p class="dish-desc">Pan rústico al horno, tomates marinados en albahaca y aceite de oliva virgen...</p>
+                                <span class="dish-price">$16.00</span>
+                            </div>
+                            <!-- Carta 6 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page1_img5.jpg" alt="Carpaccio de Res"></div>
+                                <h3 class="dish-name">Carpaccio de Res</h3>
+                                <p class="dish-desc">Láminas finas de lomo de res, lascas de parmesano y alcaparras crujientes...</p>
+                                <span class="dish-price">$22.00</span>
+                            </div>
+                            <!-- Carta 7 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page2_img8.jpg" alt="Tartar de Atún Rojo"></div>
+                                <h3 class="dish-name">Tartar de Atún Rojo</h3>
+                                <p class="dish-desc">Atún fresco en cubos, sésamo tostado, emulsión de aguacate y ponzu...</p>
+                                <span class="dish-price">$25.00</span>
+                            </div>
+                            <!-- Carta 8 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page1_img7.jpg" alt="Tabla de Quesos"></div>
+                                <h3 class="dish-name">Tabla de Quesos & Ibéricos</h3>
+                                <p class="dish-desc">Selección de quesos artesanos, jamón serrano, frutos secos y miel pura...</p>
+                                <span class="dish-price">$28.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- TARJETA DESTACADA DEL CHEF -->
+                <div class="chef-selection-wrapper" style="margin: 20px auto 60px auto;">
+                    <div class="chef-selection-card">
+                        <div class="chef-img-side">
+                            <img src="../../assets/images/seccion_restaurante/page4_img2.jpg" alt="Lobster Tortellini">
+                        </div>
+                        <div class="chef-info-side">
+                            <span class="badge-chef"><i class="fas fa-award"></i> CHEF SELECTION</span>
+                            <h3 class="chef-dish-title">Lobster Tortellini</h3>
+                            <p class="chef-dish-desc">
+                                Pasta artesanal rellena de langosta del Atlántico con salsa cremosa de azafrán y manteca de hierbas locales.
+                            </p>
+                            <div class="chef-pricing">
+                                <span class="old-price">$40.00</span>
+                                <span class="new-price">$20.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ==================== CARRUSEL 2: PLATO FUERTE (8 CARTAS) ==================== -->
+                <div class="category-carousel-block" data-category-block="plato-fuerte">
+                    <div class="category-carousel-header">
+                        <div class="cat-title-text"><i class="fas fa-drumstick-bite"></i> Plato Fuerte (8 Platos)</div>
+                        <div class="carousel-nav-btns">
+                            <button class="carousel-arrow-btn prev-btn" data-carousel="carousel-plato-fuerte" aria-label="Anterior">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-arrow-btn next-btn" data-carousel="carousel-plato-fuerte" aria-label="Siguiente">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-track-container">
+                        <div class="carousel-track" id="carousel-plato-fuerte">
+                            <!-- Carta 1 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page2_img2.jpg" alt="Tokusen Wagyu"></div>
+                                <h3 class="dish-name">Tokusen Wagyu</h3>
+                                <p class="dish-desc">Tomatoes, green bell pepper, sliced cucumber, onion, steak grilled...</p>
+                                <span class="dish-price">$45.00</span>
+                            </div>
+                            <!-- Carta 2 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page2_img4.jpg" alt="Oyu Fish"></div>
+                                <h3 class="dish-name">Oyu Fish</h3>
+                                <p class="dish-desc">Vegetables, cheese, ground meats, tomato sauce, seasonings...</p>
+                                <span class="dish-price">$12.00</span>
+                            </div>
+                            <!-- Carta 3 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page2_img6.jpg" alt="Tokusen Wagyu Special"></div>
+                                <h3 class="dish-name">Tokusen Wagyu Special</h3>
+                                <p class="dish-desc">Corte de res Wagyu madurada a las finas hierbas y vegetal al grill...</p>
+                                <span class="dish-price">$46.00</span>
+                            </div>
+                            <!-- Carta 4 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page1_img6.jpg" alt="Wagyu Beef Tenderloin"></div>
+                                <h3 class="dish-name">Wagyu Beef Tenderloin</h3>
+                                <p class="dish-desc">Lomo tierno marinada en reducción de vino tinto y vegetales salteados...</p>
+                                <span class="dish-price">$48.00</span>
+                            </div>
+                            <!-- Carta 5 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page1_img2.jpg" alt="Salmón al Eneldo"></div>
+                                <h3 class="dish-name">Salmón al Eneldo</h3>
+                                <p class="dish-desc">Filete de salmón salvaje a la plancha con puré de patata y suave crema...</p>
+                                <span class="dish-price">$32.00</span>
+                            </div>
+                            <!-- Carta 6 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page1_img4.jpg" alt="Costillas de Cordero"></div>
+                                <h3 class="dish-name">Costillas de Cordero</h3>
+                                <p class="dish-desc">Cordero glaseado en reducción de romero, ajo tierno y papas rústicas...</p>
+                                <span class="dish-price">$38.00</span>
+                            </div>
+                            <!-- Carta 7 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page3_img1.jpg" alt="Risotto de Hongos"></div>
+                                <h3 class="dish-name">Risotto de Hongos</h3>
+                                <p class="dish-desc">Arroz arborio cremoso con variedad de hongos silvestres y trufa negra...</p>
+                                <span class="dish-price">$26.00</span>
+                            </div>
+                            <!-- Carta 8 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page4_img1.jpg" alt="Lubina a la Sal"></div>
+                                <h3 class="dish-name">Lubina a la Sal</h3>
+                                <p class="dish-desc">Pescado fresco horneado a la sal de mar con verduras al vapor...</p>
+                                <span class="dish-price">$34.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ==================== CARRUSEL 3: BEBIDAS (8 CARTAS) ==================== -->
+                <div class="category-carousel-block" data-category-block="bebidas">
+                    <div class="category-carousel-header">
+                        <div class="cat-title-text"><i class="fas fa-glass-martini-alt"></i> Bebidas (8 Bebidas)</div>
+                        <div class="carousel-nav-btns">
+                            <button class="carousel-arrow-btn prev-btn" data-carousel="carousel-bebidas" aria-label="Anterior">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-arrow-btn next-btn" data-carousel="carousel-bebidas" aria-label="Siguiente">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-track-container">
+                        <div class="carousel-track" id="carousel-bebidas">
+                            <!-- Carta 1 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/bbig4.jpg" alt="Coctel Signature"></div>
+                                <h3 class="dish-name">Coctel Signature Delici</h3>
+                                <p class="dish-desc">Mezcla exclusiva de ginebra botánica, infusión de frutos rojos y tónica...</p>
+                                <span class="dish-price">$18.00</span>
+                            </div>
+                            <!-- Carta 2 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/bbig5.jpg" alt="Vino Tinto Reserva"></div>
+                                <h3 class="dish-name">Vino Tinto Reserva</h3>
+                                <p class="dish-desc">Copa de vino tinto selección especial de la casa de roble francés...</p>
+                                <span class="dish-price">$24.00</span>
+                            </div>
+                            <!-- Carta 3 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/bbig6.jpg" alt="Jugo Natural Silvestre"></div>
+                                <h3 class="dish-name">Jugo Natural Silvestre</h3>
+                                <p class="dish-desc">Combinación orgánica de frutos del bosque frescos, menta y miel...</p>
+                                <span class="dish-price">$8.00</span>
+                            </div>
+                            <!-- Carta 4 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/bbig7.jpg" alt="Sangría Artesanal"></div>
+                                <h3 class="dish-name">Sangría Artesanal</h3>
+                                <p class="dish-desc">Jarra de sangría preparada con fruta de temporada y licor rústico...</p>
+                                <span class="dish-price">$22.00</span>
+                            </div>
+                            <!-- Carta 5 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/bbig8.jpg" alt="Mojito de Maracuyá"></div>
+                                <h3 class="dish-name">Mojito de Maracuyá</h3>
+                                <p class="dish-desc">Ron blanco premium, pulpa de maracuyá fresca, menta y soda artesanal...</p>
+                                <span class="dish-price">$15.00</span>
+                            </div>
+                            <!-- Carta 6 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/bbig9.jpg" alt="Ginebra Rose"></div>
+                                <h3 class="dish-name">Ginebra Rose Botanical</h3>
+                                <p class="dish-desc">Ginebra infundida en pétalos de rosa con bayas de enebro y romero...</p>
+                                <span class="dish-price">$19.00</span>
+                            </div>
+                            <!-- Carta 7 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/bbig1.jpg" alt="Café Espresso Origen"></div>
+                                <h3 class="dish-name">Café Espresso Origen</h3>
+                                <p class="dish-desc">Café 100% arábigo de las montañas antioqueñas con notas de avellana...</p>
+                                <span class="dish-price">$6.00</span>
+                            </div>
+                            <!-- Carta 8 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/bbig3.jpg" alt="Té Matcha Helado"></div>
+                                <h3 class="dish-name">Té Matcha Helado</h3>
+                                <p class="dish-desc">Té matcha orgánico batido en leche de almendras y toques de vainilla...</p>
+                                <span class="dish-price">$9.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ==================== CARRUSEL 4: POSTRES (8 CARTAS) ==================== -->
+                <div class="category-carousel-block" data-category-block="postres">
+                    <div class="category-carousel-header">
+                        <div class="cat-title-text"><i class="fas fa-ice-cream"></i> Postres (8 Postres)</div>
+                        <div class="carousel-nav-btns">
+                            <button class="carousel-arrow-btn prev-btn" data-carousel="carousel-postres" aria-label="Anterior">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-arrow-btn next-btn" data-carousel="carousel-postres" aria-label="Siguiente">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-track-container">
+                        <div class="carousel-track" id="carousel-postres">
+                            <!-- Carta 1 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page4_img5.jpg" alt="Tarta de Calabaza & Miel"></div>
+                                <h3 class="dish-name">Tarta de Calabaza & Miel</h3>
+                                <p class="dish-desc">Base crujiente de galleta con relleno de calabaza horneada y miel...</p>
+                                <span class="dish-price">$12.00</span>
+                            </div>
+                            <!-- Carta 2 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page4_img6.jpg" alt="Tiramisú de la Casa"></div>
+                                <h3 class="dish-name">Tiramisú de la Casa</h3>
+                                <p class="dish-desc">Postre italiano clásico aromatizado con espresso fresco y cacao fino...</p>
+                                <span class="dish-price">$14.00</span>
+                            </div>
+                            <!-- Carta 3 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page4_img3.jpg" alt="Volcán de Chocolate"></div>
+                                <h3 class="dish-name">Volcán de Chocolate</h3>
+                                <p class="dish-desc">Bizcocho caliente con centro líquido de chocolate negro y gelato...</p>
+                                <span class="dish-price">$15.00</span>
+                            </div>
+                            <!-- Carta 4 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page2_img7.jpg" alt="Gelato Artesanal"></div>
+                                <h3 class="dish-name">Gelato Artesanal Delici</h3>
+                                <p class="dish-desc">Trío de helados gourmet elaborados diariamente con ingredientes naturales...</p>
+                                <span class="dish-price">$10.00</span>
+                            </div>
+                            <!-- Carta 5 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page1_img5.jpg" alt="Cheesecake de Frutos Rojos"></div>
+                                <h3 class="dish-name">Cheesecake de Frutos Rojos</h3>
+                                <p class="dish-desc">Tarta helada de queso crema con coulis artesanal de frambuesas...</p>
+                                <span class="dish-price">$13.00</span>
+                            </div>
+                            <!-- Carta 6 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page2_img1.jpg" alt="Crepe de Nutella"></div>
+                                <h3 class="dish-name">Crepe de Nutella & Banano</h3>
+                                <p class="dish-desc">Fina crepa caliente rellena de crema de avellanas y plátano caramelizado...</p>
+                                <span class="dish-price">$11.00</span>
+                            </div>
+                            <!-- Carta 7 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page2_img3.jpg" alt="Mousse de Maracuyá"></div>
+                                <h3 class="dish-name">Mousse de Maracuyá</h3>
+                                <p class="dish-desc">Crema ligera agridulce de maracuyá con crujiente de chocolate blanco...</p>
+                                <span class="dish-price">$9.00</span>
+                            </div>
+                            <!-- Carta 8 -->
+                            <div class="rest1-food-card">
+                                <div class="card-img-wrap"><img src="../../assets/images/seccion_restaurante/page4_img4.jpg" alt="Crème Brûlée"></div>
+                                <h3 class="dish-name">Crème Brûlée de Vainilla</h3>
+                                <p class="dish-desc">Crema quemada a la vainilla de Madagascar con capa fina de azúcar flameado...</p>
+                                <span class="dish-price">$14.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER IDÉNTICO A INDEX.HTML -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="../../assets/logos/logos-the-ranch.png" alt="The Ranch Group Logo" class="footer-logo">
+                    <p>The Ranch es el destino exclusivo donde la elegancia y la naturaleza se fusionan para crear
+                        experiencias únicas e inolvidables.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Explora</h4>
+                    <ul>
+                        <li><a href="../Eventos/Eventos.html">Eventos</a></li>
+                        <li><a href="../Hotel/Hotel.html">Hotelería</a></li>
+                        <li><a href="Restaurante.html">Restaurante</a></li>
+                        <li><a href="../../index.html#servicios-adicionales">Servicios Especiales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt icon-gold"></i> Vereda Pantanillo, Santa Elena, Antioquia,
+                        Colombia 050017</p>
+                    <p><i class="fas fa-phone icon-gold"></i> +57 323 345 4530</p>
+                    <p><i class="fas fa-envelope icon-gold"></i> theranchboutique@gmail.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div>
+                        <a href="https://www.facebook.com/theranchhotelboutique" 
+                           aria-label="Visitar Facebook de The Ranch" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/theranch_hotelboutique?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                           aria-label="Visitar Instagram de The Ranch" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=573233454530&text=Hola%20quiero%20mas%20informaci%C3%B3n%20"
+                           aria-label="Contactar por WhatsApp" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> The Ranch Group. Todos los derechos reservados.</p>
+                <p>Diseñado con pasión por la naturaleza y la elegancia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante Back to Top -->
+    <a href="#" class="back-to-top" id="backToTopBtn" aria-label="Volver Arriba">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script src="../../js/appMenu.js"></script>
+    <script src="../../js/appFooter.js"></script>
+    <script src="restaurante1.js"></script>
+</body>
+
+</html>

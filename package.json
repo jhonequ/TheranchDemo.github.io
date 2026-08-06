@@ -2,9 +2,9 @@
   "name": "theranch-web",
   "version": "1.0.0",
   "scripts": {
-    "sass": "sass css/style.scss css/styles.css",
-    "sass:watch": "sass --watch css:css",
-    "sass:build": "sass css/style.scss css/styles.css --style=compressed"
+    "sass": "sass css/style.scss css/style.css && sass css/style.scss css/styles.css && sass css/scss/restaurante1.scss css/restaurante1.css",
+    "sass:watch": "sass --watch css:css css/scss:css",
+    "sass:build": "sass css/style.scss css/style.css --style=compressed && sass css/style.scss css/styles.css --style=compressed && sass css/scss/restaurante1.scss css/restaurante1.css --style=compressed"
   },
   "devDependencies": {
     "sass": "^1.69.0"
